@@ -68,3 +68,9 @@ make clean
 make -j
 make install
 ```
+
+## 修改 hosts
+
+```shell
+sudo vim /etc/hosts
+```
