@@ -5,7 +5,7 @@
 
 * 常用工具
     * [Homebrew](tools/brew.md)
-    * [WebSocket在线测试](//wstool.qq52o.cn)
+    * [WebSocket在线测试](http://wstool.qq52o.cn)
 
 * 实例代码
     * [调用RPC](code/hyperf-jsonrpc-http.md)
