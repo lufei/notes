@@ -6,7 +6,7 @@
 
 2. 点击 + 号添加一个`PHP Script`，填写对应的信息
 
-![添加脚本](../images/debug/hyperf-1.png)
+![添加脚本](../images/hyperf/hyperf-1.png)
 
 对应信息说明：
 
@@ -27,20 +27,10 @@ Before launch：Activate tool window
 
 3. 点击 Apply 保存即可，选中刚才配置的 Hyperf 脚本
 
-![选中脚本](../images/debug/hyperf-2.png)
+![选中脚本](../images/hyperf/hyperf-2.png)
 
 4. 选中后在需要启动 Hyperf 服务时可以直接点击 Run 图标即可
 
-![一键执行](../images/debug/hyperf-3.png)
+![一键执行](../images/hyperf/hyperf-3.png)
 
 也可以直接点击一键重启和关闭
-
-## REST Client
-
-点击 PhpStorm 上方的工具栏，找到 Tools 、 HTTP Client 、Test RESTful Web Service 点开后如图：
-
-![REST Client](../images/debug/hyperf-4.png)
-
-和 PostMan 类似，我们可以选择对应的请求方式、域名地址、接口路径
-
-点击 Run 图标即可
