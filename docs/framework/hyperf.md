@@ -34,3 +34,31 @@ Before launch：Activate tool window
 ![一键执行](../images/hyperf/hyperf-3.png)
 
 也可以直接点击一键重启和关闭
+
+## 在 Docker 中使用框架
+
+Hyperf 对系统环境有一些要求，仅可运行于 Linux 和 Mac 环境下，但由于 Docker 虚拟化技术的发展，在 Windows 下也可以通过 Docker for Windows 来作为运行环境，通常来说 Mac 环境下，更推荐本地环境部署，以避免 Docker 共享磁盘缓慢导致 Hyperf 启动速度慢的问题。
+
+### 拉取镜像
+
+```bash
+docker pull hyperf/hyperf
+```
+
+### 下载Hyperf Skeleton
+
+```
+composer create-project hyperf/hyperf-skeleton 
+```
+
+### 配置PhpStorm
+
+和上文前两步一样，添加一个 Docker Image
+
+![配置脚本](../images/hyperf/hyperf-4.png)
+
+保存之后就可以点击 Run 图标了
+
+![运行](../images/hyperf/hyperf-5.png)
+
+重启、关闭就不说了。。。
