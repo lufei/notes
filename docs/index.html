@@ -39,11 +39,22 @@
           var footer = [
             '<hr/>',
             '<footer>',
-            '<span>&copy; 2019 <a href="https://github.com/sy-records">Luffy</a></span>',
+            '<span>&copy; 2019 <a href="https://github.com/sy-records" target="_blank">Luffy</a></span>',
+            '<p id="hitokoto">:D 获取中...</p>',
             '</footer>'
           ].join('')
 
           hook.afterEach(function (html) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'https://v1.hitokoto.cn');
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4) {
+                var data = JSON.parse(xhr.responseText);
+                var hitokoto = document.getElementById('hitokoto');
+                hitokoto.innerText = data.hitokoto;
+              }
+            }
+            xhr.send();
             return html + footer
           })
         }
@@ -53,5 +64,6 @@
   <script src="//unpkg.com/docsify-copy-code@2"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="//v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 </body>
 </html>
