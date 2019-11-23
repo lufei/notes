@@ -45,15 +45,15 @@
             '</footer>'
           ].join('')
 
-          hook.mounted(function() {
-            getHitokoto('cover-hitokoto');
+          hook.ready(function() {
+            getHitokoto('cover-page-hitokoto');
           })
 
           hook.afterEach(function (html) {
             return html + footer
           })
 
-          hook.ready(function() {
+          hook.doneEach(function() {
             getHitokoto('hitokoto');
           })
         }
