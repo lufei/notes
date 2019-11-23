@@ -4,7 +4,7 @@
 
 > 一个 PHPer 的成长之路
 
-- 🍃Don't let your past determine the future.
+### :D 获取中... :id=hitokoto
 
 [GitHub](https://github.com/sy-records)
 [Getting Started](#main)
