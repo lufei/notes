@@ -26,10 +26,11 @@
       logo: '/logo.png',
       coverpage: true,
       loadNavbar: true,
-      loadSidebar: 'summary.md',
+      loadSidebar: true,
       subMaxLevel: 2,
       themeColor: '#3F51B5',
       mergeNavbar: true,
+      auto2top: true,
       autoHeader: true,
       search: {
         depth: 6
@@ -44,21 +45,31 @@
             '</footer>'
           ].join('')
 
+          hook.mounted(function() {
+            getHitokoto('cover-hitokoto');
+          })
+
           hook.afterEach(function (html) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('get', 'https://v1.hitokoto.cn');
-            xhr.onreadystatechange = function () {
-              if (xhr.readyState === 4) {
-                var data = JSON.parse(xhr.responseText);
-                var hitokoto = document.getElementById('hitokoto');
-                hitokoto.innerText = data.hitokoto;
-              }
-            }
-            xhr.send();
             return html + footer
+          })
+
+          hook.ready(function() {
+            getHitokoto('hitokoto');
           })
         }
       ]
+    }
+    function getHitokoto(id) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', 'https://v1.hitokoto.cn');
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          var data = JSON.parse(xhr.responseText);
+          var hitokoto = document.getElementById(id);
+          hitokoto.innerText = data.hitokoto;
+        }
+      }
+      xhr.send();
     }
   </script>
   <script src="//unpkg.com/docsify-copy-code@2"></script>
