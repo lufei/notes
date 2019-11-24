@@ -8,3 +8,5 @@
 
 [GitHub](https://github.com/sy-records)
 [Getting Started](#main)
+
+![](images/bg.jpg)
