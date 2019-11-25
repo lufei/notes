@@ -51,3 +51,9 @@ git merge upstream/master
 #同时别忘了push到自己的github仓库
 git push origin master
 ```
+
+## 合并某个commitId
+
+```ini
+git cherry-pick commitId
+```
