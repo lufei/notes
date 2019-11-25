@@ -54,6 +54,6 @@ git push origin master
 
 ## 合并某个commitId
 
-```ini
+```bash
 git cherry-pick commitId
 ```

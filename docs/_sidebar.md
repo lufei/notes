@@ -15,6 +15,7 @@
     * [JSON-RPC](code/hyperf-jsonrpc.md)
 
 * 数据库
+    * [MySQL](database/mysql.md)
     * [PostgreSQL](database/postgresql.md)
 
 * 网关
