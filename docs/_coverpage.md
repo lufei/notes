@@ -9,4 +9,4 @@
 [GitHub](https://github.com/sy-records)
 [Getting Started](#main)
 
-![](images/bg.jpg)
+![](https://upyun.qq52o.me/img/bg.jpg)
