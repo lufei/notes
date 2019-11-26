@@ -50,8 +50,11 @@
           })
 
           hook.doneEach(function() {
-            getHitokoto('cover-page-hitokoto');
             getHitokoto('hitokoto');
+          })
+
+          hook.mounted(function() {
+            getHitokoto('cover-page-hitokoto');
           })
         }
       ]
