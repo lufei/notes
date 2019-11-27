@@ -14,3 +14,7 @@ fastcgi_param SERVER_SOFTWARE nginx;
 ```
 
 重载 nginx 配置即可
+
+## 反向代理
+
+- [配置 Websocket Wss 代理](/code/websocket.md)
