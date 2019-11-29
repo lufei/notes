@@ -49,6 +49,19 @@
             return html + footer
           })
 
+          hook.beforeEach(function(content) {
+            (function(u, c) {
+              var d = document, t = 'script', o = d.createElement(t),
+                      s = d.getElementsByTagName(t)[0];
+              o.src = u;
+              if (c) { o.addEventListener('load', function(e) { c(e); }); }
+              s.parentNode.insertBefore(o, s);
+            })('//cdn.staticfile.org/pangu/4.0.7/pangu.min.js', function() {
+              pangu.spacingPage();
+            });
+            return content
+          })
+
           hook.doneEach(function() {
             getHitokoto('hitokoto');
           })
