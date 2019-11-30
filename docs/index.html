@@ -49,7 +49,7 @@
             return html + footer
           })
 
-          hook.beforeEach(function(content) {
+          hook.doneEach(function() {
             (function(u, c) {
               var d = document, t = 'script', o = d.createElement(t),
                       s = d.getElementsByTagName(t)[0];
@@ -59,10 +59,6 @@
             })('//cdn.staticfile.org/pangu/4.0.7/pangu.min.js', function() {
               pangu.spacingPage();
             });
-            return content
-          })
-
-          hook.doneEach(function() {
             getHitokoto('hitokoto');
           })
 
