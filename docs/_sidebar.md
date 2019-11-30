@@ -8,6 +8,7 @@
     * [Git](tools/git.md)
     * [Homebrew](tools/brew.md)
     * [PhpStorm](tools/phpstorm.md)
+    * [WP-CLI](tools/wp-cli.md)
 
 * 框架
     * [Hyperf](framework/hyperf.md)
