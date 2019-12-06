@@ -9,7 +9,7 @@
 ```php
 <?php
 $ch = curl_init();
-$url = 'http://localhost:9504';
+$url = 'http://127.0.0.1:9504';
 $pra = '{
   "jsonrpc": "2.0",
   "method": "calculator/add",
@@ -47,28 +47,28 @@ var_dump(json_decode($data, true));
 
 ```php
 <?php
-const RPC_EOL = "\r\n";
+const RPC_EOF = "\r\n";
 
-function request($host, $method, $param, $ext = []) {
+function request($host, $method, $param, $id = '') {
 	$fp = stream_socket_client($host, $errno, $errstr);
 	if (!$fp) {
-		throw new Exception("stream_socket_client fail errno={$errno} errstr={$errstr}");
+		throw new Exception("stream_socket_client fail, errno={$errno} errstr={$errstr}");
 	}
 
 	$req = [
 		"jsonrpc" => '2.0',
 		"method" => $method,
 		'params' => $param,
-		'id' => '',
+		'id' => $id,
 	];
-	$data = json_encode($req) . RPC_EOL;
+	$data = json_encode($req) . RPC_EOF;
 	fwrite($fp, $data);
 
 	$result = '';
 	while (!feof($fp)) {
 		$tmp = stream_socket_recvfrom($fp, 1024);
 
-		if ($pos = strpos($tmp, RPC_EOL)) {
+		if ($pos = strpos($tmp, RPC_EOF)) {
 			$result .= substr($tmp, 0, $pos);
 			break;
 		} else {
@@ -81,6 +81,5 @@ function request($host, $method, $param, $ext = []) {
 }
 
 $ret = request('tcp://127.0.0.1:9503', "calculator/add",  [1, 2]);
-
 var_dump($ret);
 ```
