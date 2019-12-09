@@ -42,9 +42,6 @@ git remote add upstream [upstream_url]
 #fetch
 git fetch upstream
 
-#切换到本地master分支
-git checkout master
-
 #将upstream/master merge到本地master分支
 git merge upstream/master
 
