@@ -1,4 +1,4 @@
-PostgreSQL 是一种特性非常齐全的自由软件的对象-关系型数据库管理系统（ORDBMS），是以加州大学计算机系开发的 POSTGRES，4.2 版本为基础的对象关系型数据库管理系统
+PostgreSQL 是一个免费的对象-关系数据库服务器(ORDBMS)，在灵活的BSD许可证下发行。
 
 ## 安装
 
@@ -93,4 +93,24 @@ psql -U postgres -d postgres
 \conninfo：列出当前数据库和连接的信息
 \password [user]: 修改用户密码
 \q：退出
+```
+
+## 允许远程访问
+
+Mac下默认的postgresql目录的存放路径是`/usr/local/var/postgres/`，修改如下两个文件
+
+* postgresql.conf
+```config
+listen_addresses = '*' #修改这里的配置允许任意地址的连接
+```
+
+* pg_hba.conf
+```config
+host all all 0.0.0.0/0 trust #配置服务端允许认证的方式
+```
+
+修改完成后重启
+
+```bash
+brew services restart postgresql
 ```
