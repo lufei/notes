@@ -54,3 +54,28 @@ git push origin master
 ```bash
 git cherry-pick commitId
 ```
+
+## 22 to 443
+git的ssh使用22端口不可用时，可以使用443端口
+```bash
+vim ~/.ssh/config
+
+#写入
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+```
+
+## 设置SS代理
+
+```bash
+vim ~/.ssh/config
+
+#写入
+Host github.com
+   HostName github.com
+   User git
+   ProxyCommand nc -v -x 127.0.0.1:1086 %h %p
+```
+
+!> 注意配置文件内的 127.0.0.1:1086 需要与您本地 SS 客户端的所暴露的 本地 Socks5 监听地址 和 本地 Socks5 监听端口 一致。
