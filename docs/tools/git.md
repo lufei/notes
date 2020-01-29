@@ -79,3 +79,59 @@ Host github.com
 ```
 
 !> 注意配置文件内的 127.0.0.1:1086 需要和本地 SS 客户端的所暴露的 本地 Socks5 监听地址 和 本地 Socks5 监听端口 一致
+
+## Webhook
+
+使用Swoole的HttpServer来作为Web服务，执行Github的Webhook
+
+```php
+<?php
+
+define("SECRET", "test666");
+define("PROJECT_PATH", dirname(__FILE__));
+
+$http = new Swoole\Http\Server("0.0.0.0", 9501);
+$http->set([
+               'worker_num' => 2,
+               'daemonize' => 1,
+               'log_file' => PROJECT_PATH . '/swoole.log'
+           ]);
+$http->on('ManagerStart', function ($server) {
+    cli_set_process_title("auto-pull" . "#manager");
+});
+
+$http->on('workerStart', function ($server, $workerId) {
+    cli_set_process_title("auto-pull" . "#{$workerId}");
+});
+
+$http->on('request', function ($request, $response) {
+    $signature = $request->header['x-hub-signature'] ?? '';
+    if (!$signature) {
+        return $response->status(404);
+    }
+
+    $json = $request->rawContent();
+    $content = json_decode($json, true);
+
+    list($algo, $hash) = explode('=', $signature, 2);
+
+    //计算签名
+    $payloadHash = hash_hmac($algo, $json, SECRET);
+
+    // 判断签名是否匹配
+    if ($hash === $payloadHash) {
+        $cmd = "cd ". PROJECT_PATH . " && git pull";
+        $res = co::exec($cmd);
+        $res_log = '[' . date('Y-m-d H:i:s') . '] [success] ';
+        $res_log .= $content['head_commit']['author']['name'] . ' pushed ' . count($content['commits']) . ' commits' . PHP_EOL;
+        $res_log .= $res["output"] . PHP_EOL;
+        echo $res_log;
+        $response->end("success");
+    } else {
+        $res_log = '[' . date('Y-m-d H:i:s') . '] [error] secret error' . PHP_EOL;
+        echo $res_log;
+        $response->end("error");
+    }
+});
+$http->start();
+```
