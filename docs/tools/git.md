@@ -4,6 +4,12 @@
 git commit --amend
 ```
 
+## 撤销上一次的commit
+
+```shell
+git reset HEAD~
+```
+
 ## 修改remote url
 
 ```shell
