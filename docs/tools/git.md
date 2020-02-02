@@ -12,6 +12,12 @@ git reset HEAD~
 
 ## 修改remote url
 
+* 直接修改
+```shell
+git remote set-url origin git@github.com:UserName/Repository.git
+```
+
+* 先删后加
 ```shell
 git remote rm origin
 git remote add origin git@github.com:UserName/Repository.git
