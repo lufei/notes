@@ -1,5 +1,3 @@
-* [前言](README.md)
-
 * 环境搭建
     * [Mac](development/mac.md)
     * [Linux](development/linux.md)
