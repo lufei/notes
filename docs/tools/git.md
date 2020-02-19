@@ -119,7 +119,8 @@ $http->on('workerStart', function ($server, $workerId) {
 $http->on('request', function ($request, $response) {
     $signature = $request->header['x-hub-signature'] ?? '';
     if (!$signature) {
-        return $response->status(404);
+        $response->status(404);
+        return $response->end();
     }
 
     $json = $request->rawContent();
