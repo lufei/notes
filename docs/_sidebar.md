@@ -1,3 +1,7 @@
+* 前言
+    * [关于我](README.md)
+    * [赞赏](donate.md)
+
 * 环境搭建
     * [Mac](development/mac.md)
     * [Linux](development/linux.md)
