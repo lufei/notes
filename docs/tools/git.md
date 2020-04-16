@@ -31,8 +31,6 @@ git remote add origin git@github.com:UserName/Repository.git
 
 #码云
 git remote set-url --add origin git@gitee.com:UserName/Repository.git
-
-#其他同理...
 ```
 
 ## 回滚上次push的提交
@@ -102,15 +100,14 @@ Host github.com
 define("SECRET", "test666");
 define("PROJECT_PATH", dirname(__FILE__));
 
-$http = new Swoole\Http\Server("0.0.0.0", 9501);
-$http->set([
-               'worker_num' => 2,
-               'daemonize' => 1,
-               'log_file' => PROJECT_PATH . '/swoole.log'
-           ]);
-$http->on('ManagerStart', function ($server) {
-    cli_set_process_title("auto-pull" . "#manager");
-});
+$http = new Swoole\Http\Server("0.0.0.0", 9501, SWOOLE_BASE);
+$http->set(
+    [
+        'worker_num' => 1,
+        'daemonize' => 1,
+        'log_file' => PROJECT_PATH . '/swoole.log'
+    ]
+);
 
 $http->on('workerStart', function ($server, $workerId) {
     cli_set_process_title("auto-pull" . "#{$workerId}");
@@ -133,18 +130,17 @@ $http->on('request', function ($request, $response) {
 
     // 判断签名是否匹配
     if ($hash === $payloadHash) {
-        $cmd = "cd ". PROJECT_PATH . " && git pull";
+        $cmd = "cd ".  PROJECT_PATH . " && git pull";
         $res = co::exec($cmd);
         $res_log = '[' . date('Y-m-d H:i:s') . '] [success] ';
         $res_log .= $content['head_commit']['author']['name'] . ' pushed ' . count($content['commits']) . ' commits' . PHP_EOL;
         $res_log .= $res["output"] . PHP_EOL;
         echo $res_log;
-        $response->end("success");
-    } else {
-        $res_log = '[' . date('Y-m-d H:i:s') . '] [error] secret error' . PHP_EOL;
-        echo $res_log;
-        $response->end("error");
+        return $response->end("success");
     }
+    $res_log = '[' . date('Y-m-d H:i:s') . '] [error] secret error' . PHP_EOL;
+    echo $res_log;
+    $response->end("error");
 });
 $http->start();
 ```
