@@ -51,7 +51,7 @@ function getAccessToken($appid, $secret)
     $tokenJson = curlRequest($url);
     $tokenArr = json_decode($tokenJson,true);
     if(isset($tokenArr['errcode'])) {
-        return "";
+        return $tokenArr['errcode'];
     }
     // 此处应该缓存 可以自己提供一个api 使用redis缓存2个小时
     $accessToken = $tokenArr['access_token'];
