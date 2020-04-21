@@ -11,6 +11,7 @@
     * [Homebrew](tools/brew.md)
     * [PhpStorm](tools/phpstorm.md)
     * [WP-CLI](tools/wp-cli.md)
+    * [Docker](tools/docker.md)
 
 * 常用API
     * [短链](api/short_url.md)
