@@ -1,7 +1,5 @@
 ## 腾讯 url.cn
 
-!> `url.cn`加了`csrf`，等有人研究了再修改吧
-
 请求地址：`https://vip.video.qq.com/fcgi-bin/comm_cgi`  
 请求参数：`name，need_short_url，url`  
 示例：
