@@ -144,3 +144,25 @@ $http->on('request', function ($request, $response) {
 });
 $http->start();
 ```
+
+## 压缩/合并commit
+
+```shell
+git rebase -i HEAD~<number>
+
+# example : git rebase -i HEAD~4
+# HEAD～4的含义是从头部开始追溯4条记录
+```
+
+执行后进入编辑模式，将需要压缩的commit前面的`pick`改为`squash`
+
+```shell
+# 取消
+git rebase --abort
+
+# 因为冲突打断的话 执行continue
+git rebase --continue
+
+# 强推
+git push -f origin branch_name
+```
