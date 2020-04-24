@@ -1,92 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>沈唁的编程笔记</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="沈唁的编程笔记">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-  <style>
-    .app-name-link img {
-      width: 45%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>沈唁的编程笔记</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="沈唁的编程笔记">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <style>
+        .app-name-link img {
+            width: 45%;
+        }
+    </style>
 </head>
 <body>
-  <div id="app"></div>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
-  <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
-  <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
-  <script src="//cdn.staticfile.org/pangu/4.0.7/pangu.min.js"></script>
-  <script>
+<div id="app"></div>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+<script src="//cdn.staticfile.org/pangu/4.0.7/pangu.min.js"></script>
+<script>
     window.$docsify = {
-      name: '沈唁志',
-      repo: 'lufeibot/notes',
-      logo: 'https://upyun.qq52o.me/img/logo.png',
-      coverpage: true,
-      loadNavbar: true,
-      loadSidebar: true,
-      subMaxLevel: 2,
-      themeColor: '#3F51B5',
-      mergeNavbar: true,
-      auto2top: true,
-      autoHeader: true,
-      search: {
-        depth: 6
-      },
-      plugins: [
-        function (hook) {
-          var footer = [
-            '<hr/>',
-            '<footer>',
-            '<span>&copy; 2019 - ' + new Date().getFullYear() +
-            ' <a href="https://github.com/sy-records" target="_blank">Luffy</a></span>',
-            '<p id="hitokoto">左手代码右手诗，亦是生活亦是痴</p>',
-            '</footer>'
-          ].join('')
+        name: '沈唁志',
+        repo: 'lufeibot/notes',
+        logo: 'https://upyun.qq52o.me/img/logo.png',
+        coverpage: true,
+        loadNavbar: true,
+        loadSidebar: true,
+        subMaxLevel: 2,
+        themeColor: '#3F51B5',
+        mergeNavbar: true,
+        auto2top: true,
+        autoHeader: true,
+        search: {
+            depth: 6
+        },
+        plugins: [
+            function (hook) {
+                var top = [
+                    '<div class="notes-resource">' +
+                    '<ins class="adsbygoogle"\n' +
+                    '       style="display:block"\n' +
+                    '       data-ad-client="ca-pub-6283374584269480"\n' +
+                    '       data-ad-slot="8241554858"\n' +
+                    '       data-ad-format="auto"\n' +
+                    '       data-full-width-responsive="true"></ins>' +
+                    '</div>',
+                    '<br/>'
+                ].join('')
 
-          hook.afterEach(function (html) {
-            return html + footer
-          })
+                var bottom = [
+                    '<br/>',
+                    '<div class="notes-resource">' +
+                    '<ins class="adsbygoogle"\n' +
+                    '       style="display:block"\n' +
+                    '       data-ad-client="ca-pub-6283374584269480"\n' +
+                    '       data-ad-slot="8241554858"\n' +
+                    '       data-ad-format="auto"\n' +
+                    '       data-full-width-responsive="true"></ins>' +
+                    '</div>'
+                ].join('')
 
-          hook.doneEach(function() {
-            pangu.spacingElementByClassName('content')
-            getHitokoto('hitokoto');
-          })
+                var footer = [
+                    '<hr/>',
+                    '<footer>',
+                    '<span>&copy; 2019 - ' + new Date().getFullYear() +
+                    ' <a href="https://github.com/sy-records" target="_blank">Luffy</a></span>',
+                    '<p id="hitokoto">左手代码右手诗，亦是生活亦是痴</p>',
+                    '</footer>'
+                ].join('')
 
-          hook.mounted(function() {
-            getHitokoto('cover-page-hitokoto');
-          })
-        }
-      ]
+                hook.afterEach(function (html) {
+                    return top+ html + bottom + footer
+                })
+
+                hook.doneEach(function () {
+                    pangu.spacingElementByClassName('content')
+                    getHitokoto('hitokoto');
+                })
+
+                hook.mounted(function () {
+                    getHitokoto('cover-page-hitokoto');
+                })
+            }
+        ]
     }
+
     function getHitokoto(id) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('get', 'https://v1.hitokoto.cn');
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          var data = JSON.parse(xhr.responseText);
-          var hitokoto = document.getElementById(id);
-          hitokoto.innerText = data.hitokoto;
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'https://v1.hitokoto.cn');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                var data = JSON.parse(xhr.responseText);
+                var hitokoto = document.getElementById(id);
+                hitokoto.innerText = data.hitokoto;
+            }
         }
-      }
-      xhr.send();
+        xhr.send();
     }
-  </script>
-  <script src="//unpkg.com/docsify-copy-code@2"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
-  <script data-ad-client="ca-pub-6283374584269480" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
+</script>
+<script src="//unpkg.com/docsify-copy-code@2"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
     var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?2e3e68a45cd6630a4544247988ba21cd";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2e3e68a45cd6630a4544247988ba21cd";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
     })();
-  </script>
+
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
