@@ -31,4 +31,4 @@
 
 * WebSocket
     * [Wss](code/websocket.md)
-    * [在线测试](http://wstool.qq52o.cn)
+    * [在线测试](http://wstool.js.org)

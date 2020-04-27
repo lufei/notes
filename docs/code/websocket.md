@@ -37,6 +37,6 @@ server {
 }
 ```
 
-重载 Nginx 服务，如果没有错误，打开 [测试工具](http://wstool.qq52o.cn)，服务地址输入 `wss://域名`
+重载 Nginx 服务，如果没有错误，打开 [测试工具](http://wstool.js.org)，服务地址输入 `wss://域名`
 
 无需添加端口号，点击开启连接，提示 `OPENED`，恭喜你 Wss 服务就可以了
