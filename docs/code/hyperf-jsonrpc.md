@@ -2,9 +2,9 @@
 
 客户端可以参考[JSON-RPC 2.0 Specification](https://www.jsonrpc.org/specification)
 
-## Http
+## HTTP
 
-以下为简单调用 JsonRpcHttp 的示例代码
+以下为简单调用 JsonRpcHTTP 的示例代码
 
 ```php
 <?php

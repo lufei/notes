@@ -13,11 +13,13 @@ git reset HEAD~
 ## 修改remote url
 
 * 直接修改
+
 ```shell
 git remote set-url origin git@github.com:UserName/Repository.git
 ```
 
 * 先删后加
+
 ```shell
 git remote rm origin
 git remote add origin git@github.com:UserName/Repository.git
@@ -66,7 +68,9 @@ git cherry-pick commitId
 ```
 
 ## 22 to 443
+
 git的ssh使用22端口不可用时，可以使用443端口
+
 ```bash
 vim ~/.ssh/config
 
@@ -90,9 +94,9 @@ Host github.com
 
 !> 注意配置文件内的 127.0.0.1:1086 需要和本地 SS 客户端的所暴露的 本地 Socks5 监听地址 和 本地 Socks5 监听端口 一致
 
-## Webhook
+## WebHook
 
-使用Swoole的HttpServer来作为Web服务，执行Github的Webhook
+使用Swoole的`Http\Server`来作为Web服务，执行GitHub的WebHook
 
 ```php
 <?php

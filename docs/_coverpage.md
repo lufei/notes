@@ -1,4 +1,4 @@
-![logo](https://upyun.qq52o.me/img/huaji.png)
+![logo](https://cdn.jsdelivr.net/gh/lufeibot/notes/docs/images/huaji.png)
 
 # 沈唁志
 

@@ -13,13 +13,13 @@
 
 设置 -> Editor -> Live Templates
 
-![Live Templates](../images/phpstorm/LiveTemplates.png)
+![Live Templates](//cdn.jsdelivr.net/gh/lufeibot/notes@master/docs/images/phpstorm/LiveTemplates.png)
 
 ## REST Client
 
 点击 PhpStorm 上方的工具栏，找到 Tools 、 HTTP Client 、Test RESTful Web Service 点开后如图：
 
-![REST Client](../images/phpstorm/rest-client.png)
+![REST Client](//cdn.jsdelivr.net/gh/lufeibot/notes@master/docs/images/phpstorm/rest-client.png)
 
 和 PostMan 类似，我们可以选择对应的请求方式、域名地址、接口路径
 
@@ -33,7 +33,7 @@
 
 点击+号添加一个服务器，填写对应的连接信息
 
-![](../images/phpstorm/add-ftp-server.png)
+![](//cdn.jsdelivr.net/gh/lufeibot/notes@master/docs/images/phpstorm/add-ftp-server.png)
 
 2. 添加项目路径
 
@@ -41,7 +41,7 @@
 
 点击`Mappings`，填写对应的项目路径
 
-![](../images/phpstorm/add-ftp-mappings.png)
+![](//cdn.jsdelivr.net/gh/lufeibot/notes@master/docs/images/phpstorm/add-ftp-mappings.png)
 
 `Local path`为本地的项目路径，默认是当前目录  
 `Deployment path`为远端ftp服务器对应的路径，这里需要注意的是此路径会拼接上一步中的`Root path`，即我上传到ftp服务器的路径为：`/root/luffy/swool`
