@@ -15,7 +15,8 @@
 </head>
 <body>
 <div id="app"></div>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+<!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>-->
+<script src="//cdn.jsdelivr.net/gh/sy-records/staticfile@master/js/docsify/docsify.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-php.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
@@ -32,8 +33,13 @@
         themeColor: '#3F51B5',
         mergeNavbar: true,
         autoHeader: true,
+        auto2top: true,
         search: {
             depth: 6
+        },
+        alias: {
+            '/.*/_sidebar.md': '/_sidebar.md',
+            '/.*/_navbar.md': '/_navbar.md',
         },
         plugins: [
             function (hook) {
@@ -42,7 +48,7 @@
                     '<hr/>',
                     '<footer>',
                     '<span>&copy; 2019 - ' + new Date().getFullYear() +
-                    ' <a href="https://github.com/sy-records" target="_blank">Luffy</a></span>',
+                    ' <a href="https://github.com/sy-records" target="_blank">沈唁</a></span>',
                     '<p id="hitokoto">左手代码右手诗，亦是生活亦是痴</p>',
                     '</footer>'
                 ].join('')
@@ -77,7 +83,8 @@
     }
 </script>
 <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>-->
+<script src="//cdn.jsdelivr.net/gh/sy-records/staticfile@master/js/docsify/search.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.js"></script>
 <script>
     var _hmt = _hmt || [];
