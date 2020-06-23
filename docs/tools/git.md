@@ -170,3 +170,9 @@ git rebase --continue
 # 强推
 git push -f origin branch_name
 ```
+
+## 清除本地 remotes/origin/*
+
+```shell
+git remote prune origin
+```
