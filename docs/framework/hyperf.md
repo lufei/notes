@@ -6,7 +6,7 @@
 
 2. 点击 + 号添加一个`PHP Script`，填写对应的信息
 
-![添加脚本](//cdn.jsdelivr.net/gh/lufeibot/notes@master/docs/images/hyperf/hyperf-1.png)
+![添加脚本](//cdn.jsdelivr.net/gh/lufeidot/notes@master/docs/images/hyperf/hyperf-1.png)
 
 对应信息说明：
 
@@ -27,11 +27,11 @@ Before launch：Activate tool window
 
 3. 点击 Apply 保存即可，选中刚才配置的 Hyperf 脚本
 
-![选中脚本](//cdn.jsdelivr.net/gh/lufeibot/notes@master/docs/images/hyperf/hyperf-2.png)
+![选中脚本](//cdn.jsdelivr.net/gh/lufeidot/notes@master/docs/images/hyperf/hyperf-2.png)
 
 4. 选中后在需要启动 Hyperf 服务时可以直接点击 Run 图标即可
 
-![一键执行](//cdn.jsdelivr.net/gh/lufeibot/notes@master/docs/images/hyperf/hyperf-3.png)
+![一键执行](//cdn.jsdelivr.net/gh/lufeidot/notes@master/docs/images/hyperf/hyperf-3.png)
 
 也可以直接点击一键重启和关闭
 
@@ -55,10 +55,10 @@ composer create-project hyperf/hyperf-skeleton
 
 和上文前两步一样，添加一个 Docker Image
 
-![配置脚本](//cdn.jsdelivr.net/gh/lufeibot/notes@master/docs/images/hyperf/hyperf-4.png)
+![配置脚本](//cdn.jsdelivr.net/gh/lufeidot/notes@master/docs/images/hyperf/hyperf-4.png)
 
 保存之后就可以点击 Run 图标了
 
-![运行](//cdn.jsdelivr.net/gh/lufeibot/notes@master/docs/images/hyperf/hyperf-5.png)
+![运行](//cdn.jsdelivr.net/gh/lufeidot/notes@master/docs/images/hyperf/hyperf-5.png)
 
 重启、关闭就不说了。。。
