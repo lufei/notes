@@ -3,7 +3,7 @@
 ## 数据回显
 
 ```javascript
-$("#select2_id").select2({"data":[{"id":1,"text":"111"},{"id":2,"text":"222"}]});
+$('select2_id').select2({"data":[{"id":1,"text":"111"},{"id":2,"text":"222"}]});
 $('#select2_id').val([1,2]).trigger("change");
 ```
 
@@ -30,4 +30,18 @@ $('#select2_id').select2({
     },
     minimumInputLength: 1
 });
+```
+
+## 下拉框不能输入
+
+!> 检查下modal模态窗口中的div中是否有属性`tabindex="-1"`
+
+## 设置宽度
+
+设置宽度需要设置给`span`，即
+
+```css
+.select2 span {
+    width: 150px;
+}
 ```
