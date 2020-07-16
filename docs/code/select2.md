@@ -45,3 +45,17 @@ $('#select2_id').select2({
     width: 150px;
 }
 ```
+
+## 下拉框去除已经选中的值
+
+```css
+.select2-results__option[aria-selected=true]{
+    display:none;
+}
+```
+
+## 连续多选
+
+```javascript
+closeOnSelect: false
+```
