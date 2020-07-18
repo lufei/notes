@@ -35,3 +35,6 @@
 * WebSocket
     * [Wss](code/websocket.md)
     * [在线测试](http://wstool.js.org)
+
+* 语言
+    * [Python](language/python.md)
