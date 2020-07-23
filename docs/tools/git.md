@@ -127,3 +127,10 @@ git push -f origin branch_name
 ```shell
 git remote prune origin
 ```
+
+## 删除远程分支
+
+```shell
+git branch -r -d origin/branch_name
+git push origin :branch_name
+```
