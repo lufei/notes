@@ -12,6 +12,7 @@
     * [PhpStorm](tools/phpstorm.md)
     * [WP-CLI](tools/wp-cli.md)
     * [Docker](tools/docker.md)
+    * [Charles](tools/charles.md)
 
 * 常用API
     * [短链](api/short_url.md)
