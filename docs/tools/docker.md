@@ -12,3 +12,11 @@ docker rm $(docker ps -qa)
 ```shell
 docker rmi --force $(docker images -q)
 ```
+
+## Docker CE 镜像
+
+```
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+```
+
+https://developer.aliyun.com/article/110806
