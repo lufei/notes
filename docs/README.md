@@ -8,7 +8,7 @@
     "nickname": "沈唁", 
     "contact": {
         "email": "52o[at]qq52o.cn",
-        "weibo": "@写Bug的路飞"
+        "weibo": "@你飞"
     },
     "location": "Xi'an",
     "skills": ["PHP", "Swoole", "Linux", "Python", "WordPress"],
