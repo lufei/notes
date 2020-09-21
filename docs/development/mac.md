@@ -74,3 +74,16 @@ make install
 ```shell
 sudo vim /etc/hosts
 ```
+
+## Core Dump
+
+```shell
+sudo mkdir /cores 
+sudo chown root:admin /cores 
+sudo chmod 1775 /cores
+sudo chmod o+w /cores
+
+ulimit -c unlimited
+
+lldb -c /cores/core.37676
+```
