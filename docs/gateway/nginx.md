@@ -1,3 +1,5 @@
+# Nginx
+
 ## 隐藏版本号
 
 进入 nginx 配置文件的目录，编辑`nginx.conf`

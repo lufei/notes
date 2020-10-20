@@ -1,3 +1,5 @@
+# WP-CLI
+
 WP-CLI 可以在不使用 WordPress 后台的情况下，仅通过命令行就可以完成 WordPress、主题、插件的安装、升级、使用等等
 
 ## 安装 WP-CLI

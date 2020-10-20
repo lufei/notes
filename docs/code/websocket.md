@@ -1,3 +1,5 @@
+# WSS
+
 这里使用 Nginx 反向代理解决 Wss 服务问题，即客户端通过 Wss 协议连接 Nginx 然后 Nginx 通过 Ws 协议和 Server 通讯；
 
 也就是说 Nginx 负责通讯加解密，Nginx 到 Server 是明文的，Swoole 不用开启 ssl，而且还能隐藏服务器端口和负载均衡；

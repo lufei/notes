@@ -140,3 +140,15 @@ function pageShow(string $url, $total = 0, $nowPage = 1, $limit = 20, $rollPage 
 ```php
 echo pageShow($_SERVER["REQUEST_URI"], $total, $page);
 ```
+
+### 导航下拉菜单触发方式改为鼠标浮动触发
+
+```css
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+```

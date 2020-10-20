@@ -1,3 +1,5 @@
+# 短链
+
 ## 腾讯 url.cn
 
 请求地址：`https://vip.video.qq.com/fcgi-bin/comm_cgi`  
