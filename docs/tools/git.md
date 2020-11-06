@@ -136,3 +136,23 @@ git remote prune origin
 git branch -r -d origin/branch_name
 git push origin :branch_name
 ```
+
+## 修改分支名称
+
+```shell
+# 本地分支重命名
+git branch -m oldName newName
+# 将重命名后的分支推送到远程
+git push origin newName
+# 删除远程的旧分支
+git push --delete origin oldName
+```
+
+## 使用远程覆盖本地
+
+远程分支强推后，本地文件冲突，需要使用远程文件覆盖本地文件时使用。
+
+```shell
+git fetch --all
+git reset --hard origin/master
+```
