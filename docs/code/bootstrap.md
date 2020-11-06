@@ -56,7 +56,7 @@ function showFilename(file){
 }
 ```
 
-### 计算分页
+## 计算分页
 
 ```php
 /**
@@ -141,7 +141,7 @@ function pageShow(string $url, $total = 0, $nowPage = 1, $limit = 20, $rollPage 
 echo pageShow($_SERVER["REQUEST_URI"], $total, $page);
 ```
 
-### 导航下拉菜单触发方式改为鼠标浮动触发
+## 导航下拉菜单触发方式改为鼠标浮动触发
 
 ```css
 .dropdown:hover>.dropdown-menu {
@@ -153,7 +153,7 @@ echo pageShow($_SERVER["REQUEST_URI"], $total, $page);
 }
 ```
 
-### 表格点击变色再点击取消
+## 表格点击变色再点击取消
 
 ```javascript
 $('table').on('click', function(e) {
