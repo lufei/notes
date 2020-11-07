@@ -25,6 +25,7 @@
     * [Select2](code/select2.md)
     * [ECharts](code/echarts.md)
     * [Bootstrap](code/bootstrap.md)
+    * [JavaScript](code/javascript.md)
 
 * 数据库
     * [MySQL](database/mysql.md)

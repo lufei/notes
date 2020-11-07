@@ -152,18 +152,3 @@ echo pageShow($_SERVER["REQUEST_URI"], $total, $page);
     pointer-events: none;
 }
 ```
-
-## 表格点击变色再点击取消
-
-```javascript
-$('table').on('click', function(e) {
-    // 点击变色 再次点击取消
-    if (!$(e.target).parent('tr').hasClass('bg-primary')) {
-        $(e.target).parent('tr').addClass('bg-primary');
-    } else {
-        $(e.target).parent('tr').removeClass('bg-primary');
-    }
-    // 点击变色并同时删除其他的
-    // $(e.target).parent('tr').addClass('bg-primary').siblings('tr.bg-primary').removeClass('bg-primary');
-});
-```
