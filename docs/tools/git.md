@@ -146,6 +146,9 @@ git branch -m oldName newName
 git push origin newName
 # 删除远程的旧分支
 git push --delete origin oldName
+
+git branch --unset-upstream
+git branch --set-upstream-to=origin/<branch> master
 ```
 
 ## 使用远程覆盖本地
