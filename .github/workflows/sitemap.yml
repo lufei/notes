@@ -15,6 +15,7 @@ jobs:
 
       - name: Build Sitemap
         run: |
+          git pull --rebase
           cd docs/
           ./sitemap.sh
 

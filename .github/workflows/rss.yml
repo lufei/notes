@@ -19,7 +19,7 @@ jobs:
 
       - name: Build RSS
         run: |
-          git pull
+          git pull --rebase
           cd docs/
           ./rss.sh
 
