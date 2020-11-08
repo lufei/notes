@@ -6,6 +6,31 @@
   <description>沈唁的编程笔记</description>
    
   <item>
+    <title><![CDATA[关于我]]></title>
+    <link>https://notes.qq52o.me/#/README</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/README</guid>
+    <description><![CDATA[<h1 id="关于我">关于我</h1>
+<p><a href="https://github.com/lufei/notes/actions"><img src="https://github.com/lufei/notes/workflows/RSS/badge.svg" alt="RSS Status" /></a> <a href="https://github.com/lufei/notes/actions"><img src="https://github.com/lufei/notes/workflows/Sitemap/badge.svg" alt="Sitemap Status" /></a> <a href="https://github.com/lufei/notes/blob/master/LICENSE"><img src="https://img.shields.io/github/license/lufei/notes" alt="LICENSE" /></a> <a href="https://notes.qq52o.me/feed.xml"><img src="https://img.shields.io/badge/RSS-Atom-orange" alt="RSS Icon" /></a> <a href="https://paypal.me/lufeidot"><img src="https://img.shields.io/badge/paypal-donate-ff69b4.svg" alt="Donate" /></a> <a href="https://qq52o.me"><embed src="https://img.shields.io/badge/Blog-qq52o.me-blue" /></a> <a href="https://weibo.com/i3l4521"><img src="https://cdn.jsdelivr.net/gh/jaywcjlove/sb@gh-pages/ico/weibo.svg" alt="WeiBo" /></a></p>
+<blockquote>
+<p>路有多远，只有心知道，<br />
+最美的旅程，是不断的经历，<br />
+坚持走下去，与梦想者同行！<br />
+我是沈唁，一个成长中的PHPer！</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;nickname&quot;</span><span class="fu">:</span> <span class="st">&quot;沈唁&quot;</span><span class="fu">,</span> 
+    <span class="dt">&quot;contact&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;52o[at]qq52o.cn&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;weibo&quot;</span><span class="fu">:</span> <span class="st">&quot;@你飞&quot;</span>
+    <span class="fu">},</span>
+    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Xi&#39;an&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;skills&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;PHP&quot;</span><span class="ot">,</span> <span class="st">&quot;Swoole&quot;</span><span class="ot">,</span> <span class="st">&quot;Linux&quot;</span><span class="ot">,</span> <span class="st">&quot;Python&quot;</span><span class="ot">,</span> <span class="st">&quot;WordPress&quot;</span><span class="ot">]</span><span class="fu">,</span>
+    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;天秤男&quot;</span><span class="ot">,</span> <span class="st">&quot;果粉&quot;</span><span class="ot">,</span> <span class="st">&quot;路飞迷&quot;</span><span class="ot">]</span>
+<span class="fu">}</span></code></pre></div>]]></description>
+    <pubDate>Sun, 8 Nov 2020 18:08:53 +0800</pubDate>
+  </item>
+   
+  <item>
     <title><![CDATA[前言]]></title>
     <link>https://notes.qq52o.me/#/_sidebar</link>
     <guid isPermaLink="false">https://notes.qq52o.me/#/_sidebar</guid>
@@ -63,31 +88,6 @@
 <li><a href="language/python.md">Python</a></li>
 </ul></li>
 </ul>]]></description>
-    <pubDate>Sun, 8 Nov 2020 08:55:35 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[关于我]]></title>
-    <link>https://notes.qq52o.me/#/README</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/README</guid>
-    <description><![CDATA[<h1 id="关于我">关于我</h1>
-<p><a href="https://github.com/lufei/notes/actions"><img src="https://github.com/lufei/notes/workflows/RSS/badge.svg" alt="RSS Status" /></a> <a href="https://github.com/lufei/notes/blob/master/LICENSE"><img src="https://img.shields.io/github/license/lufei/notes" alt="LICENSE" /></a> <a href="https://paypal.me/lufeidot"><img src="https://img.shields.io/badge/paypal-donate-ff69b4.svg" alt="donate" /></a> <a href="https://qq52o.me"><embed src="https://img.shields.io/badge/Blog-qq52o.me-blue" /></a> <a href="https://weibo.com/i3l4521"><img src="https://cdn.jsdelivr.net/gh/jaywcjlove/sb@gh-pages/ico/weibo.svg" alt="WeiBo" /></a></p>
-<blockquote>
-<p>路有多远，只有心知道，<br />
-最美的旅程，是不断的经历，<br />
-坚持走下去，与梦想者同行！<br />
-我是沈唁，一个成长中的PHPer！</p>
-</blockquote>
-<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-    <span class="dt">&quot;nickname&quot;</span><span class="fu">:</span> <span class="st">&quot;沈唁&quot;</span><span class="fu">,</span> 
-    <span class="dt">&quot;contact&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-        <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;52o[at]qq52o.cn&quot;</span><span class="fu">,</span>
-        <span class="dt">&quot;weibo&quot;</span><span class="fu">:</span> <span class="st">&quot;@你飞&quot;</span>
-    <span class="fu">},</span>
-    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Xi&#39;an&quot;</span><span class="fu">,</span>
-    <span class="dt">&quot;skills&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;PHP&quot;</span><span class="ot">,</span> <span class="st">&quot;Swoole&quot;</span><span class="ot">,</span> <span class="st">&quot;Linux&quot;</span><span class="ot">,</span> <span class="st">&quot;Python&quot;</span><span class="ot">,</span> <span class="st">&quot;WordPress&quot;</span><span class="ot">]</span><span class="fu">,</span>
-    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;天秤男&quot;</span><span class="ot">,</span> <span class="st">&quot;果粉&quot;</span><span class="ot">,</span> <span class="st">&quot;路飞迷&quot;</span><span class="ot">]</span>
-<span class="fu">}</span></code></pre></div>]]></description>
     <pubDate>Sun, 8 Nov 2020 08:55:35 +0800</pubDate>
   </item>
    
