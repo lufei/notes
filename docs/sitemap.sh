@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sitemap="sitemap.xml"
-link="https://notes.qq52o.me"
+website_link="https://notes.qq52o.me"
 ignore=(
 _sidebar.md
 _coverpage.md
@@ -30,7 +30,7 @@ for file in ${files[@]}; do
   echo $file
   title=$(grep "." $file | head -n1)
   encode=$(urlencode "${file::-3}")
-  link="$link/#/$encode"
+  link="$website_link/#/$encode"
   date=$(git log -1 --format="%ad" --date="iso-strict-local" -- $file)
   item="
   <url>
