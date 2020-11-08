@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql/#/code/websocket/#/code/hyperf-jsonrpc/#/api/short_url/#/tools/docker/#/language/python/#/code/select2/#/code/echarts/#/database/redis</loc>
-    <lastmod>2020-11-08T09:53:21+00:00</lastmod>
+    <loc>https://notes.qq52o.me/#/database/redis</loc>
+    <lastmod>2020-11-08T09:57:36+00:00</lastmod>
   </url>
    
   <url>
@@ -11,112 +11,112 @@
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript</loc>
+    <loc>https://notes.qq52o.me/#/code/javascript</loc>
     <lastmod>2020-11-07T01:17:45+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap</loc>
+    <loc>https://notes.qq52o.me/#/code/bootstrap</loc>
     <lastmod>2020-11-07T01:17:45+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git</loc>
+    <loc>https://notes.qq52o.me/#/tools/git</loc>
     <lastmod>2020-11-07T01:17:17+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli</loc>
+    <loc>https://notes.qq52o.me/#/tools/wp-cli</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm</loc>
+    <loc>https://notes.qq52o.me/#/tools/phpstorm</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles</loc>
+    <loc>https://notes.qq52o.me/#/tools/charles</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew</loc>
+    <loc>https://notes.qq52o.me/#/tools/brew</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx</loc>
+    <loc>https://notes.qq52o.me/#/gateway/nginx</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf</loc>
+    <loc>https://notes.qq52o.me/#/framework/hyperf</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate</loc>
+    <loc>https://notes.qq52o.me/#/donate</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac</loc>
+    <loc>https://notes.qq52o.me/#/development/mac</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux</loc>
+    <loc>https://notes.qq52o.me/#/development/linux</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql</loc>
+    <loc>https://notes.qq52o.me/#/database/postgresql</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql</loc>
+    <loc>https://notes.qq52o.me/#/database/mysql</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql/#/code/websocket</loc>
+    <loc>https://notes.qq52o.me/#/code/websocket</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql/#/code/websocket/#/code/hyperf-jsonrpc</loc>
+    <loc>https://notes.qq52o.me/#/code/hyperf-jsonrpc</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql/#/code/websocket/#/code/hyperf-jsonrpc/#/api/short_url</loc>
+    <loc>https://notes.qq52o.me/#/api/short_url</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql/#/code/websocket/#/code/hyperf-jsonrpc/#/api/short_url/#/tools/docker</loc>
+    <loc>https://notes.qq52o.me/#/tools/docker</loc>
     <lastmod>2020-08-31T00:03:14+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql/#/code/websocket/#/code/hyperf-jsonrpc/#/api/short_url/#/tools/docker/#/language/python</loc>
+    <loc>https://notes.qq52o.me/#/language/python</loc>
     <lastmod>2020-07-18T02:20:29+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql/#/code/websocket/#/code/hyperf-jsonrpc/#/api/short_url/#/tools/docker/#/language/python/#/code/select2</loc>
+    <loc>https://notes.qq52o.me/#/code/select2</loc>
     <lastmod>2020-07-16T00:36:26+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql/#/code/websocket/#/code/hyperf-jsonrpc/#/api/short_url/#/tools/docker/#/language/python/#/code/select2/#/code/echarts</loc>
+    <loc>https://notes.qq52o.me/#/code/echarts</loc>
     <lastmod>2020-07-09T08:06:38+00:00</lastmod>
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/README/#/code/javascript/#/code/bootstrap/#/tools/git/#/tools/wp-cli/#/tools/phpstorm/#/tools/charles/#/tools/brew/#/gateway/nginx/#/framework/hyperf/#/donate/#/development/mac/#/development/linux/#/database/postgresql/#/database/mysql/#/code/websocket/#/code/hyperf-jsonrpc/#/api/short_url/#/tools/docker/#/language/python/#/code/select2/#/code/echarts/#/database/redis</loc>
+    <loc>https://notes.qq52o.me/#/database/redis</loc>
     <lastmod>2020-02-17T02:27:41+00:00</lastmod>
   </url>
   
