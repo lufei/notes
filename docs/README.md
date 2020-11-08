@@ -1,6 +1,7 @@
 # 关于我
 
 [![RSS Status](https://github.com/lufei/notes/workflows/RSS/badge.svg)](https://github.com/lufei/notes/actions)
+[![Sitemap Status](https://github.com/lufei/notes/workflows/Sitemap/badge.svg)](https://github.com/lufei/notes/actions)
 [![LICENSE](https://img.shields.io/github/license/lufei/notes)](https://github.com/lufei/notes/blob/master/LICENSE)
 [![RSS Icon](https://img.shields.io/badge/RSS-Atom-orange)](https://notes.qq52o.me/feed.xml)
 [![Donate](https://img.shields.io/badge/paypal-donate-ff69b4.svg)](https://paypal.me/lufeidot)
