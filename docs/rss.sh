@@ -1,6 +1,6 @@
 #!/bin/bash
 
-feed="feed"
+feed="feed.xml"
 blog_title="沈唁的编程笔记"
 blog_link="https://notes.qq52o.me"
 description="沈唁的编程笔记"
