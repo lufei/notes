@@ -19,16 +19,9 @@ jobs:
 
       - name: Build RSS
         run: |
+          git pull
           cd docs/
           ./rss.sh
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        id: commit
-
-      - name: Check Changes
-        if: steps.commit.outputs.changes_detected == 1
-        run:
-          git pull
 
       - name: Commit Updated
         uses: stefanzweifel/git-auto-commit-action@v4
