@@ -1,0 +1,616 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<channel>
+  <title>沈唁的编程笔记</title>
+  <atom:link href="https://notes.qq52o.me/feed" rel="self" type="application/rss+xml" />
+  <link>https://notes.qq52o.me</link>
+  <description>沈唁的编程笔记</description>
+   
+  <item>
+    <title><![CDATA[JavaScript]]></title>
+    <link>https://notes.qq52o.me/#/code/javascript</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/code/javascript</guid>
+    <description><![CDATA[<h1 id="javascript">JavaScript</h1>
+<h2 id="表格点击变色再点击取消">表格点击变色再点击取消</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">$</span>(<span class="st">&#39;tbody&#39;</span>).<span class="at">on</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">function</span>(e) <span class="op">{</span>
+    <span class="co">// 点击变色 再次点击取消</span>
+    <span class="cf">if</span> (<span class="op">!</span><span class="at">$</span>(<span class="va">e</span>.<span class="at">target</span>).<span class="at">parent</span>(<span class="st">&#39;tr&#39;</span>).<span class="at">hasClass</span>(<span class="st">&#39;bg-primary&#39;</span>)) <span class="op">{</span>
+        <span class="at">$</span>(<span class="va">e</span>.<span class="at">target</span>).<span class="at">parent</span>(<span class="st">&#39;tr&#39;</span>).<span class="at">addClass</span>(<span class="st">&#39;bg-primary&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+        <span class="at">$</span>(<span class="va">e</span>.<span class="at">target</span>).<span class="at">parent</span>(<span class="st">&#39;tr&#39;</span>).<span class="at">removeClass</span>(<span class="st">&#39;bg-primary&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="co">// 点击变色并同时删除其他的</span>
+    <span class="co">// $(e.target).parent(&#39;tr&#39;).addClass(&#39;bg-primary&#39;).siblings(&#39;tr.bg-primary&#39;).removeClass(&#39;bg-primary&#39;);</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<h2 id="表格点击变色选中复选框">表格点击变色选中复选框</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">//除了表头（第一行）以外所有的行添加click事件</span>
+<span class="at">$</span>(<span class="st">&#39;tr&#39;</span>).<span class="at">slice</span>(<span class="dv">1</span>).<span class="at">click</span>(<span class="kw">function</span> (e) <span class="op">{</span>
+    <span class="co">// 忽略哪些元素点击</span>
+    <span class="cf">if</span> (<span class="va">e</span>.<span class="va">target</span>.<span class="at">tagName</span> <span class="op">===</span> <span class="st">&#39;BUTTON&#39;</span>) <span class="op">{</span>
+        <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span>
+    <span class="op">}</span>
+    <span class="co">// 切换样式</span>
+    <span class="cf">if</span> (<span class="op">!</span><span class="at">$</span>(<span class="kw">this</span>).<span class="at">hasClass</span>(<span class="st">&#39;layui-table-click&#39;</span>)) <span class="op">{</span>
+        <span class="at">$</span>(<span class="kw">this</span>).<span class="at">addClass</span>(<span class="st">&#39;layui-table-click&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+        <span class="at">$</span>(<span class="kw">this</span>).<span class="at">removeClass</span>(<span class="st">&#39;layui-table-click&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="co">// 找到checkbox对象</span>
+    <span class="kw">var</span> chks <span class="op">=</span> <span class="at">$</span>(<span class="st">&quot;input[type=&#39;checkbox&#39;]&quot;</span><span class="op">,</span> <span class="kw">this</span>)<span class="op">;</span>
+    <span class="kw">var</span> tag <span class="op">=</span> <span class="at">$</span>(<span class="kw">this</span>).<span class="at">attr</span>(<span class="st">&#39;tag&#39;</span>)<span class="op">;</span>
+    <span class="cf">if</span> (tag <span class="op">===</span> <span class="st">&#39;selected&#39;</span>) <span class="op">{</span>
+        <span class="co">// 之前已选中，设置为未选中</span>
+        <span class="at">$</span>(<span class="kw">this</span>).<span class="at">attr</span>(<span class="st">&#39;tag&#39;</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">;</span>
+        <span class="va">chks</span>.<span class="at">prop</span>(<span class="st">&#39;checked&#39;</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span>
+    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+        <span class="co">// 之前未选中，设置为选中</span>
+        <span class="at">$</span>(<span class="kw">this</span>).<span class="at">attr</span>(<span class="st">&#39;tag&#39;</span><span class="op">,</span> <span class="st">&#39;selected&#39;</span>)<span class="op">;</span>
+        <span class="va">chks</span>.<span class="at">prop</span>(<span class="st">&#39;checked&#39;</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span>
+    <span class="op">}</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>]]></description>
+    <pubDate>Sat, 7 Nov 2020 09:17:45 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Bootstrap]]></title>
+    <link>https://notes.qq52o.me/#/code/bootstrap</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/code/bootstrap</guid>
+    <description><![CDATA[<h1 id="bootstrap">Bootstrap</h1>
+<h2 id="bootstrap-datepicker">bootstrap-datepicker</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">//只选择年份</span>
+<span class="at">$</span>(<span class="st">&#39;.datepicker&#39;</span>).<span class="at">datepicker</span>(<span class="op">{</span>
+   <span class="dt">format</span><span class="op">:</span> <span class="st">&#39;yyyy&#39;</span><span class="op">,</span>
+   <span class="dt">language</span><span class="op">:</span> <span class="st">&quot;zh-CN&quot;</span><span class="op">,</span>
+   <span class="dt">autoclose</span><span class="op">:</span><span class="kw">true</span><span class="op">,</span>
+   <span class="dt">startView</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span>
+   <span class="dt">minViewMode</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span>
+   <span class="dt">maxViewMode</span><span class="op">:</span> <span class="dv">2</span>
+<span class="op">}</span>)<span class="op">;</span>
+<span class="co">//选择年月</span>
+<span class="at">$</span>(<span class="st">&#39;.datepicker&#39;</span>).<span class="at">datepicker</span>(<span class="op">{</span>
+   <span class="dt">format</span><span class="op">:</span> <span class="st">&#39;yyyy-mm&#39;</span><span class="op">,</span>
+   <span class="dt">language</span><span class="op">:</span> <span class="st">&quot;zh-CN&quot;</span><span class="op">,</span>
+   <span class="dt">autoclose</span><span class="op">:</span><span class="kw">true</span><span class="op">,</span>
+   <span class="dt">startView</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
+   <span class="dt">minViewMode</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
+   <span class="dt">maxViewMode</span><span class="op">:</span> <span class="dv">1</span>
+<span class="op">}</span>)<span class="op">;</span>
+<span class="co">//选择年月日</span>
+<span class="at">$</span>(<span class="st">&#39;.datepicker&#39;</span>).<span class="at">datepicker</span>(<span class="op">{</span>
+   <span class="dt">format</span><span class="op">:</span> <span class="st">&#39;yyyy-mm-dd&#39;</span><span class="op">,</span>
+   <span class="dt">language</span><span class="op">:</span> <span class="st">&quot;zh-CN&quot;</span><span class="op">,</span>
+   <span class="dt">autoclose</span><span class="op">:</span><span class="kw">true</span><span class="op">,</span>
+   <span class="dt">startView</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span>
+   <span class="dt">minViewMode</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span>
+   <span class="dt">maxViewMode</span><span class="op">:</span> <span class="dv">0</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<h2 id="自定义文件上传">自定义文件上传</h2>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;custom-file mb-3&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;input</span><span class="ot"> onchange=</span><span class="st">&quot;showFilename(this.files[0])&quot;</span><span class="ot"> type=</span><span class="st">&quot;file&quot;</span><span class="ot"> class=</span><span class="st">&quot;custom-file-input&quot;</span><span class="ot"> id=</span><span class="st">&quot;customFile&quot;</span><span class="ot"> name=</span><span class="st">&quot;filename&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;label</span><span class="ot"> id=</span><span class="st">&quot;filename_label&quot;</span><span class="ot"> class=</span><span class="st">&quot;custom-file-label&quot;</span><span class="ot"> for=</span><span class="st">&quot;customFile&quot;</span><span class="kw">&gt;</span>选择文件<span class="kw">&lt;/label&gt;</span>
+<span class="kw">&lt;/div&gt;</span>
+
+<span class="co">&lt;!-- 显示文件名 --&gt;</span>
+<span class="kw">&lt;script&gt;</span>
+<span class="kw">function</span> <span class="at">showFilename</span>(file)<span class="op">{</span>
+    <span class="at">$</span>(<span class="st">&quot;#filename_label&quot;</span>).<span class="at">html</span>(<span class="va">file</span>.<span class="at">name</span>)<span class="op">;</span>
+<span class="op">}</span>
+<span class="kw">&lt;/script&gt;</span></code></pre></div>
+<h3 id="修改browse">修改Browse</h3>
+<div class="sourceCode"><pre class="sourceCode css"><code class="sourceCode css"><span class="fu">.custom-file-label</span><span class="in">::after</span> {
+  <span class="kw">content</span>: <span class="st">&quot;浏览&quot;</span><span class="at">!important</span>;
+}</code></pre></div>
+<h2 id="计算分页">计算分页</h2>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="co">/**</span>
+<span class="co"> * </span><span class="an">@param</span><span class="co"> </span><span class="cv">string</span><span class="co"> $url 跳转链接</span>
+<span class="co"> * </span><span class="an">@param</span><span class="co"> </span><span class="cv">int</span><span class="co"> $total 总数</span>
+<span class="co"> * </span><span class="an">@param</span><span class="co"> </span><span class="cv">int</span><span class="co"> $nowPage 当前页</span>
+<span class="co"> * </span><span class="an">@param</span><span class="co"> </span><span class="cv">int</span><span class="co"> $limit 分页个数</span>
+<span class="co"> * </span><span class="an">@param</span><span class="co"> </span><span class="cv">int</span><span class="co"> $rollPage 显示几个链接</span>
+<span class="co"> * </span><span class="an">@return</span><span class="co"> string</span>
+<span class="co"> */</span>
+<span class="kw">function</span> pageShow<span class="ot">(</span>string <span class="kw">$url</span><span class="ot">,</span> <span class="kw">$total</span> = <span class="dv">0</span><span class="ot">,</span> <span class="kw">$nowPage</span> = <span class="dv">1</span><span class="ot">,</span> <span class="kw">$limit</span> = <span class="dv">20</span><span class="ot">,</span> <span class="kw">$rollPage</span> = <span class="dv">5</span><span class="ot">)</span>
+{
+    <span class="kw">if</span> <span class="ot">(</span><span class="kw">$total</span> == <span class="dv">0</span><span class="ot">)</span> {
+        <span class="kw">return</span> <span class="st">&#39;&#39;</span><span class="ot">;</span>
+    }
+    <span class="co">// 计算分页信息</span>
+    <span class="kw">$totalPages</span> = <span class="fu">ceil</span><span class="ot">(</span><span class="kw">$total</span> / <span class="kw">$limit</span><span class="ot">);</span> <span class="co">//总页数</span>
+    <span class="kw">$nowPage</span> = <span class="kw">$nowPage</span> &gt; <span class="dv">0</span> <span class="ot">?</span> <span class="kw">$nowPage</span> <span class="ot">:</span> <span class="dv">1</span><span class="ot">;</span> <span class="co">// 当前页</span>
+    <span class="kw">if</span> <span class="ot">(</span>! <span class="fu">empty</span><span class="ot">(</span><span class="kw">$totalPages</span><span class="ot">)</span> &amp;&amp; <span class="kw">$nowPage</span> &gt; <span class="kw">$total</span><span class="ot">)</span> {
+        <span class="kw">$nowPage</span> = <span class="kw">$total</span><span class="ot">;</span>
+    }
+
+    <span class="kw">$parseUrl</span> = <span class="fu">parse_url</span><span class="ot">(</span><span class="kw">$url</span><span class="ot">);</span>
+    <span class="kw">$path</span> = <span class="ot">[];</span>
+    <span class="kw">if</span> <span class="ot">(</span><span class="fu">isset</span><span class="ot">(</span><span class="kw">$parseUrl</span><span class="ot">[</span><span class="st">&#39;query&#39;</span><span class="ot">]))</span> {
+        <span class="co">// str转为数组 会处理多个page键名的问题</span>
+        <span class="fu">parse_str</span><span class="ot">(</span><span class="kw">$parseUrl</span><span class="ot">[</span><span class="st">&#39;query&#39;</span><span class="ot">],</span> <span class="kw">$path</span><span class="ot">);</span>
+    }
+    <span class="co">// 当前page设为空</span>
+    <span class="kw">$path</span><span class="ot">[</span><span class="st">&#39;page&#39;</span><span class="ot">]</span> = <span class="st">&#39;&#39;</span><span class="ot">;</span>
+    <span class="kw">$url</span> = <span class="kw">$parseUrl</span><span class="ot">[</span><span class="st">&#39;path&#39;</span><span class="ot">]</span> . <span class="st">&#39;?&#39;</span> . <span class="fu">http_build_query</span><span class="ot">(</span><span class="kw">$path</span><span class="ot">);</span>
+
+    <span class="co">//计算分页临时变量</span>
+    <span class="kw">$now_cool_page</span> = <span class="kw">$rollPage</span> / <span class="dv">2</span><span class="ot">;</span>
+    <span class="kw">$now_cool_page_ceil</span> = <span class="fu">ceil</span><span class="ot">(</span><span class="kw">$now_cool_page</span><span class="ot">);</span>
+
+    <span class="co">//数字链接</span>
+    <span class="kw">$link_page</span> = <span class="st">&#39;&#39;</span><span class="ot">;</span>
+    <span class="kw">for</span> <span class="ot">(</span><span class="kw">$i</span> = <span class="dv">1</span><span class="ot">;</span> <span class="kw">$i</span> &lt;= <span class="kw">$rollPage</span><span class="ot">;</span> ++<span class="kw">$i</span><span class="ot">)</span> {
+        <span class="kw">if</span> <span class="ot">((</span><span class="kw">$nowPage</span> - <span class="kw">$now_cool_page</span><span class="ot">)</span> &lt;= <span class="dv">0</span><span class="ot">)</span> {
+            <span class="kw">$page</span> = <span class="kw">$i</span><span class="ot">;</span>
+        } <span class="kw">elseif</span> <span class="ot">((</span><span class="kw">$nowPage</span> + <span class="kw">$now_cool_page</span> - <span class="dv">1</span><span class="ot">)</span> &gt;= <span class="kw">$total</span><span class="ot">)</span> {
+            <span class="kw">$page</span> = <span class="kw">$total</span> - <span class="kw">$rollPage</span> + <span class="kw">$i</span><span class="ot">;</span>
+        } <span class="kw">else</span> {
+            <span class="kw">$page</span> = <span class="kw">$nowPage</span> - <span class="kw">$now_cool_page_ceil</span> + <span class="kw">$i</span><span class="ot">;</span>
+        }
+        <span class="kw">if</span> <span class="ot">(</span><span class="kw">$page</span> &gt; <span class="dv">0</span><span class="ot">)</span> {
+            <span class="kw">if</span> <span class="ot">(</span><span class="kw">$page</span> != <span class="kw">$nowPage</span><span class="ot">)</span> {
+                <span class="kw">if</span> <span class="ot">(</span><span class="kw">$page</span> &lt;= <span class="kw">$total</span> || <span class="kw">$page</span> &lt;= <span class="kw">$rollPage</span><span class="ot">)</span> {
+                    <span class="co">// 最后禁止点击</span>
+                    <span class="kw">$end_class</span> = <span class="kw">$page</span> &gt; <span class="kw">$totalPages</span> <span class="ot">?</span> <span class="st">&#39;disabled&#39;</span> <span class="ot">:</span> <span class="st">&#39;&#39;</span><span class="ot">;</span>
+                    <span class="kw">$link_page</span> .= <span class="st">&#39;&lt;li class=&quot;page-item &#39;</span> . <span class="kw">$end_class</span> . <span class="st">&#39;&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;&#39;</span> . <span class="kw">$url</span> . <span class="kw">$page</span> . <span class="st">&#39;&quot;&gt;&#39;</span> . <span class="kw">$page</span> . <span class="st">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="ot">;</span>
+                } <span class="kw">else</span> {
+                    <span class="kw">break</span><span class="ot">;</span>
+                }
+            } <span class="kw">else</span> {
+                <span class="kw">$link_page</span> .= <span class="st">&#39;&lt;li class=&quot;page-item active&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;&#39;</span> . <span class="kw">$url</span> . <span class="kw">$page</span> . <span class="st">&#39;&quot;&gt;&#39;</span> . <span class="kw">$page</span> . <span class="st">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="ot">;</span>
+            }
+        }
+    }
+
+    <span class="co">//上一页</span>
+    <span class="kw">$up_row</span> = <span class="kw">$nowPage</span> - <span class="dv">1</span><span class="ot">;</span>
+    <span class="kw">$end_class</span> = <span class="kw">$up_row</span> &gt; <span class="dv">0</span> <span class="ot">?</span> <span class="st">&#39;&#39;</span> <span class="ot">:</span> <span class="st">&#39;disabled&#39;</span><span class="ot">;</span>
+    <span class="kw">$up_page</span> = <span class="st">&#39;&lt;li class=&quot;page-item &#39;</span> . <span class="kw">$end_class</span> . <span class="st">&#39;&quot;&gt;&lt;a class=&quot;page-link&quot; title=&quot;上一页&quot; href=&quot;&#39;</span> . <span class="kw">$url</span> . <span class="kw">$up_row</span> . <span class="st">&#39;&quot;&gt;«&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="ot">;</span>
+    <span class="co">//下一页</span>
+    <span class="kw">$down_row</span> = <span class="kw">$nowPage</span> + <span class="dv">1</span><span class="ot">;</span>
+    <span class="kw">$end_class</span> = <span class="kw">$down_row</span> &gt; <span class="kw">$totalPages</span> <span class="ot">?</span> <span class="st">&#39;disabled&#39;</span> <span class="ot">:</span> <span class="st">&#39;&#39;</span><span class="ot">;</span>
+    <span class="kw">$down_page</span> = <span class="st">&#39;&lt;li class=&quot;page-item &#39;</span> . <span class="kw">$end_class</span> . <span class="st">&#39;&quot;&gt;&lt;a class=&quot;page-link&quot; title=&quot;下一页&quot; href=&quot;&#39;</span> . <span class="kw">$url</span> . <span class="kw">$down_row</span> . <span class="st">&#39;&quot;&gt;»&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="ot">;</span>
+    <span class="co">//第一页</span>
+    <span class="kw">$end_class</span> = <span class="kw">$nowPage</span> == <span class="dv">1</span> <span class="ot">?</span> <span class="st">&#39;disabled&#39;</span> <span class="ot">:</span> <span class="st">&#39;&#39;</span><span class="ot">;</span>
+    <span class="kw">$the_first</span> = <span class="st">&#39;&lt;li class=&quot;page-item &#39;</span> . <span class="kw">$end_class</span> . <span class="st">&#39;&quot;&gt;&lt;a class=&quot;page-link&quot; title=&quot;第一页&quot; href=&quot;&#39;</span> . <span class="kw">$url</span> . <span class="st">&#39;1&quot;&gt;&lt;&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="ot">;</span>
+    <span class="co">//最后一页</span>
+    <span class="kw">$end_class</span> = <span class="kw">$nowPage</span> == <span class="kw">$totalPages</span> <span class="ot">?</span> <span class="st">&#39;disabled&#39;</span> <span class="ot">:</span> <span class="st">&#39;&#39;</span><span class="ot">;</span>
+    <span class="kw">$the_end</span> = <span class="st">&#39;&lt;li class=&quot;page-item &#39;</span> . <span class="kw">$end_class</span> . <span class="st">&#39;&quot;&gt;&lt;a class=&quot;page-link&quot; title=&quot;最后一页&quot; href=&quot;&#39;</span> . <span class="kw">$url</span> . <span class="kw">$totalPages</span> . <span class="st">&#39;&quot;&gt;&gt;&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="ot">;</span>
+
+    <span class="kw">return</span> <span class="st">&#39;&lt;ul class=&quot;pagination&quot;&gt;&#39;</span> . <span class="kw">$the_first</span> . <span class="kw">$up_page</span> . <span class="kw">$link_page</span> . <span class="kw">$down_page</span> . <span class="kw">$the_end</span> . <span class="st">&#39;&lt;/ul&gt;&#39;</span><span class="ot">;</span>
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="fu">echo</span> pageShow<span class="ot">(</span><span class="kw">$_SERVER</span><span class="ot">[</span><span class="st">&quot;REQUEST_URI&quot;</span><span class="ot">],</span> <span class="kw">$total</span><span class="ot">,</span> <span class="kw">$page</span><span class="ot">);</span></code></pre></div>
+<h2 id="导航下拉菜单触发方式改为鼠标浮动触发">导航下拉菜单触发方式改为鼠标浮动触发</h2>
+<div class="sourceCode"><pre class="sourceCode css"><code class="sourceCode css"><span class="fu">.dropdown</span><span class="in">:hover</span>&gt;<span class="fu">.dropdown-menu</span> {
+    <span class="kw">display</span>: <span class="dv">block</span>;
+}
+
+<span class="fu">.dropdown</span>&gt;<span class="fu">.dropdown-toggle</span><span class="in">:active</span> {
+    <span class="kw">pointer-events</span>: <span class="dv">none</span>;
+}</code></pre></div>]]></description>
+    <pubDate>Sat, 7 Nov 2020 09:17:45 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[前言]]></title>
+    <link>https://notes.qq52o.me/#/_sidebar</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/_sidebar</guid>
+    <description><![CDATA[<ul>
+<li>前言
+<ul>
+<li><a href="README.md">关于我</a></li>
+<li><a href="donate.md">赞赏</a></li>
+</ul></li>
+<li>环境搭建
+<ul>
+<li><a href="development/mac.md">Mac</a></li>
+<li><a href="development/linux.md">Linux</a></li>
+</ul></li>
+<li>常用工具
+<ul>
+<li><a href="tools/git.md">Git</a></li>
+<li><a href="tools/brew.md">Homebrew</a></li>
+<li><a href="tools/phpstorm.md">PhpStorm</a></li>
+<li><a href="tools/wp-cli.md">WP-CLI</a></li>
+<li><a href="tools/docker.md">Docker</a></li>
+<li><a href="tools/charles.md">Charles</a></li>
+</ul></li>
+<li>常用API
+<ul>
+<li><a href="api/short_url.md">短链</a></li>
+</ul></li>
+<li>框架
+<ul>
+<li><a href="framework/hyperf.md">Hyperf</a></li>
+</ul></li>
+<li>实例代码
+<ul>
+<li><a href="code/hyperf-jsonrpc.md">JSON-RPC</a></li>
+<li><a href="code/select2.md">Select2</a></li>
+<li><a href="code/echarts.md">ECharts</a></li>
+<li><a href="code/bootstrap.md">Bootstrap</a></li>
+<li><a href="code/javascript.md">JavaScript</a></li>
+</ul></li>
+<li>数据库
+<ul>
+<li><a href="database/mysql.md">MySQL</a></li>
+<li><a href="database/postgresql.md">PostgreSQL</a></li>
+</ul></li>
+<li>网关
+<ul>
+<li><a href="gateway/nginx.md">Nginx</a></li>
+</ul></li>
+<li>WebSocket
+<ul>
+<li><a href="code/websocket.md">Wss</a></li>
+<li><a href="http://wstool.js.org">在线测试</a></li>
+</ul></li>
+<li>语言
+<ul>
+<li><a href="language/python.md">Python</a></li>
+</ul></li>
+</ul>]]></description>
+    <pubDate>Sat, 7 Nov 2020 09:17:45 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Git]]></title>
+    <link>https://notes.qq52o.me/#/tools/git</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/git</guid>
+    <description><![CDATA[<h1 id="git">Git</h1>
+<h2 id="修改最后一次提交的commit信息">修改最后一次提交的commit信息</h2>
+<pre class="shell"><code>git commit --amend</code></pre>
+<h2 id="撤销上一次的commit">撤销上一次的commit</h2>
+<pre class="shell"><code>git reset HEAD~</code></pre>
+<h2 id="修改remote-url">修改remote url</h2>
+<ul>
+<li>直接修改</li>
+</ul>
+<pre class="shell"><code>git remote set-url origin git@github.com:UserName/Repository.git</code></pre>
+<ul>
+<li>先删后加</li>
+</ul>
+<pre class="shell"><code>git remote rm origin
+git remote add origin git@github.com:UserName/Repository.git</code></pre>
+<h2 id="同时推送多个平台">同时推送多个平台</h2>
+<pre class="shell"><code>#github
+git remote add origin git@github.com:UserName/Repository.git
+
+#码云
+git remote set-url --add origin git@gitee.com:UserName/Repository.git</code></pre>
+<h2 id="回滚上次push的提交">回滚上次push的提交</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> reset --hard HEAD^
+<span class="fu">git</span> add .
+<span class="fu">git</span> commit
+<span class="co">#强推</span>
+<span class="fu">git</span> push -f origin master</code></pre></div>
+<h2 id="保持fork之后的项目和上游同步">保持fork之后的项目和上游同步</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#添加上游仓库</span>
+<span class="fu">git</span> remote add upstream [upstream_url]
+
+<span class="co">#fetch</span>
+<span class="fu">git</span> fetch upstream
+
+<span class="co">#将upstream/master merge到本地master分支</span>
+<span class="fu">git</span> merge upstream/master
+
+<span class="co">#同时别忘了push到自己的github仓库</span>
+<span class="fu">git</span> push origin master</code></pre></div>
+<h2 id="合并某个commitid">合并某个commitId</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> cherry-pick commitId</code></pre></div>
+<h2 id="to-443">22 to 443</h2>
+<p>git的ssh使用22端口不可用时，可以使用443端口</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vim</span> ~/.ssh/config
+
+<span class="co">#写入</span>
+<span class="ex">Host</span> github.com
+  <span class="ex">Hostname</span> ssh.github.com
+  <span class="ex">Port</span> 443</code></pre></div>
+<h2 id="设置ss代理">设置SS代理</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vim</span> ~/.ssh/config
+
+<span class="co">#写入</span>
+<span class="ex">Host</span> github.com
+   <span class="ex">HostName</span> github.com
+   <span class="ex">User</span> git
+   <span class="ex">ProxyCommand</span> nc -v -x 127.0.0.1:1086 %h %p</code></pre></div>
+<p>!&gt; 注意配置文件内的 127.0.0.1:1086 需要和本地 SS 客户端的所暴露的 本地 Socks5 监听地址 和 本地 Socks5 监听端口 一致</p>
+<h2 id="webhook">WebHook</h2>
+<p>使用Swoole的<code>Http\Server</code>来作为Web服务，执行GitHub/Gitee的WebHook</p>
+<p><a href="https://github.com/sy-records/git-deploy">git-deploy</a></p>
+<h2 id="压缩合并commit">压缩/合并commit</h2>
+<pre class="shell"><code>git rebase -i HEAD~&lt;number&gt;
+
+# example : git rebase -i HEAD~4
+# HEAD～4的含义是从头部开始追溯4条记录</code></pre>
+<p>执行后进入编辑模式，将需要压缩的commit前面的<code>pick</code>改为<code>squash</code></p>
+<pre class="shell"><code># 取消
+git rebase --abort
+
+# 因为冲突打断的话 执行continue
+git rebase --continue
+
+# 强推
+git push -f origin branch_name</code></pre>
+<h2 id="清除本地-remotesorigin">清除本地 remotes/origin/*</h2>
+<pre class="shell"><code>git remote prune origin</code></pre>
+<h2 id="删除远程分支">删除远程分支</h2>
+<pre class="shell"><code>git branch -r -d origin/branch_name
+git push origin :branch_name</code></pre>
+<h2 id="修改分支名称">修改分支名称</h2>
+<pre class="shell"><code># 本地分支重命名
+git branch -m oldName newName
+# 将重命名后的分支推送到远程
+git push origin newName
+# 删除远程的旧分支
+git push --delete origin oldName
+
+git branch --unset-upstream
+git branch --set-upstream-to=origin/&lt;branch&gt; master</code></pre>
+<h2 id="使用远程覆盖本地">使用远程覆盖本地</h2>
+<p>远程分支强推后，本地文件冲突，需要使用远程文件覆盖本地文件时使用。</p>
+<pre class="shell"><code>git fetch --all
+git reset --hard origin/master</code></pre>]]></description>
+    <pubDate>Sat, 7 Nov 2020 09:17:17 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[WP-CLI]]></title>
+    <link>https://notes.qq52o.me/#/tools/wp-cli</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/wp-cli</guid>
+    <description><![CDATA[<h1 id="wp-cli">WP-CLI</h1>
+<p>WP-CLI 可以在不使用 WordPress 后台的情况下，仅通过命令行就可以完成 WordPress、主题、插件的安装、升级、使用等等</p>
+<h2 id="安装-wp-cli">安装 WP-CLI</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">curl</span> -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+<span class="ex">php</span> wp-cli.phar --info <span class="co"># 检查是否可用</span>
+<span class="fu">chmod</span> +x wp-cli.phar
+<span class="fu">sudo</span> mv wp-cli.phar /usr/local/bin/wp <span class="co"># 简化命令</span></code></pre></div>
+<h2 id="安装-wordpress">安装 WordPress</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">wp</span> core download</code></pre></div>
+<h2 id="更新-wordpress-核心">更新 WordPress 核心</h2>
+<p>!&gt; 需要在 WordPress 项目的根目录下执行；如果使用 root 账户进行安装，需要我们新建一个新账户，如果不想新建可在命令后加上 <code>--allow-root</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">wp</span> core update --allow-root</code></pre></div>
+<p>?&gt; 遇到 <code>429 Too Many Requests</code> 的时候，可以把源码通过 <code>wget</code> 下载后跟在命令后面进行更新</p>
+<h2 id="更新-wordpress-数据库">更新 WordPress 数据库</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">wp</span> core update-db --allow-root</code></pre></div>]]></description>
+    <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[PhpStorm]]></title>
+    <link>https://notes.qq52o.me/#/tools/phpstorm</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/phpstorm</guid>
+    <description><![CDATA[<h1 id="phpstorm">PhpStorm</h1>
+<h2 id="快捷键">快捷键</h2>
+<ol style="list-style-type: decimal">
+<li><code>Command + Shift + A</code></li>
+</ol>
+<p>在 Windows 中的是 <code>Ctrl + Shift + A</code>，弹出一个动作查询窗口，输入操作或者工具的关键词就可以执行操作或打开工具</p>
+<p>比如：需要打开 Terminal 工具，那么在窗口输入 ter ，按下<code>Enter</code>键， 那么就能打开 Terminal工具。</p>
+<h2 id="live-templates">Live Templates</h2>
+<p>快捷生成代码块、注释等。</p>
+<p>设置 -&gt; Editor -&gt; Live Templates</p>
+<div class="figure">
+<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/phpstorm/LiveTemplates.png" alt="Live Templates" />
+<p class="caption">Live Templates</p>
+</div>
+<h2 id="rest-client">REST Client</h2>
+<p>点击 PhpStorm 上方的工具栏，找到 Tools 、 HTTP Client 、Test RESTful Web Service 点开后如图：</p>
+<div class="figure">
+<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/phpstorm/rest-client.png" alt="REST Client" />
+<p class="caption">REST Client</p>
+</div>
+<p>和 PostMan 类似，我们可以选择对应的请求方式、域名地址、接口路径</p>
+<p>点击 Run 图标即可</p>
+<h2 id="设置ftp自动同步文件">设置FTP自动同步文件</h2>
+<ol style="list-style-type: decimal">
+<li>添加一个FTP服务器</li>
+</ol>
+<p><code>工具栏 -&gt; Tools -&gt; Deployment -&gt; Configuration</code></p>
+<p>点击+号添加一个服务器，填写对应的连接信息</p>
+<div class="figure">
+<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/phpstorm/add-ftp-server.png" />
+
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>添加项目路径</li>
+</ol>
+<p>这里需要设置项目路径，否则下一步设置自动上传时会报错<code>Default server mservice has no valid mappings. Automatic upload is not enabled</code></p>
+<p>点击<code>Mappings</code>，填写对应的项目路径</p>
+<div class="figure">
+<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/phpstorm/add-ftp-mappings.png" />
+
+</div>
+<p><code>Local path</code>为本地的项目路径，默认是当前目录<br />
+<code>Deployment path</code>为远端ftp服务器对应的路径，这里需要注意的是此路径会拼接上一步中的<code>Root path</code>，即我上传到ftp服务器的路径为：<code>/root/luffy/swool</code></p>
+<ol start="3" style="list-style-type: decimal">
+<li>设置FTP自动上传</li>
+</ol>
+<p><code>工具栏 -&gt; Tools -&gt; Deployment -&gt; Automatic Upload</code></p>
+<p>到此，今后编辑文件后按 Ctrl+S (MAC：command + S)保存文件，即可自动将文件上传到FTP服务器了</p>]]></description>
+    <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Charles]]></title>
+    <link>https://notes.qq52o.me/#/tools/charles</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/charles</guid>
+    <description><![CDATA[<h1 id="charles">Charles</h1>
+<h2 id="抓不到包解决方法">抓不到包解决方法</h2>
+<ul>
+<li>确认是否代理冲突</li>
+</ul>
+<p>设置 -&gt; 网络 -&gt; Wifi -&gt; 高级 -&gt; 代理，在左侧的配置协议列表中取消勾选&quot;自动发现代理&quot;和&quot;自动代理配置&quot;</p>
+<ul>
+<li>工具栏 <code>Proxy-&gt;Recording settings-&gt;include</code> 里面，设置了某个网页域名，除此域名之外都不进行抓包</li>
+</ul>]]></description>
+    <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Homebrew]]></title>
+    <link>https://notes.qq52o.me/#/tools/brew</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/brew</guid>
+    <description><![CDATA[<h1 id="homebrew">Homebrew</h1>
+<p>Homebrew 简称 brew，Homebrew 是一款 Mac OS 平台下的软件包管理工具，很方便帮助我们实现安装、卸载、更新、查看、搜索等很多实用的功能。</p>
+<h2 id="安装">安装</h2>
+<pre class="shell"><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre>
+<h2 id="配置镜像">配置镜像</h2>
+<pre class="shell"><code>cd &quot;$(brew --repo)&quot;
+git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-cask&quot;
+git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
+brew update
+echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#39; &gt;&gt; ~/.bash_profile</code></pre>
+<h2 id="常用命令">常用命令</h2>
+<pre class="shell"><code>#查询 Homebrew 版本
+brew -v
+
+#brew帮助
+brew -h
+
+#更新Homebrew
+brew update
+
+#安装
+brew install &lt;pkg_name&gt;
+
+#卸载
+brew uninstall &lt;pkg_name&gt;
+
+#搜索
+brew search &lt;pkg_name&gt;
+
+#列出安装列表
+brew list
+
+#查看包内容信息
+brew info &lt;pkg_name&gt;
+
+#更新包
+brew upgrade &lt;pkg_name&gt;
+
+#删除具体旧软件
+brew cleanup &lt;pkg_name&gt;
+
+#删除所有旧软件
+brew cleanup
+
+#列出所有安装的软件里可以升级的
+brew outdated       </code></pre>
+<h2 id="brew-和-brew-cask-的区别">brew 和 brew cask 的区别</h2>
+<ul>
+<li>brew 主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发</li>
+<li>brew cask 主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在 Mac 中直接运行使用</li>
+</ul>]]></description>
+    <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Nginx]]></title>
+    <link>https://notes.qq52o.me/#/gateway/nginx</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/gateway/nginx</guid>
+    <description><![CDATA[<h1 id="nginx">Nginx</h1>
+<h2 id="隐藏版本号">隐藏版本号</h2>
+<p>进入 nginx 配置文件的目录，编辑<code>nginx.conf</code></p>
+<p>在<code>http {}</code>里加上<code>server_tokens off;</code></p>
+<p>编辑 php-fpm 配置文件，如<code>fastcgi.conf</code>或<code>fcgi.conf</code></p>
+<div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="co">#找到：</span>
+<span class="dt">fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;</span>
+<span class="co">#改为：</span>
+<span class="dt">fastcgi_param SERVER_SOFTWARE nginx;</span></code></pre></div>
+<p>重载 nginx 配置即可</p>
+<h2 id="反向代理">反向代理</h2>
+<ul>
+<li><a href="/code/websocket.md">配置 Websocket Wss 代理</a></li>
+</ul>
+<h2 id="伪静态">伪静态</h2>
+<pre class="conf"><code>location / {
+    if (!-e $request_filename) {
+        rewrite ^/(.*)$ /index.php/$1 last;
+        break;
+    }
+}
+
+location ~ \.php/?.*$ {
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi.conf;
+
+    set $fastcgi_script_name2 $fastcgi_script_name;
+    if ($fastcgi_script_name ~ &quot;^(.+\.php)(/.+)$&quot;) {
+        set $fastcgi_script_name2 $1;
+        set $path_info $2;
+    }
+    fastcgi_param PATH_INFO $path_info;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name2;
+    fastcgi_param SCRIPT_NAME $fastcgi_script_name2;
+}</code></pre>]]></description>
+    <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Hyperf]]></title>
+    <link>https://notes.qq52o.me/#/framework/hyperf</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/framework/hyperf</guid>
+    <description><![CDATA[<h1 id="hyperf">Hyperf</h1>
+<p>以下内容皆使用 PhpStorm 作为演示</p>
+<h2 id="快速启动重启停止服务">快速启动/重启/停止服务</h2>
+<ol style="list-style-type: decimal">
+<li><p>点击 PhpStorm 右上角 Run 按钮旁边的<code>Add Configurations</code></p></li>
+<li><p>点击 + 号添加一个<code>PHP Script</code>，填写对应的信息</p></li>
+</ol>
+<div class="figure">
+<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-1.png" alt="添加脚本" />
+<p class="caption">添加脚本</p>
+</div>
+<p>对应信息说明：</p>
+<pre><code>Name：脚本名称，这里我们取名叫 Hyperf
+
+File：脚本路径，我们选择 Hyperf 目录下，bin文件夹下的hyperf.php，路径为：YourProject/bin/hyperf.php
+Arguments：脚本参数，这里我们填写 start 开启命令就行了，如果有需要可以写一些别的
+
+Command Line
+Interpreter options：解释器选项，这里默认不填写。如果你不想修改 php.ini 关闭短名称，可以填写-d swoole.use_shortname=Off
+Custom Working directory：自定义工作目录，这里默认不填写
+Environment variables：环境变量，这里默认不填写
+
+Before launch：Activate tool window
+启动前，我们需要做的事，默认不填写</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>点击 Apply 保存即可，选中刚才配置的 Hyperf 脚本</li>
+</ol>
+<div class="figure">
+<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-2.png" alt="选中脚本" />
+<p class="caption">选中脚本</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>选中后在需要启动 Hyperf 服务时可以直接点击 Run 图标即可</li>
+</ol>
+<div class="figure">
+<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-3.png" alt="一键执行" />
+<p class="caption">一键执行</p>
+</div>
+<p>也可以直接点击一键重启和关闭</p>
+<h2 id="在-docker-中使用框架">在 Docker 中使用框架</h2>
+<p>Hyperf 对系统环境有一些要求，仅可运行于 Linux 和 Mac 环境下，但由于 Docker 虚拟化技术的发展，在 Windows 下也可以通过 Docker for Windows 来作为运行环境，通常来说 Mac 环境下，更推荐本地环境部署，以避免 Docker 共享磁盘缓慢导致 Hyperf 启动速度慢的问题。</p>
+<h3 id="拉取镜像">拉取镜像</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> pull hyperf/hyperf</code></pre></div>
+<h3 id="下载hyperf-skeleton">下载Hyperf Skeleton</h3>
+<pre><code>composer create-project hyperf/hyperf-skeleton </code></pre>
+<h3 id="配置phpstorm">配置PhpStorm</h3>
+<p>和上文前两步一样，添加一个 Docker Image</p>
+<div class="figure">
+<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-4.png" alt="配置脚本" />
+<p class="caption">配置脚本</p>
+</div>
+<p>保存之后就可以点击 Run 图标了</p>
+<div class="figure">
+<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-5.png" alt="运行" />
+<p class="caption">运行</p>
+</div>
+<p>重启、关闭就不说了。。。</p>]]></description>
+    <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
+  </item>
+  
+</channel>
+</rss>
