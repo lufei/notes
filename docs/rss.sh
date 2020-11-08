@@ -1,8 +1,8 @@
 #!/bin/bash
 
 feed="feed.xml"
-blog_title="沈唁的编程笔记"
-blog_link="https://notes.qq52o.me"
+website_title="沈唁的编程笔记"
+website_link="https://notes.qq52o.me"
 description="沈唁的编程笔记"
 
 urlencode() {
@@ -28,7 +28,7 @@ for file in ${newest_files[@]}; do
   echo $file
   title=$(grep "." $file | head -n1)
   encode=$(urlencode "${file::-3}")
-  link="$blog_link/#/$encode"
+  link="$website_link/#/$encode"
   html=$(pandoc -f markdown -t html $file)
   date=$(git log -1 --format="%aD" -- $file)
   item="
@@ -45,9 +45,9 @@ done
 
 rss_content="<rss xmlns:atom=\"http://www.w3.org/2005/Atom\" version=\"2.0\">
 <channel>
-  <title>$blog_title</title>
-  <atom:link href=\"$blog_link/$feed\" rel=\"self\" type=\"application/rss+xml\" />
-  <link>$blog_link</link>
+  <title>$website_title</title>
+  <atom:link href=\"$website_link/$feed\" rel=\"self\" type=\"application/rss+xml\" />
+  <link>$website_link</link>
   <description>$description</description>
   $items
 </channel>

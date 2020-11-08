@@ -2,7 +2,8 @@
 
 [![RSS Status](https://github.com/lufei/notes/workflows/RSS/badge.svg)](https://github.com/lufei/notes/actions)
 [![LICENSE](https://img.shields.io/github/license/lufei/notes)](https://github.com/lufei/notes/blob/master/LICENSE)
-[![donate](https://img.shields.io/badge/paypal-donate-ff69b4.svg)](https://paypal.me/lufeidot)
+[![RSS Icon](https://img.shields.io/badge/RSS-Atom-orange)](https://notes.qq52o.me/feed.xml)
+[![Donate](https://img.shields.io/badge/paypal-donate-ff69b4.svg)](https://paypal.me/lufeidot)
 [![Blog](https://img.shields.io/badge/Blog-qq52o.me-blue)](https://qq52o.me)
 [![WeiBo](https://cdn.jsdelivr.net/gh/jaywcjlove/sb@gh-pages/ico/weibo.svg)](https://weibo.com/i3l4521)
 
