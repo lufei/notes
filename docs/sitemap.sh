@@ -40,7 +40,7 @@ for file in ${files[@]}; do
   items="$items $item"
 done
 
-now=$(date "+%Y-%m-%dT%H:%M:%S%:z")
+now=$(git log -1 --format="%ad" --date="iso-strict-local")
 sitemap_content="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
   <url>
