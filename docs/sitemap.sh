@@ -28,7 +28,6 @@ items=""
 for file in ${files[@]}; do
   [[ ${ignore[@]/${file}/} != ${ignore[@]} ]] && continue
   echo $file
-  title=$(grep "." $file | head -n1)
   encode=$(urlencode "${file::-3}")
   link="$website_link/#/$encode"
   date=$(git log -1 --format="%ad" --date="iso-strict-local" -- $file)
