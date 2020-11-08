@@ -1,4 +1,4 @@
-name: RSS
+name: Sitemap
 
 on: [ push, pull_request ]
 
@@ -13,17 +13,13 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.head_ref }}
 
-      - name: Install Pandoc
-        run:
-          sudo apt-get install -y pandoc
-
-      - name: Build RSS
+      - name: Build Sitemap
         run: |
           git pull --rebase
           cd docs/
-          ./rss.sh
+          ./sitemap.sh
 
       - name: Commit Updated
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Build feed.xml
+          commit_message: Build sitemap.xml
