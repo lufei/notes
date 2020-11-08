@@ -6,6 +6,92 @@
   <description>沈唁的编程笔记</description>
    
   <item>
+    <title><![CDATA[前言]]></title>
+    <link>https://notes.qq52o.me/#/_sidebar</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/_sidebar</guid>
+    <description><![CDATA[<ul>
+<li>前言
+<ul>
+<li><a href="donate.md">赞赏</a></li>
+</ul></li>
+<li>环境搭建
+<ul>
+<li><a href="development/mac.md">Mac</a></li>
+<li><a href="development/linux.md">Linux</a></li>
+</ul></li>
+<li>常用工具
+<ul>
+<li><a href="tools/git.md">Git</a></li>
+<li><a href="tools/brew.md">Homebrew</a></li>
+<li><a href="tools/phpstorm.md">PhpStorm</a></li>
+<li><a href="tools/wp-cli.md">WP-CLI</a></li>
+<li><a href="tools/docker.md">Docker</a></li>
+<li><a href="tools/charles.md">Charles</a></li>
+</ul></li>
+<li>常用API
+<ul>
+<li><a href="api/short_url.md">短链</a></li>
+</ul></li>
+<li>框架
+<ul>
+<li><a href="framework/hyperf.md">Hyperf</a></li>
+</ul></li>
+<li>实例代码
+<ul>
+<li><a href="code/hyperf-jsonrpc.md">JSON-RPC</a></li>
+<li><a href="code/select2.md">Select2</a></li>
+<li><a href="code/echarts.md">ECharts</a></li>
+<li><a href="code/bootstrap.md">Bootstrap</a></li>
+<li><a href="code/javascript.md">JavaScript</a></li>
+</ul></li>
+<li>数据库
+<ul>
+<li><a href="database/mysql.md">MySQL</a></li>
+<li><a href="database/postgresql.md">PostgreSQL</a></li>
+</ul></li>
+<li>网关
+<ul>
+<li><a href="gateway/nginx.md">Nginx</a></li>
+</ul></li>
+<li>WebSocket
+<ul>
+<li><a href="code/websocket.md">Wss</a></li>
+<li><a href="http://wstool.js.org">在线测试</a></li>
+</ul></li>
+<li>语言
+<ul>
+<li><a href="language/python.md">Python</a></li>
+</ul></li>
+</ul>]]></description>
+    <pubDate>Sun, 8 Nov 2020 08:55:35 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[关于我]]></title>
+    <link>https://notes.qq52o.me/#/README</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/README</guid>
+    <description><![CDATA[<h1 id="关于我">关于我</h1>
+<p><a href="https://github.com/lufei/notes/actions"><img src="https://github.com/lufei/notes/workflows/RSS/badge.svg" alt="RSS Status" /></a> <a href="https://github.com/lufei/notes/blob/master/LICENSE"><img src="https://img.shields.io/github/license/lufei/notes" alt="LICENSE" /></a> <a href="https://paypal.me/lufeidot"><img src="https://img.shields.io/badge/paypal-donate-ff69b4.svg" alt="donate" /></a> <a href="https://qq52o.me"><embed src="https://img.shields.io/badge/Blog-qq52o.me-blue" /></a> <a href="https://weibo.com/i3l4521"><img src="https://cdn.jsdelivr.net/gh/jaywcjlove/sb@gh-pages/ico/weibo.svg" alt="WeiBo" /></a></p>
+<blockquote>
+<p>路有多远，只有心知道，<br />
+最美的旅程，是不断的经历，<br />
+坚持走下去，与梦想者同行！<br />
+我是沈唁，一个成长中的PHPer！</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;nickname&quot;</span><span class="fu">:</span> <span class="st">&quot;沈唁&quot;</span><span class="fu">,</span> 
+    <span class="dt">&quot;contact&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;52o[at]qq52o.cn&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;weibo&quot;</span><span class="fu">:</span> <span class="st">&quot;@你飞&quot;</span>
+    <span class="fu">},</span>
+    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Xi&#39;an&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;skills&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;PHP&quot;</span><span class="ot">,</span> <span class="st">&quot;Swoole&quot;</span><span class="ot">,</span> <span class="st">&quot;Linux&quot;</span><span class="ot">,</span> <span class="st">&quot;Python&quot;</span><span class="ot">,</span> <span class="st">&quot;WordPress&quot;</span><span class="ot">]</span><span class="fu">,</span>
+    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;天秤男&quot;</span><span class="ot">,</span> <span class="st">&quot;果粉&quot;</span><span class="ot">,</span> <span class="st">&quot;路飞迷&quot;</span><span class="ot">]</span>
+<span class="fu">}</span></code></pre></div>]]></description>
+    <pubDate>Sun, 8 Nov 2020 08:55:35 +0800</pubDate>
+  </item>
+   
+  <item>
     <title><![CDATA[JavaScript]]></title>
     <link>https://notes.qq52o.me/#/code/javascript</link>
     <guid isPermaLink="false">https://notes.qq52o.me/#/code/javascript</guid>
@@ -185,68 +271,6 @@
 <span class="fu">.dropdown</span>&gt;<span class="fu">.dropdown-toggle</span><span class="in">:active</span> {
     <span class="kw">pointer-events</span>: <span class="dv">none</span>;
 }</code></pre></div>]]></description>
-    <pubDate>Sat, 7 Nov 2020 09:17:45 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[前言]]></title>
-    <link>https://notes.qq52o.me/#/_sidebar</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/_sidebar</guid>
-    <description><![CDATA[<ul>
-<li>前言
-<ul>
-<li><a href="README.md">关于我</a></li>
-<li><a href="donate.md">赞赏</a></li>
-</ul></li>
-<li>环境搭建
-<ul>
-<li><a href="development/mac.md">Mac</a></li>
-<li><a href="development/linux.md">Linux</a></li>
-</ul></li>
-<li>常用工具
-<ul>
-<li><a href="tools/git.md">Git</a></li>
-<li><a href="tools/brew.md">Homebrew</a></li>
-<li><a href="tools/phpstorm.md">PhpStorm</a></li>
-<li><a href="tools/wp-cli.md">WP-CLI</a></li>
-<li><a href="tools/docker.md">Docker</a></li>
-<li><a href="tools/charles.md">Charles</a></li>
-</ul></li>
-<li>常用API
-<ul>
-<li><a href="api/short_url.md">短链</a></li>
-</ul></li>
-<li>框架
-<ul>
-<li><a href="framework/hyperf.md">Hyperf</a></li>
-</ul></li>
-<li>实例代码
-<ul>
-<li><a href="code/hyperf-jsonrpc.md">JSON-RPC</a></li>
-<li><a href="code/select2.md">Select2</a></li>
-<li><a href="code/echarts.md">ECharts</a></li>
-<li><a href="code/bootstrap.md">Bootstrap</a></li>
-<li><a href="code/javascript.md">JavaScript</a></li>
-</ul></li>
-<li>数据库
-<ul>
-<li><a href="database/mysql.md">MySQL</a></li>
-<li><a href="database/postgresql.md">PostgreSQL</a></li>
-</ul></li>
-<li>网关
-<ul>
-<li><a href="gateway/nginx.md">Nginx</a></li>
-</ul></li>
-<li>WebSocket
-<ul>
-<li><a href="code/websocket.md">Wss</a></li>
-<li><a href="http://wstool.js.org">在线测试</a></li>
-</ul></li>
-<li>语言
-<ul>
-<li><a href="language/python.md">Python</a></li>
-</ul></li>
-</ul>]]></description>
     <pubDate>Sat, 7 Nov 2020 09:17:45 +0800</pubDate>
   </item>
    
@@ -545,70 +569,6 @@ location ~ \.php/?.*$ {
     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name2;
     fastcgi_param SCRIPT_NAME $fastcgi_script_name2;
 }</code></pre>]]></description>
-    <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Hyperf]]></title>
-    <link>https://notes.qq52o.me/#/framework/hyperf</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/framework/hyperf</guid>
-    <description><![CDATA[<h1 id="hyperf">Hyperf</h1>
-<p>以下内容皆使用 PhpStorm 作为演示</p>
-<h2 id="快速启动重启停止服务">快速启动/重启/停止服务</h2>
-<ol style="list-style-type: decimal">
-<li><p>点击 PhpStorm 右上角 Run 按钮旁边的<code>Add Configurations</code></p></li>
-<li><p>点击 + 号添加一个<code>PHP Script</code>，填写对应的信息</p></li>
-</ol>
-<div class="figure">
-<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-1.png" alt="添加脚本" />
-<p class="caption">添加脚本</p>
-</div>
-<p>对应信息说明：</p>
-<pre><code>Name：脚本名称，这里我们取名叫 Hyperf
-
-File：脚本路径，我们选择 Hyperf 目录下，bin文件夹下的hyperf.php，路径为：YourProject/bin/hyperf.php
-Arguments：脚本参数，这里我们填写 start 开启命令就行了，如果有需要可以写一些别的
-
-Command Line
-Interpreter options：解释器选项，这里默认不填写。如果你不想修改 php.ini 关闭短名称，可以填写-d swoole.use_shortname=Off
-Custom Working directory：自定义工作目录，这里默认不填写
-Environment variables：环境变量，这里默认不填写
-
-Before launch：Activate tool window
-启动前，我们需要做的事，默认不填写</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>点击 Apply 保存即可，选中刚才配置的 Hyperf 脚本</li>
-</ol>
-<div class="figure">
-<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-2.png" alt="选中脚本" />
-<p class="caption">选中脚本</p>
-</div>
-<ol start="4" style="list-style-type: decimal">
-<li>选中后在需要启动 Hyperf 服务时可以直接点击 Run 图标即可</li>
-</ol>
-<div class="figure">
-<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-3.png" alt="一键执行" />
-<p class="caption">一键执行</p>
-</div>
-<p>也可以直接点击一键重启和关闭</p>
-<h2 id="在-docker-中使用框架">在 Docker 中使用框架</h2>
-<p>Hyperf 对系统环境有一些要求，仅可运行于 Linux 和 Mac 环境下，但由于 Docker 虚拟化技术的发展，在 Windows 下也可以通过 Docker for Windows 来作为运行环境，通常来说 Mac 环境下，更推荐本地环境部署，以避免 Docker 共享磁盘缓慢导致 Hyperf 启动速度慢的问题。</p>
-<h3 id="拉取镜像">拉取镜像</h3>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> pull hyperf/hyperf</code></pre></div>
-<h3 id="下载hyperf-skeleton">下载Hyperf Skeleton</h3>
-<pre><code>composer create-project hyperf/hyperf-skeleton </code></pre>
-<h3 id="配置phpstorm">配置PhpStorm</h3>
-<p>和上文前两步一样，添加一个 Docker Image</p>
-<div class="figure">
-<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-4.png" alt="配置脚本" />
-<p class="caption">配置脚本</p>
-</div>
-<p>保存之后就可以点击 Run 图标了</p>
-<div class="figure">
-<img src="//cdn.jsdelivr.net/gh/lufei/notes@master/docs/images/hyperf/hyperf-5.png" alt="运行" />
-<p class="caption">运行</p>
-</div>
-<p>重启、关闭就不说了。。。</p>]]></description>
     <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
   </item>
   
