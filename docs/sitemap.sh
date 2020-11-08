@@ -44,7 +44,7 @@ now=$(date "+%Y-%m-%dT%H:%M:%S%:z")
 sitemap_content="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
   <url>
-    <loc>$link</loc>
+    <loc>$website_link</loc>
     <lastmod>$now</lastmod>
   </url>
   $items
