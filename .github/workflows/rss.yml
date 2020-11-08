@@ -25,4 +25,4 @@ jobs:
       - name: Commit Updated
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Build RSS
+          commit_message: Build feed.xml
