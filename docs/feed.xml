@@ -6,6 +6,24 @@
   <description>沈唁的编程笔记</description>
    
   <item>
+    <title><![CDATA[Docker]]></title>
+    <link>https://notes.qq52o.me/#/tools/docker</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/docker</guid>
+    <description><![CDATA[<h1 id="docker">Docker</h1>
+<h2 id="删除所有容器">删除所有容器</h2>
+<pre class="shell"><code>docker stop $(docker ps -qa)
+docker rm $(docker ps -qa)</code></pre>
+<h2 id="删除所有镜像">删除所有镜像</h2>
+<pre class="shell"><code>docker rmi --force $(docker images -q)</code></pre>
+<h2 id="docker-ce-镜像">Docker CE 镜像</h2>
+<pre class="shell"><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></pre>
+<p>https://developer.aliyun.com/article/110806</p>
+<h2 id="通过docker-overlay2目录名查找容器名和容器id">通过docker overlay2目录名查找容器名和容器ID</h2>
+<pre class="shell"><code>docker ps -q | xargs docker inspect --format &#39;{{.State.Pid}}, {{.Id}}, {{.Name}}, {{.GraphDriver.Data.WorkDir}}&#39; | grep &quot;xxxxxxxx&quot;</code></pre>]]></description>
+    <pubDate>Wed, 18 Nov 2020 08:58:27 +0800</pubDate>
+  </item>
+   
+  <item>
     <title><![CDATA[关于我]]></title>
     <link>https://notes.qq52o.me/#/README</link>
     <guid isPermaLink="false">https://notes.qq52o.me/#/README</guid>
@@ -526,49 +544,6 @@ brew outdated       </code></pre>
 <li>brew 主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发</li>
 <li>brew cask 主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在 Mac 中直接运行使用</li>
 </ul>]]></description>
-    <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Nginx]]></title>
-    <link>https://notes.qq52o.me/#/gateway/nginx</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/gateway/nginx</guid>
-    <description><![CDATA[<h1 id="nginx">Nginx</h1>
-<h2 id="隐藏版本号">隐藏版本号</h2>
-<p>进入 nginx 配置文件的目录，编辑<code>nginx.conf</code></p>
-<p>在<code>http {}</code>里加上<code>server_tokens off;</code></p>
-<p>编辑 php-fpm 配置文件，如<code>fastcgi.conf</code>或<code>fcgi.conf</code></p>
-<div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="co">#找到：</span>
-<span class="dt">fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;</span>
-<span class="co">#改为：</span>
-<span class="dt">fastcgi_param SERVER_SOFTWARE nginx;</span></code></pre></div>
-<p>重载 nginx 配置即可</p>
-<h2 id="反向代理">反向代理</h2>
-<ul>
-<li><a href="/code/websocket.md">配置 Websocket Wss 代理</a></li>
-</ul>
-<h2 id="伪静态">伪静态</h2>
-<pre class="conf"><code>location / {
-    if (!-e $request_filename) {
-        rewrite ^/(.*)$ /index.php/$1 last;
-        break;
-    }
-}
-
-location ~ \.php/?.*$ {
-    fastcgi_pass 127.0.0.1:9000;
-    fastcgi_index index.php;
-    include fastcgi.conf;
-
-    set $fastcgi_script_name2 $fastcgi_script_name;
-    if ($fastcgi_script_name ~ &quot;^(.+\.php)(/.+)$&quot;) {
-        set $fastcgi_script_name2 $1;
-        set $path_info $2;
-    }
-    fastcgi_param PATH_INFO $path_info;
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name2;
-    fastcgi_param SCRIPT_NAME $fastcgi_script_name2;
-}</code></pre>]]></description>
     <pubDate>Tue, 20 Oct 2020 09:30:25 +0800</pubDate>
   </item>
   
