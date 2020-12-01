@@ -1,12 +1,15 @@
 # 关于我
 
+[![博客](https://img.shields.io/badge/Blog-qq52o.me-blue)](https://qq52o.me "沈唁志")
+[![知乎](https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/zhihu.svg)](https://www.zhihu.com/people/sy-records "沈唁")
+[![新浪微博](https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/weibo.svg)](https://weibo.com/i3l4521 "@你飞")
+[![思否](https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/segmentfault.svg)](https://segmentfault.com/u/sy_records "沈唁")
+
 [![RSS Status](https://github.com/lufei/notes/workflows/RSS/badge.svg)](https://github.com/lufei/notes/actions)
 [![Sitemap Status](https://github.com/lufei/notes/workflows/Sitemap/badge.svg)](https://github.com/lufei/notes/actions)
 [![LICENSE](https://img.shields.io/github/license/lufei/notes)](https://github.com/lufei/notes/blob/master/LICENSE)
-[![RSS Icon](https://img.shields.io/badge/RSS-Atom-orange)](https://notes.qq52o.me/feed.xml)
-[![Donate](https://img.shields.io/badge/paypal-donate-ff69b4.svg)](https://paypal.me/lufeidot)
-[![Blog](https://img.shields.io/badge/Blog-qq52o.me-blue)](https://qq52o.me)
-[![WeiBo](https://cdn.jsdelivr.net/gh/jaywcjlove/sb@gh-pages/ico/weibo.svg)](https://weibo.com/i3l4521)
+[![RSS Icon](https://img.shields.io/badge/RSS-Atom-green)](https://notes.qq52o.me/feed.xml)
+[![Donate](https://img.shields.io/badge/paypal-donate-green.svg)](https://paypal.me/lufeidot)
 
 > 路有多远，只有心知道，  
 > 最美的旅程，是不断的经历，  
@@ -15,7 +18,7 @@
 
 ```json
 {
-    "nickname": "沈唁", 
+    "nickname": "沈唁",
     "contact": {
         "email": "52o[at]qq52o.cn",
         "weibo": "@你飞"
