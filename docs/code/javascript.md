@@ -44,3 +44,13 @@ $('tr').slice(1).click(function (e) {
     }
 });
 ```
+
+## 登录超时后跳出iframe
+
+```javascript
+if (top.location !== self.location) {
+    top.location = self.location;
+}
+```
+
+!> 加在登录页面中。
