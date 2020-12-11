@@ -12,6 +12,7 @@
     * [WP-CLI](tools/wp-cli.md)
     * [Docker](tools/docker.md)
     * [Charles](tools/charles.md)
+    * [Wireshark](tools/wireshark.md)
 
 * 常用API
     * [短链](api/short_url.md)
@@ -25,6 +26,7 @@
     * [ECharts](code/echarts.md)
     * [Bootstrap](code/bootstrap.md)
     * [JavaScript](code/javascript.md)
+    * [CLI](code/cli.md)
 
 * 数据库
     * [MySQL](database/mysql.md)
