@@ -159,3 +159,20 @@ git branch --set-upstream-to=origin/<branch> master
 git fetch --all
 git reset --hard origin/master
 ```
+
+## 批量创建/删除.gitignore文件
+
+```shell
+find . -type d -empty -exec touch {}/.gitignore \;
+
+find ./ -type f -name '.gitignore' -delete
+```
+
+## 将某个分支的代码完全覆盖另一个分支
+
+```shell
+#将test分支上的代码完全覆盖dev分支
+git checkout dev
+git reset --hard origin/test
+git push -f
+```
