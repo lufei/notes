@@ -27,6 +27,7 @@
     * [Bootstrap](code/bootstrap.md)
     * [JavaScript](code/javascript.md)
     * [CLI](code/cli.md)
+    * [Layui](code/layui.md)
 
 * 数据库
     * [MySQL](database/mysql.md)
