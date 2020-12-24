@@ -28,6 +28,7 @@
     * [JavaScript](code/javascript.md)
     * [CLI](code/cli.md)
     * [Layui](code/layui.md)
+    * [Node.js](code/nodejs.md)
 
 * 数据库
     * [MySQL](database/mysql.md)
