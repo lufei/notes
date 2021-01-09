@@ -176,3 +176,13 @@ git checkout dev
 git reset --hard origin/test
 git push -f
 ```
+
+## 删除中间某次提交
+
+```shell
+#commit-id 为要删除的commit的下一个commit号
+git rebase -i commit-id
+
+#要删除的commit之前的改为drop
+git push -f
+```
