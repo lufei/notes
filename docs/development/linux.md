@@ -30,3 +30,14 @@ vim /etc/ssh/sshd_config
 #修改port后重启
 service sshd restart
 ```
+
+## 查看命令是否存在
+
+```shell
+if nonce=$(type php-config 2>&1) ;then
+  echo "exist"
+else
+  echo "not exist"
+  exit $?
+fi
+```
