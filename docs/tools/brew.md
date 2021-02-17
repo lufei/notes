@@ -9,6 +9,7 @@ Homebrew 简称 brew，Homebrew 是一款 Mac OS 平台下的软件包管理工�
 ```
 
 ## 配置镜像
+
 ```shell
 cd "$(brew --repo)"
 git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
@@ -17,7 +18,13 @@ git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 cd "$(brew --repo)/Library/Taps/homebrew/homebrew-cask"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
 brew update
+#bash
 echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bash_profile
+source ~/.bash_profile
+
+#zsh
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 ## 常用命令
@@ -33,7 +40,7 @@ brew -h
 brew update
 
 #安装
-brew install <pkg_name>
+brew install <pkg_name>
 
 #卸载
 brew uninstall <pkg_name>
@@ -45,13 +52,13 @@ brew search <pkg_name>
 brew list
 
 #查看包内容信息
-brew info <pkg_name>
+brew info <pkg_name>
 
 #更新包
 brew upgrade <pkg_name>
 
 #删除具体旧软件
-brew cleanup <pkg_name>
+brew cleanup <pkg_name>
 
 #删除所有旧软件
 brew cleanup
