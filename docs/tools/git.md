@@ -44,7 +44,7 @@ git reset --hard HEAD^
 git add .
 git commit
 #强推
-git push -f origin master
+git push -f origin <branch_name>
 ```
 
 ## 保持fork之后的项目和上游同步
@@ -56,11 +56,11 @@ git remote add upstream [upstream_url]
 #fetch
 git fetch upstream
 
-#将upstream/master merge到本地master分支
-git merge upstream/master
+#将upstream/<branch_name> merge到本地当前分支
+git merge upstream/<branch_name>
 
 #同时别忘了push到自己的github仓库
-git push origin master
+git push origin <branch_name>
 ```
 
 ## 合并某个commitId
@@ -105,7 +105,7 @@ Host github.com
 ## 压缩/合并commit
 
 ```shell
-git rebase -i HEAD~<number>
+git rebase -i HEAD~[number]
 
 # example : git rebase -i HEAD~4
 # HEAD～4的含义是从头部开始追溯4条记录
@@ -121,7 +121,7 @@ git rebase --abort
 git rebase --continue
 
 # 强推
-git push -f origin branch_name
+git push -f origin <branch_name>
 ```
 
 ## 清除本地 remotes/origin/*
@@ -133,8 +133,8 @@ git remote prune origin
 ## 删除远程分支
 
 ```shell
-git branch -r -d origin/branch_name
-git push origin :branch_name
+git branch -r -d origin/<branch_name>
+git push origin :<branch_name>
 ```
 
 ## 修改分支名称
@@ -148,7 +148,7 @@ git push origin newName
 git push --delete origin oldName
 
 git branch --unset-upstream
-git branch --set-upstream-to=origin/<branch> master
+git branch --set-upstream-to=origin/<branch_name> <branch_name>
 ```
 
 ## 使用远程覆盖本地
@@ -157,7 +157,7 @@ git branch --set-upstream-to=origin/<branch> master
 
 ```shell
 git fetch --all
-git reset --hard origin/master
+git reset --hard origin/<branch_name>
 ```
 
 ## 批量创建/删除.gitignore文件
