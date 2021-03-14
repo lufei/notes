@@ -34,6 +34,7 @@
 * 数据库
     * [MySQL](database/mysql.md)
     * [PostgreSQL](database/postgresql.md)
+    * [PHP](database/php.md)
 
 * 网关
     * [Nginx](gateway/nginx.md)
