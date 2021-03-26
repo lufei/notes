@@ -30,11 +30,11 @@
     * [CLI](code/cli.md)
     * [Layui](code/layui.md)
     * [Node.js](code/nodejs.md)
+    * [PHP](code/php.md)
 
 * 数据库
     * [MySQL](database/mysql.md)
     * [PostgreSQL](database/postgresql.md)
-    * [PHP](database/php.md)
 
 * 网关
     * [Nginx](gateway/nginx.md)
