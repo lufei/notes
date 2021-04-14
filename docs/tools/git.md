@@ -186,3 +186,14 @@ git rebase -i commit-id
 #要删除的commit之前的改为drop
 git push -f
 ```
+
+## 修改提交日期
+
+```shell
+git filter-branch --env-filter \
+'if [ $GIT_COMMIT = f70cf6dc1dabb4ad0523a3259681b1e0fe43a788 ]
+then
+    export GIT_AUTHOR_DATE="Sun Apr 4 09:30:01 2021 +0800"
+    export GIT_COMMITTER_DATE="Sun Apr 4 09:30:01 2021 +0800"
+fi'
+```
