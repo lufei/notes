@@ -6,93 +6,6 @@
   <description>沈唁的编程笔记</description>
    
   <item>
-    <title><![CDATA[前言]]></title>
-    <link>https://notes.qq52o.me/#/_sidebar</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/_sidebar</guid>
-    <description><![CDATA[<ul>
-<li>前言
-<ul>
-<li><a href="donate.md">赞赏</a></li>
-</ul></li>
-<li>环境搭建
-<ul>
-<li><a href="development/mac.md">Mac</a></li>
-<li><a href="development/linux.md">Linux</a></li>
-</ul></li>
-<li>常用工具
-<ul>
-<li><a href="tools/git.md">Git</a></li>
-<li><a href="tools/brew.md">Homebrew</a></li>
-<li><a href="tools/phpstorm.md">PhpStorm</a></li>
-<li><a href="tools/wp-cli.md">WP-CLI</a></li>
-<li><a href="tools/docker.md">Docker</a></li>
-<li><a href="tools/charles.md">Charles</a></li>
-<li><a href="tools/wireshark.md">Wireshark</a></li>
-<li><a href="tools/tools.md">Tools</a></li>
-</ul></li>
-<li>常用API
-<ul>
-<li><a href="api/short_url.md">短链</a></li>
-</ul></li>
-<li>框架
-<ul>
-<li><a href="framework/hyperf.md">Hyperf</a></li>
-</ul></li>
-<li>实例代码
-<ul>
-<li><a href="code/hyperf-jsonrpc.md">JSON-RPC</a></li>
-<li><a href="code/select2.md">Select2</a></li>
-<li><a href="code/echarts.md">ECharts</a></li>
-<li><a href="code/bootstrap.md">Bootstrap</a></li>
-<li><a href="code/javascript.md">JavaScript</a></li>
-<li><a href="code/cli.md">CLI</a></li>
-<li><a href="code/layui.md">Layui</a></li>
-<li><a href="code/nodejs.md">Node.js</a></li>
-<li><a href="code/php.md">PHP</a></li>
-</ul></li>
-<li>数据库
-<ul>
-<li><a href="database/mysql.md">MySQL</a></li>
-<li><a href="database/postgresql.md">PostgreSQL</a></li>
-</ul></li>
-<li>网关
-<ul>
-<li><a href="gateway/nginx.md">Nginx</a></li>
-</ul></li>
-<li>WebSocket
-<ul>
-<li><a href="code/websocket.md">Wss</a></li>
-<li><a href="http://wstool.js.org">在线测试</a></li>
-</ul></li>
-<li>语言
-<ul>
-<li><a href="language/python.md">Python</a></li>
-</ul></li>
-</ul>]]></description>
-    <pubDate>Fri, 26 Mar 2021 13:39:58 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[PHP]]></title>
-    <link>https://notes.qq52o.me/#/code/php</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/code/php</guid>
-    <description><![CDATA[<h1 id="php">PHP</h1>
-<h2 id="进制转换">进制转换</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode php"><code class="sourceCode php"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// 十六进制 十进制</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">hexdec</span><span class="ot">(</span><span class="st">&#39;abc&#39;</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">dechex</span><span class="ot">(</span><span class="dv">2748</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co">// 二进制 十进制</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">bindec</span><span class="ot">(</span><span class="st">&#39;110011&#39;</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">decbin</span><span class="ot">(</span><span class="dv">51</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co">// 八进制 十进制</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">octdec</span><span class="ot">(</span><span class="st">&#39;77&#39;</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">decoct</span><span class="ot">(</span><span class="dv">63</span><span class="ot">));</span></a></code></pre></div>]]></description>
-    <pubDate>Sun, 14 Mar 2021 09:01:53 +0800</pubDate>
-  </item>
-   
-  <item>
     <title><![CDATA[Git]]></title>
     <link>https://notes.qq52o.me/#/tools/git</link>
     <guid isPermaLink="false">https://notes.qq52o.me/#/tools/git</guid>
@@ -204,8 +117,102 @@ git push -f</code></pre>
 git rebase -i commit-id
 
 #要删除的commit之前的改为drop
-git push -f</code></pre>]]></description>
-    <pubDate>Sat, 13 Mar 2021 08:04:52 +0800</pubDate>
+git push -f</code></pre>
+<h2 id="修改提交日期">修改提交日期</h2>
+<pre class="shell"><code>git filter-branch --env-filter \
+&#39;if [ $GIT_COMMIT = f70cf6dc1dabb4ad0523a3259681b1e0fe43a788 ]
+then
+    export GIT_AUTHOR_DATE=&quot;Sun Apr 4 09:30:01 2021 +0800&quot;
+    export GIT_COMMITTER_DATE=&quot;Sun Apr 4 09:30:01 2021 +0800&quot;
+fi&#39;</code></pre>]]></description>
+    <pubDate>Wed, 14 Apr 2021 18:02:51 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[前言]]></title>
+    <link>https://notes.qq52o.me/#/_sidebar</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/_sidebar</guid>
+    <description><![CDATA[<ul>
+<li>前言
+<ul>
+<li><a href="donate.md">赞赏</a></li>
+</ul></li>
+<li>环境搭建
+<ul>
+<li><a href="development/mac.md">Mac</a></li>
+<li><a href="development/linux.md">Linux</a></li>
+</ul></li>
+<li>常用工具
+<ul>
+<li><a href="tools/git.md">Git</a></li>
+<li><a href="tools/brew.md">Homebrew</a></li>
+<li><a href="tools/phpstorm.md">PhpStorm</a></li>
+<li><a href="tools/wp-cli.md">WP-CLI</a></li>
+<li><a href="tools/docker.md">Docker</a></li>
+<li><a href="tools/charles.md">Charles</a></li>
+<li><a href="tools/wireshark.md">Wireshark</a></li>
+<li><a href="tools/tools.md">Tools</a></li>
+</ul></li>
+<li>常用API
+<ul>
+<li><a href="api/short_url.md">短链</a></li>
+</ul></li>
+<li>框架
+<ul>
+<li><a href="framework/hyperf.md">Hyperf</a></li>
+</ul></li>
+<li>实例代码
+<ul>
+<li><a href="code/hyperf-jsonrpc.md">JSON-RPC</a></li>
+<li><a href="code/select2.md">Select2</a></li>
+<li><a href="code/echarts.md">ECharts</a></li>
+<li><a href="code/bootstrap.md">Bootstrap</a></li>
+<li><a href="code/javascript.md">JavaScript</a></li>
+<li><a href="code/cli.md">CLI</a></li>
+<li><a href="code/layui.md">Layui</a></li>
+<li><a href="code/nodejs.md">Node.js</a></li>
+<li><a href="code/php.md">PHP</a></li>
+</ul></li>
+<li>数据库
+<ul>
+<li><a href="database/mysql.md">MySQL</a></li>
+<li><a href="database/postgresql.md">PostgreSQL</a></li>
+</ul></li>
+<li>网关
+<ul>
+<li><a href="gateway/nginx.md">Nginx</a></li>
+</ul></li>
+<li>WebSocket
+<ul>
+<li><a href="code/websocket.md">Wss</a></li>
+<li><a href="http://wstool.js.org">在线测试</a></li>
+</ul></li>
+<li>语言
+<ul>
+<li><a href="language/python.md">Python</a></li>
+</ul></li>
+</ul>]]></description>
+    <pubDate>Fri, 26 Mar 2021 13:39:58 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[PHP]]></title>
+    <link>https://notes.qq52o.me/#/code/php</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/code/php</guid>
+    <description><![CDATA[<h1 id="php">PHP</h1>
+<h2 id="进制转换">进制转换</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode php"><code class="sourceCode php"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// 十六进制 十进制</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">hexdec</span><span class="ot">(</span><span class="st">&#39;abc&#39;</span><span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">dechex</span><span class="ot">(</span><span class="dv">2748</span><span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">// 二进制 十进制</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">bindec</span><span class="ot">(</span><span class="st">&#39;110011&#39;</span><span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">decbin</span><span class="ot">(</span><span class="dv">51</span><span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co">// 八进制 十进制</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">octdec</span><span class="ot">(</span><span class="st">&#39;77&#39;</span><span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">decoct</span><span class="ot">(</span><span class="dv">63</span><span class="ot">));</span></a></code></pre></div>]]></description>
+    <pubDate>Sun, 14 Mar 2021 09:01:53 +0800</pubDate>
   </item>
    
   <item>
