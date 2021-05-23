@@ -80,3 +80,11 @@ ulimit -c unlimited
 
 lldb -c /cores/core.37676
 ```
+
+## TouchBar
+
+音量和亮度调节消失
+
+```bash
+killall ControlStrip
+```
