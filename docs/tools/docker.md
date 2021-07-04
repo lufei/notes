@@ -26,3 +26,10 @@ https://developer.aliyun.com/article/110806
 ```shell
 docker ps -q | xargs docker inspect --format '{{.State.Pid}}, {{.Id}}, {{.Name}}, {{.GraphDriver.Data.WorkDir}}' | grep "xxxxxxxx"
 ```
+
+## 安装 docker-compose
+
+```bash
+curl -L https://get.daocloud.io/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+```
