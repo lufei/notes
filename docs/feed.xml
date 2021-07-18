@@ -6,6 +6,27 @@
   <description>沈唁的编程笔记</description>
    
   <item>
+    <title><![CDATA[Docker]]></title>
+    <link>https://notes.qq52o.me/#/tools/docker</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/docker</guid>
+    <description><![CDATA[<h1 id="docker">Docker</h1>
+<h2 id="删除所有容器">删除所有容器</h2>
+<pre class="shell"><code>docker stop $(docker ps -qa)
+docker rm $(docker ps -qa)</code></pre>
+<h2 id="删除所有镜像">删除所有镜像</h2>
+<pre class="shell"><code>docker rmi --force $(docker images -q)</code></pre>
+<h2 id="docker-ce-镜像">Docker CE 镜像</h2>
+<pre class="shell"><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></pre>
+<p>https://developer.aliyun.com/article/110806</p>
+<h2 id="通过docker-overlay2目录名查找容器名和容器id">通过docker overlay2目录名查找容器名和容器ID</h2>
+<pre class="shell"><code>docker ps -q | xargs docker inspect --format &#39;{{.State.Pid}}, {{.Id}}, {{.Name}}, {{.GraphDriver.Data.WorkDir}}&#39; | grep &quot;xxxxxxxx&quot;</code></pre>
+<h2 id="安装-docker-compose">安装 docker-compose</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">curl</span> -L https://get.daocloud.io/docker/compose/releases/download/1.29.2/docker-compose-<span class="kw">`</span><span class="fu">uname</span> -s<span class="kw">`</span>-<span class="kw">`</span><span class="fu">uname</span> -m<span class="kw">`</span> <span class="op">&gt;</span> /usr/local/bin/docker-compose</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="fu">chmod</span> +x /usr/local/bin/docker-compose</a></code></pre></div>]]></description>
+    <pubDate>Sun, 4 Jul 2021 20:05:30 +0800</pubDate>
+  </item>
+   
+  <item>
     <title><![CDATA[Nginx]]></title>
     <link>https://notes.qq52o.me/#/gateway/nginx</link>
     <guid isPermaLink="false">https://notes.qq52o.me/#/gateway/nginx</guid>
@@ -464,21 +485,6 @@ fi</code></pre>]]></description>
 <a class="sourceLine" id="cb1-2" title="2"></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="ex">npm</span> config delete registry</a></code></pre></div>]]></description>
     <pubDate>Thu, 24 Dec 2020 15:24:34 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Layui]]></title>
-    <link>https://notes.qq52o.me/#/code/layui</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/code/layui</guid>
-    <description><![CDATA[<h1 id="layui">Layui</h1>
-<h2 id="获取select选择的值">获取select选择的值</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="va">form</span>.<span class="at">on</span>(<span class="st">&#39;select(filter)&#39;</span><span class="op">,</span> <span class="kw">function</span>(data)<span class="op">{</span></a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="va">console</span>.<span class="at">log</span>(<span class="va">data</span>.<span class="at">elem</span>)<span class="op">;</span> <span class="co">//得到select原始DOM对象</span></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="va">console</span>.<span class="at">log</span>(<span class="va">data</span>.<span class="at">value</span>)<span class="op">;</span> <span class="co">//得到被选中的值</span></a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="va">console</span>.<span class="at">log</span>(<span class="va">data</span>.<span class="at">othis</span>)<span class="op">;</span> <span class="co">//得到美化后的DOM对象</span></a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="va">console</span>.<span class="at">log</span>(<span class="va">data</span>.<span class="at">elem</span>[<span class="va">data</span>.<span class="va">elem</span>.<span class="at">selectedIndex</span>].<span class="at">text</span>)<span class="op">;</span> <span class="co">// 得到选中的文本内容</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="op">}</span>)<span class="op">;</span>      </a></code></pre></div>]]></description>
-    <pubDate>Wed, 23 Dec 2020 09:20:20 +0800</pubDate>
   </item>
   
 </channel>
