@@ -88,3 +88,9 @@ lldb -c /cores/core.37676
 ```bash
 killall ControlStrip
 ```
+
+## Nginx
+
+```shell
+brew install nginx
+```
