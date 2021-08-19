@@ -197,3 +197,11 @@ then
     export GIT_COMMITTER_DATE="Sun Apr 4 09:30:01 2021 +0800"
 fi'
 ```
+
+## 获取最后一次 commit id
+
+```shell
+git log --pretty=format:"%h" | head -1
+```
+
+https://git-scm.com/docs/pretty-formats
