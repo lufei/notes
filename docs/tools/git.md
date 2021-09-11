@@ -205,3 +205,9 @@ git log --pretty=format:"%h" | head -1
 ```
 
 https://git-scm.com/docs/pretty-formats
+
+## 非SSH模式免密
+
+```shell
+echo 'http://username:password@githost' >> ~/.git-credentials
+```
