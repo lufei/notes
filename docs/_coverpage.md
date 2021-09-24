@@ -9,4 +9,4 @@
 [GitHub](https://github.com/sy-records)
 [Getting Started](#main)
 
-![](https://upyun.qq52o.me/img/bg.jpg)
+![](https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202109/home-background.jpg)
