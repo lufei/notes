@@ -211,3 +211,16 @@ https://git-scm.com/docs/pretty-formats
 ```shell
 echo 'http://username:password@githost' >> ~/.git-credentials
 ```
+
+## Patch
+
+```bash
+# 所有文件
+git diff > xxx.patch
+
+# 指定文件
+git diff file1 file2 > xxx.patch
+
+# 应用patch
+git apply xxx.patch
+```
