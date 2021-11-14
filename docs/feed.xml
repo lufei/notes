@@ -6,155 +6,6 @@
   <description>沈唁的编程笔记</description>
    
   <item>
-    <title><![CDATA[Docker]]></title>
-    <link>https://notes.qq52o.me/#/tools/docker</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/docker</guid>
-    <description><![CDATA[<h1 id="docker">Docker</h1>
-<h2 id="删除所有容器">删除所有容器</h2>
-<pre class="shell"><code>docker stop $(docker ps -qa)
-docker rm $(docker ps -qa)</code></pre>
-<h2 id="删除所有镜像">删除所有镜像</h2>
-<pre class="shell"><code>docker rmi --force $(docker images -q)</code></pre>
-<h2 id="docker-ce-镜像">Docker CE 镜像</h2>
-<pre class="shell"><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></pre>
-<p>https://developer.aliyun.com/article/110806</p>
-<h2 id="通过docker-overlay2目录名查找容器名和容器id">通过docker overlay2目录名查找容器名和容器ID</h2>
-<pre class="shell"><code>docker ps -q | xargs docker inspect --format &#39;{{.State.Pid}}, {{.Id}}, {{.Name}}, {{.GraphDriver.Data.WorkDir}}&#39; | grep &quot;xxxxxxxx&quot;</code></pre>
-<h2 id="安装-docker-compose">安装 docker-compose</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">curl</span> -L https://get.daocloud.io/docker/compose/releases/download/1.29.2/docker-compose-<span class="kw">`</span><span class="fu">uname</span> -s<span class="kw">`</span>-<span class="kw">`</span><span class="fu">uname</span> -m<span class="kw">`</span> <span class="op">&gt;</span> /usr/local/bin/docker-compose</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">chmod</span> +x /usr/local/bin/docker-compose</a></code></pre></div>]]></description>
-    <pubDate>Sun, 4 Jul 2021 20:05:30 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Nginx]]></title>
-    <link>https://notes.qq52o.me/#/gateway/nginx</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/gateway/nginx</guid>
-    <description><![CDATA[<h1 id="nginx">Nginx</h1>
-<h2 id="隐藏版本号">隐藏版本号</h2>
-<p>进入 nginx 配置文件的目录，编辑<code>nginx.conf</code></p>
-<p>在<code>http {}</code>里加上<code>server_tokens off;</code></p>
-<p>编辑 php-fpm 配置文件，如<code>fastcgi.conf</code>或<code>fcgi.conf</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode ini"><code class="sourceCode ini"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#找到：</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="dt">fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co">#改为：</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="dt">fastcgi_param SERVER_SOFTWARE nginx;</span></a></code></pre></div>
-<p>重载 nginx 配置即可</p>
-<h2 id="反向代理">反向代理</h2>
-<h3 id="http">HTTP</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode conf"><code class="sourceCode ini"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># 至少需要一个 Server 节点，多个配置多行</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="dt">upstream http_servers {</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="dt">    </span><span class="co"># HTTP Server 的 IP 及 端口</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="dt">    server 127.0.0.1:9501;</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="dt">    server 127.0.0.1:9502;</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="dt">}</span></a>
-<a class="sourceLine" id="cb2-7" title="7"></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="dt">server {</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="dt">    </span><span class="co"># 监听端口</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="dt">    listen 80; </span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="dt">    </span><span class="co"># 绑定的域名</span></a>
-<a class="sourceLine" id="cb2-12" title="12"><span class="dt">    server_name proxy.host.name;</span></a>
-<a class="sourceLine" id="cb2-13" title="13"></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="dt">    location / {</span></a>
-<a class="sourceLine" id="cb2-15" title="15"><span class="dt">        </span><span class="co"># 将客户端的 Host 和 IP 信息一并转发到对应节点  </span></a>
-<a class="sourceLine" id="cb2-16" title="16"><span class="dt">        proxy_set_header Host $http_host;</span></a>
-<a class="sourceLine" id="cb2-17" title="17"><span class="dt">        proxy_set_header X-Real-IP $remote_addr;</span></a>
-<a class="sourceLine" id="cb2-18" title="18"><span class="dt">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span></a>
-<a class="sourceLine" id="cb2-19" title="19"><span class="dt">        </span></a>
-<a class="sourceLine" id="cb2-20" title="20"><span class="dt">        </span><span class="co"># 转发Cookie，设置 SameSite</span></a>
-<a class="sourceLine" id="cb2-21" title="21"><span class="dt">        proxy_cookie_path / &quot;/; secure; HttpOnly; SameSite</span><span class="ot">=</span><span class="st">strict&quot;;</span></a>
-<a class="sourceLine" id="cb2-22" title="22"><span class="dt">        </span></a>
-<a class="sourceLine" id="cb2-23" title="23"><span class="dt">        </span><span class="co"># 执行代理访问真实服务器</span></a>
-<a class="sourceLine" id="cb2-24" title="24"><span class="dt">        proxy_pass http://http_servers;</span></a>
-<a class="sourceLine" id="cb2-25" title="25"><span class="dt">    }</span></a>
-<a class="sourceLine" id="cb2-26" title="26"><span class="dt">}</span></a></code></pre></div>
-<ul>
-<li><a href="/code/websocket.md">配置 Websocket Wss 代理</a></li>
-</ul>
-<h2 id="伪静态">伪静态</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode conf"><code class="sourceCode ini"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">location / {</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="dt">    if (!-e $request_filename) {</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="dt">        rewrite ^/(.*)$ /index.php/$1 last;</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="dt">        break;</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="dt">    }</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="dt">}</span></a>
-<a class="sourceLine" id="cb3-7" title="7"></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="dt">location ~ \.php/?.*$ {</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="dt">    fastcgi_pass 127.0.0.1:9000;</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="dt">    fastcgi_index index.php;</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="dt">    include fastcgi.conf;</span></a>
-<a class="sourceLine" id="cb3-12" title="12"></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="dt">    set $fastcgi_script_name2 $fastcgi_script_name;</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="dt">    if ($fastcgi_script_name ~ &quot;^(.+\.php)(/.+)$&quot;) {</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="dt">        set $fastcgi_script_name2 $1;</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="dt">        set $path_info $2;</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="dt">    }</span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="dt">    fastcgi_param PATH_INFO $path_info;</span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="dt">    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name2;</span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="dt">    fastcgi_param SCRIPT_NAME $fastcgi_script_name2;</span></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="dt">}</span></a></code></pre></div>]]></description>
-    <pubDate>Sat, 5 Jun 2021 20:34:28 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Mac]]></title>
-    <link>https://notes.qq52o.me/#/development/mac</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/development/mac</guid>
-    <description><![CDATA[<h1 id="mac">Mac</h1>
-<p>brew 工具参照 <a href="tools/brew.md">Homebrew</a> 进行安装。</p>
-<h2 id="php">PHP</h2>
-<p>安装 PHP72 来代替系统自带的 PHP。</p>
-<pre class="shell"><code>brew install php@7.2
-brew link php@7.2 --force</code></pre>
-<pre class="shell"><code>brew install php@7.3
-brew link php@7.3 --force
-
-brew install php@7.4
-brew link php@7.4 --force</code></pre>
-<h2 id="composer">Composer</h2>
-<pre class="shell"><code>brew install composer</code></pre>
-<h2 id="mysql">MySQL</h2>
-<pre class="shell"><code>#先安装一下 cmake
-brew install cmake
-
-#安装 MySQL
-brew install mysql@5.7
-
-#添加环境变量
-echo &#39;export PATH=&quot;/usr/local/opt/mysql@5.7/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
-source ~/.zshrc
-
-#启动 MySQL
-brew services start mysql@5.7
-
-#初始化 MySQL，设置密码相关的
-mysql_secure_installation</code></pre>
-<h2 id="mycli">MyCli</h2>
-<p>MySQL 的自动补全和语法高亮工具。</p>
-<pre class="shell"><code>brew install mycli</code></pre>
-<h2 id="redis">Redis</h2>
-<pre class="shell"><code>brew install redis
-
-#启动 Redis
-brew services start redis</code></pre>
-<h2 id="修改-hosts">修改 hosts</h2>
-<pre class="shell"><code>sudo vim /etc/hosts</code></pre>
-<h2 id="core-dump">Core Dump</h2>
-<pre class="shell"><code>sudo mkdir /cores 
-sudo chown root:admin /cores 
-sudo chmod 1775 /cores
-sudo chmod o+w /cores
-
-ulimit -c unlimited
-
-lldb -c /cores/core.37676</code></pre>
-<h2 id="touchbar">TouchBar</h2>
-<p>音量和亮度调节消失</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">killall</span> ControlStrip</a></code></pre></div>]]></description>
-    <pubDate>Sun, 23 May 2021 15:42:03 +0800</pubDate>
-  </item>
-   
-  <item>
     <title><![CDATA[Git]]></title>
     <link>https://notes.qq52o.me/#/tools/git</link>
     <guid isPermaLink="false">https://notes.qq52o.me/#/tools/git</guid>
@@ -273,8 +124,190 @@ git push -f</code></pre>
 then
     export GIT_AUTHOR_DATE=&quot;Sun Apr 4 09:30:01 2021 +0800&quot;
     export GIT_COMMITTER_DATE=&quot;Sun Apr 4 09:30:01 2021 +0800&quot;
-fi&#39;</code></pre>]]></description>
-    <pubDate>Wed, 14 Apr 2021 18:02:51 +0800</pubDate>
+fi&#39;</code></pre>
+<h2 id="获取最后一次-commit-id">获取最后一次 commit id</h2>
+<pre class="shell"><code>git log --pretty=format:&quot;%h&quot; | head -1</code></pre>
+<p>https://git-scm.com/docs/pretty-formats</p>
+<h2 id="非ssh模式免密">非SSH模式免密</h2>
+<pre class="shell"><code>echo &#39;http://username:password@githost&#39; &gt;&gt; ~/.git-credentials</code></pre>
+<h2 id="patch">Patch</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb23-1" title="1"><span class="co"># 所有文件</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="fu">git</span> diff <span class="op">&gt;</span> xxx.patch</a>
+<a class="sourceLine" id="cb23-3" title="3"></a>
+<a class="sourceLine" id="cb23-4" title="4"><span class="co"># 指定文件</span></a>
+<a class="sourceLine" id="cb23-5" title="5"><span class="fu">git</span> diff file1 file2 <span class="op">&gt;</span> xxx.patch</a>
+<a class="sourceLine" id="cb23-6" title="6"></a>
+<a class="sourceLine" id="cb23-7" title="7"><span class="co"># 应用patch</span></a>
+<a class="sourceLine" id="cb23-8" title="8"><span class="fu">git</span> apply xxx.patch</a></code></pre></div>]]></description>
+    <pubDate>Thu, 30 Sep 2021 20:26:12 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[logo](https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png)]]></title>
+    <link>https://notes.qq52o.me/#/_coverpage</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/_coverpage</guid>
+    <description><![CDATA[<figure>
+<img src="https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png" alt="logo" /><figcaption>logo</figcaption>
+</figure>
+<h1 id="沈唁志">沈唁志</h1>
+<blockquote>
+<p>一个 PHPer 的成长之路</p>
+</blockquote>
+<h3 id="dont-let-your-past-determine-the-future.-idcover-page-hitokoto">🍃Don’t let your past determine the future. :id=cover-page-hitokoto</h3>
+<p><a href="https://github.com/sy-records">GitHub</a> <a href="#main">Getting Started</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202109/home-background.jpg" /></p>]]></description>
+    <pubDate>Fri, 24 Sep 2021 09:19:43 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Mac]]></title>
+    <link>https://notes.qq52o.me/#/development/mac</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/development/mac</guid>
+    <description><![CDATA[<h1 id="mac">Mac</h1>
+<p>brew 工具参照 <a href="tools/brew.md">Homebrew</a> 进行安装。</p>
+<h2 id="php">PHP</h2>
+<p>安装 PHP72 来代替系统自带的 PHP。</p>
+<pre class="shell"><code>brew install php@7.2
+brew link php@7.2 --force</code></pre>
+<pre class="shell"><code>brew install php@7.3
+brew link php@7.3 --force
+
+brew install php@7.4
+brew link php@7.4 --force</code></pre>
+<h2 id="composer">Composer</h2>
+<pre class="shell"><code>brew install composer</code></pre>
+<h2 id="mysql">MySQL</h2>
+<pre class="shell"><code>#先安装一下 cmake
+brew install cmake
+
+#安装 MySQL
+brew install mysql@5.7
+
+#添加环境变量
+echo &#39;export PATH=&quot;/usr/local/opt/mysql@5.7/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
+source ~/.zshrc
+
+#启动 MySQL
+brew services start mysql@5.7
+
+#初始化 MySQL，设置密码相关的
+mysql_secure_installation</code></pre>
+<h2 id="mycli">MyCli</h2>
+<p>MySQL 的自动补全和语法高亮工具。</p>
+<pre class="shell"><code>brew install mycli</code></pre>
+<h2 id="redis">Redis</h2>
+<pre class="shell"><code>brew install redis
+
+#启动 Redis
+brew services start redis</code></pre>
+<h2 id="修改-hosts">修改 hosts</h2>
+<pre class="shell"><code>sudo vim /etc/hosts</code></pre>
+<h2 id="core-dump">Core Dump</h2>
+<pre class="shell"><code>sudo mkdir /cores 
+sudo chown root:admin /cores 
+sudo chmod 1775 /cores
+sudo chmod o+w /cores
+
+ulimit -c unlimited
+
+lldb -c /cores/core.37676</code></pre>
+<h2 id="touchbar">TouchBar</h2>
+<p>音量和亮度调节消失</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">killall</span> ControlStrip</a></code></pre></div>
+<h2 id="nginx">Nginx</h2>
+<pre class="shell"><code>brew install nginx</code></pre>]]></description>
+    <pubDate>Wed, 28 Jul 2021 14:41:23 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Docker]]></title>
+    <link>https://notes.qq52o.me/#/tools/docker</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/docker</guid>
+    <description><![CDATA[<h1 id="docker">Docker</h1>
+<h2 id="删除所有容器">删除所有容器</h2>
+<pre class="shell"><code>docker stop $(docker ps -qa)
+docker rm $(docker ps -qa)</code></pre>
+<h2 id="删除所有镜像">删除所有镜像</h2>
+<pre class="shell"><code>docker rmi --force $(docker images -q)</code></pre>
+<h2 id="docker-ce-镜像">Docker CE 镜像</h2>
+<pre class="shell"><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></pre>
+<p>https://developer.aliyun.com/article/110806</p>
+<h2 id="通过docker-overlay2目录名查找容器名和容器id">通过docker overlay2目录名查找容器名和容器ID</h2>
+<pre class="shell"><code>docker ps -q | xargs docker inspect --format &#39;{{.State.Pid}}, {{.Id}}, {{.Name}}, {{.GraphDriver.Data.WorkDir}}&#39; | grep &quot;xxxxxxxx&quot;</code></pre>
+<h2 id="安装-docker-compose">安装 docker-compose</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">curl</span> -L https://get.daocloud.io/docker/compose/releases/download/1.29.2/docker-compose-<span class="kw">`</span><span class="fu">uname</span> -s<span class="kw">`</span>-<span class="kw">`</span><span class="fu">uname</span> -m<span class="kw">`</span> <span class="op">&gt;</span> /usr/local/bin/docker-compose</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="fu">chmod</span> +x /usr/local/bin/docker-compose</a></code></pre></div>]]></description>
+    <pubDate>Sun, 4 Jul 2021 20:05:30 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Nginx]]></title>
+    <link>https://notes.qq52o.me/#/gateway/nginx</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/gateway/nginx</guid>
+    <description><![CDATA[<h1 id="nginx">Nginx</h1>
+<h2 id="隐藏版本号">隐藏版本号</h2>
+<p>进入 nginx 配置文件的目录，编辑<code>nginx.conf</code></p>
+<p>在<code>http {}</code>里加上<code>server_tokens off;</code></p>
+<p>编辑 php-fpm 配置文件，如<code>fastcgi.conf</code>或<code>fcgi.conf</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode ini"><code class="sourceCode ini"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#找到：</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="dt">fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">#改为：</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="dt">fastcgi_param SERVER_SOFTWARE nginx;</span></a></code></pre></div>
+<p>重载 nginx 配置即可</p>
+<h2 id="反向代理">反向代理</h2>
+<h3 id="http">HTTP</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode conf"><code class="sourceCode ini"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># 至少需要一个 Server 节点，多个配置多行</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="dt">upstream http_servers {</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="dt">    </span><span class="co"># HTTP Server 的 IP 及 端口</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="dt">    server 127.0.0.1:9501;</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="dt">    server 127.0.0.1:9502;</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="dt">}</span></a>
+<a class="sourceLine" id="cb2-7" title="7"></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="dt">server {</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="dt">    </span><span class="co"># 监听端口</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="dt">    listen 80; </span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="dt">    </span><span class="co"># 绑定的域名</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="dt">    server_name proxy.host.name;</span></a>
+<a class="sourceLine" id="cb2-13" title="13"></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="dt">    location / {</span></a>
+<a class="sourceLine" id="cb2-15" title="15"><span class="dt">        </span><span class="co"># 将客户端的 Host 和 IP 信息一并转发到对应节点  </span></a>
+<a class="sourceLine" id="cb2-16" title="16"><span class="dt">        proxy_set_header Host $http_host;</span></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="dt">        proxy_set_header X-Real-IP $remote_addr;</span></a>
+<a class="sourceLine" id="cb2-18" title="18"><span class="dt">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span></a>
+<a class="sourceLine" id="cb2-19" title="19"><span class="dt">        </span></a>
+<a class="sourceLine" id="cb2-20" title="20"><span class="dt">        </span><span class="co"># 转发Cookie，设置 SameSite</span></a>
+<a class="sourceLine" id="cb2-21" title="21"><span class="dt">        proxy_cookie_path / &quot;/; secure; HttpOnly; SameSite</span><span class="ot">=</span><span class="st">strict&quot;;</span></a>
+<a class="sourceLine" id="cb2-22" title="22"><span class="dt">        </span></a>
+<a class="sourceLine" id="cb2-23" title="23"><span class="dt">        </span><span class="co"># 执行代理访问真实服务器</span></a>
+<a class="sourceLine" id="cb2-24" title="24"><span class="dt">        proxy_pass http://http_servers;</span></a>
+<a class="sourceLine" id="cb2-25" title="25"><span class="dt">    }</span></a>
+<a class="sourceLine" id="cb2-26" title="26"><span class="dt">}</span></a></code></pre></div>
+<ul>
+<li><a href="/code/websocket.md">配置 Websocket Wss 代理</a></li>
+</ul>
+<h2 id="伪静态">伪静态</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode conf"><code class="sourceCode ini"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">location / {</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="dt">    if (!-e $request_filename) {</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="dt">        rewrite ^/(.*)$ /index.php/$1 last;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="dt">        break;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="dt">    }</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="dt">}</span></a>
+<a class="sourceLine" id="cb3-7" title="7"></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="dt">location ~ \.php/?.*$ {</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="dt">    fastcgi_pass 127.0.0.1:9000;</span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="dt">    fastcgi_index index.php;</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="dt">    include fastcgi.conf;</span></a>
+<a class="sourceLine" id="cb3-12" title="12"></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="dt">    set $fastcgi_script_name2 $fastcgi_script_name;</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="dt">    if ($fastcgi_script_name ~ &quot;^(.+\.php)(/.+)$&quot;) {</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="dt">        set $fastcgi_script_name2 $1;</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="dt">        set $path_info $2;</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="dt">    }</span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="dt">    fastcgi_param PATH_INFO $path_info;</span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="dt">    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name2;</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="dt">    fastcgi_param SCRIPT_NAME $fastcgi_script_name2;</span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="dt">}</span></a></code></pre></div>]]></description>
+    <pubDate>Sat, 5 Jun 2021 20:34:28 +0800</pubDate>
   </item>
    
   <item>
@@ -473,18 +506,6 @@ fi</code></pre>]]></description>
 <h3 id="获取-tag">获取 tag</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">curl</span> -s https://api.github.com/repos/swoole/swoole-src/tags <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&quot;.[].name&quot;</span> -r <span class="kw">|</span> <span class="fu">grep</span> v4.5 <span class="kw">|</span> <span class="fu">head</span> -1</a></code></pre></div>]]></description>
     <pubDate>Fri, 8 Jan 2021 09:07:36 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Node.js]]></title>
-    <link>https://notes.qq52o.me/#/code/nodejs</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/code/nodejs</guid>
-    <description><![CDATA[<h1 id="node.js">Node.js</h1>
-<h2 id="设置取消淘宝npm镜像">设置/取消淘宝npm镜像</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npm</span> config set registry=https://registry.npm.taobao.org</a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="ex">npm</span> config delete registry</a></code></pre></div>]]></description>
-    <pubDate>Thu, 24 Dec 2020 15:24:34 +0800</pubDate>
   </item>
   
 </channel>
