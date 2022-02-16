@@ -31,19 +31,19 @@ upstream http_servers {
 
 server {
     # 监听端口
-    listen 80; 
+    listen 80;
     # 绑定的域名
     server_name proxy.host.name;
 
     location / {
-        # 将客户端的 Host 和 IP 信息一并转发到对应节点  
+        # 将客户端的 Host 和 IP 信息一并转发到对应节点
         proxy_set_header Host $http_host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        
+
         # 转发Cookie，设置 SameSite
         proxy_cookie_path / "/; secure; HttpOnly; SameSite=strict";
-        
+
         # 执行代理访问真实服务器
         proxy_pass http://http_servers;
     }
