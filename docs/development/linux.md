@@ -41,3 +41,11 @@ else
   exit $?
 fi
 ```
+
+## Ubuntu 连接wifi
+
+```bash
+suto apt install net-tools wireless-tools network-manager
+
+nmcli dev wifi connect "" password ""
+```
