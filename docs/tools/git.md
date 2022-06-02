@@ -224,3 +224,9 @@ git diff file1 file2 > xxx.patch
 # 应用patch
 git apply xxx.patch
 ```
+
+## 获取两个分支的差异文件
+
+```bash
+git diff master dev --stat --name-only
+```
