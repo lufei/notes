@@ -139,9 +139,10 @@ fi&#39;</code></pre>
 <a class="sourceLine" id="cb23-6" title="6"></a>
 <a class="sourceLine" id="cb23-7" title="7"><span class="co"># 应用patch</span></a>
 <a class="sourceLine" id="cb23-8" title="8"><span class="fu">git</span> apply xxx.patch</a></code></pre></div>
-<h2 id="获取两个分支的差异文件">获取两个分支的差异文件</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb24-1" title="1"><span class="fu">git</span> diff master dev --stat --name-only</a></code></pre></div>]]></description>
-    <pubDate>Thu, 2 Jun 2022 10:28:05 +0800</pubDate>
+<h2 id="获取两个分支commitid的差异文件">获取两个分支/commitID的差异文件</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb24-1" title="1"><span class="fu">git</span> diff master dev --stat --name-only</a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="fu">git</span> diff xxxxxx xxxxxx --stat --name-only</a></code></pre></div>]]></description>
+    <pubDate>Sat, 16 Jul 2022 16:00:23 +0800</pubDate>
   </item>
    
   <item>
