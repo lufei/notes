@@ -141,8 +141,13 @@ fi&#39;</code></pre>
 <a class="sourceLine" id="cb23-8" title="8"><span class="fu">git</span> apply xxx.patch</a></code></pre></div>
 <h2 id="获取两个分支commitid的差异文件">获取两个分支/commitID的差异文件</h2>
 <div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb24-1" title="1"><span class="fu">git</span> diff master dev --stat --name-only</a>
-<a class="sourceLine" id="cb24-2" title="2"><span class="fu">git</span> diff xxxxxx xxxxxx --stat --name-only</a></code></pre></div>]]></description>
-    <pubDate>Sat, 16 Jul 2022 16:00:23 +0800</pubDate>
+<a class="sourceLine" id="cb24-2" title="2"><span class="fu">git</span> diff xxxxxx xxxxxx --stat --name-only</a></code></pre></div>
+<h2 id="git-提交统计">Git 提交统计</h2>
+<h3 id="某个人的提交次数">某个人的提交次数</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb25-1" title="1"><span class="fu">git</span> log --author=<span class="st">&quot;username&quot;</span> --after=<span class="st">&quot;2022-08-01 00:00:01&quot;</span> --before=<span class="st">&quot;2022-09-15 23:59:59&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -</a></code></pre></div>
+<h3 id="按用户查看提交次数">按用户查看提交次数</h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb26-1" title="1"><span class="fu">git</span> log --format=<span class="st">&#39;%aN&#39;</span> <span class="kw">|</span> <span class="fu">sort</span> -u <span class="kw">|</span> <span class="kw">while</span> <span class="bu">read</span> <span class="va">name</span>; <span class="kw">do</span> <span class="bu">echo</span> -en <span class="st">&quot;</span><span class="va">$name</span><span class="st">\t&quot;</span><span class="kw">;</span> <span class="fu">git</span> log --author=<span class="st">&quot;</span><span class="va">$name</span><span class="st">&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -<span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>]]></description>
+    <pubDate>Thu, 15 Sep 2022 20:10:58 +0800</pubDate>
   </item>
    
   <item>
