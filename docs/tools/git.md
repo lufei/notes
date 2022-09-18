@@ -234,14 +234,26 @@ git diff xxxxxx xxxxxx --stat --name-only
 
 ## Git 提交统计
 
-### 某个人的提交次数
+### 指定时间内某个人的提交代码行数
 
 ```bash
 git log --author="username" --after="2022-08-01 00:00:01" --before="2022-09-15 23:59:59" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -
 ```
 
-### 按用户查看提交次数
+### 某个人的提交代码行数
+
+```bash
+git log --author="username" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -
+```
+
+### 按用户查看提交代码行数
 
 ```bash
 git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -; done
+```
+
+### 查看每个用户的提交次数
+
+```bash
+git shortlog -s -n 
 ```
