@@ -16,7 +16,6 @@
 > 路有多远，只有心知道，  
 > 最美的旅程，是不断的经历，  
 > 坚持走下去，与梦想者同行！  
-> 我是沈唁，一个成长中的PHPer！
 
 ```json
 {
@@ -33,4 +32,4 @@
 
 ### 微信公众号
 
-![沈唁志](https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202012/wechat_white.png ":size=autox150 欢迎关注")
+![鲁飞](https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202012/wechat_white.png ":size=autox150 欢迎关注")
