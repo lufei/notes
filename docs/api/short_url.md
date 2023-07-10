@@ -2,6 +2,8 @@
 
 ## 腾讯 url.cn
 
+!> 已失效。
+
 请求地址：`https://vip.video.qq.com/fcgi-bin/comm_cgi`  
 请求参数：`name，need_short_url，url`  
 示例：

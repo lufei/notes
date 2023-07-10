@@ -14,6 +14,7 @@
     * [Charles](tools/charles.md)
     * [Wireshark](tools/wireshark.md)
     * [Tools](tools/tools.md)
+    * [Snippets](tools/snippets.md)
 
 * 常用API
     * [短链](api/short_url.md)
