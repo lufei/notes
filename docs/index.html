@@ -88,6 +88,11 @@
 <script src="//unpkg.com/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
 <script>
     var _hmt = _hmt || [];
+    _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+      shouldTrackUrlChange: function (newPath, oldPath) {
+        return newPath && oldPath;
+      }}
+    ]);
     (function() {
       var hm = document.createElement("script");
       hm.src = "https://hm.baidu.com/hm.js?f7183671fb31a72132a222296b162353";
@@ -95,7 +100,7 @@
       s.parentNode.insertBefore(hm, s);
     })();
     if (typeof navigator.serviceWorker !== 'undefined') {
-        navigator.serviceWorker.register('sw.js')
+      navigator.serviceWorker.register('sw.js')
     }
 </script>
 </body>
