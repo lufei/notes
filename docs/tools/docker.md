@@ -16,7 +16,7 @@ docker rmi --force $(docker images -q)
 ## 删除none的镜像
 
 ```shell
-docker rmi $docker images -f dangling=true -q)
+docker rmi $(docker images -f dangling=true -q)
 ```
 
 ## Docker CE 镜像
