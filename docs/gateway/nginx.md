@@ -52,6 +52,38 @@ server {
 
 - [配置 Websocket Wss 代理](/code/websocket.md)
 
+### 微信图片
+
+```conf
+# http://mmbiz.qpic.cn/mmbiz_png/2lUhY9SosBGOtQLz66sZrjlyoqIT3A9sVeU7YQcVlpbZ9GicFkmM8Ctht1bFhXvPp7Uhtj0fU4JlRakqn4ViaspA/0?wx_fmt=png
+# /mmbiz_png/2lUhY9SosBGOtQLz66sZrjlyoqIT3A9sVeU7YQcVlpbZ9GicFkmM8Ctht1bFhXvPp7Uhtj0fU4JlRakqn4ViaspA/0
+
+location ~ /(.*)mmbiz(.*)/ {
+    if ($http_referer !~* ^https://qq52o.me) {
+        return 403;
+    }
+    proxy_pass http://mmbiz.qpic.cn;
+    proxy_set_header Host "mmbiz.qpic.cn";
+    proxy_set_header Referer "";
+}
+```
+
+### CSDN 头像
+
+```conf
+# https://profile-avatar.csdnimg.cn/f9dd455bf70d483299fb65e2e840d359_kaiyuanshe.jpg
+# /avatar-csdnimg/f9dd455bf70d483299fb65e2e840d359_kaiyuanshe.jpg
+
+location /avatar-csdnimg/ {
+    if ($http_referer !~* ^https://qq52o.me) {
+        return 403;
+    }
+    proxy_pass https://profile-avatar.csdnimg.cn/;
+    proxy_set_header Host "profile-avatar.csdnimg.cn";
+    proxy_set_header Referer "";
+}
+```
+
 ## 伪静态
 
 ```conf
