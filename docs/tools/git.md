@@ -257,3 +257,17 @@ git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git l
 ```bash
 git shortlog -s -n 
 ```
+
+## Tag
+
+### 删除本地tag
+
+```bash
+git tag -d <tagname>
+```
+
+### 删除远程tag
+
+```bash
+git push origin :refs/tags/<tagname>
+```
