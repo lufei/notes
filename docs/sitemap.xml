@@ -2,12 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://notes.qq52o.me</loc>
-    <lastmod>2022-09-23T07:17:55+00:00</lastmod>
+    <lastmod>2023-10-21T07:57:57+00:00</lastmod>
   </url>
    
   <url>
     <loc>https://notes.qq52o.me/#/tools/git</loc>
-    <lastmod>2022-09-18T00:33:23+00:00</lastmod>
+    <lastmod>2023-10-21T07:57:57+00:00</lastmod>
+  </url>
+   
+  <url>
+    <loc>https://notes.qq52o.me/#/gateway/nginx</loc>
+    <lastmod>2023-10-11T00:36:18+00:00</lastmod>
+  </url>
+   
+  <url>
+    <loc>https://notes.qq52o.me/#/tools/docker</loc>
+    <lastmod>2023-08-08T01:22:16+00:00</lastmod>
+  </url>
+   
+  <url>
+    <loc>https://notes.qq52o.me/#/tools/snippets</loc>
+    <lastmod>2023-07-10T06:07:26+00:00</lastmod>
+  </url>
+   
+  <url>
+    <loc>https://notes.qq52o.me/#/api/short_url</loc>
+    <lastmod>2023-07-10T06:07:26+00:00</lastmod>
+  </url>
+   
+  <url>
+    <loc>https://notes.qq52o.me/#/README</loc>
+    <lastmod>2023-06-27T01:43:38+00:00</lastmod>
   </url>
    
   <url>
@@ -16,18 +41,8 @@
   </url>
    
   <url>
-    <loc>https://notes.qq52o.me/#/gateway/nginx</loc>
-    <lastmod>2022-02-16T02:43:37+00:00</lastmod>
-  </url>
-   
-  <url>
     <loc>https://notes.qq52o.me/#/development/mac</loc>
     <lastmod>2021-07-28T06:41:23+00:00</lastmod>
-  </url>
-   
-  <url>
-    <loc>https://notes.qq52o.me/#/tools/docker</loc>
-    <lastmod>2021-07-04T12:05:30+00:00</lastmod>
   </url>
    
   <url>
@@ -68,11 +83,6 @@
   <url>
     <loc>https://notes.qq52o.me/#/code/javascript</loc>
     <lastmod>2020-12-05T00:06:14+00:00</lastmod>
-  </url>
-   
-  <url>
-    <loc>https://notes.qq52o.me/#/README</loc>
-    <lastmod>2020-12-01T07:33:54+00:00</lastmod>
   </url>
    
   <url>
@@ -122,11 +132,6 @@
    
   <url>
     <loc>https://notes.qq52o.me/#/code/hyperf-jsonrpc</loc>
-    <lastmod>2020-10-20T01:30:25+00:00</lastmod>
-  </url>
-   
-  <url>
-    <loc>https://notes.qq52o.me/#/api/short_url</loc>
     <lastmod>2020-10-20T01:30:25+00:00</lastmod>
   </url>
    
