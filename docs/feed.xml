@@ -31,41 +31,41 @@ git remote add origin git@github.com:UserName/Repository.git
 #码云
 git remote set-url --add origin git@gitee.com:UserName/Repository.git</code></pre>
 <h2 id="回滚上次push的提交">回滚上次push的提交</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">git</span> reset --hard HEAD^</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="fu">git</span> add .</a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="fu">git</span> commit</a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="co">#强推</span></a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="fu">git</span> push -f origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="fu">git</span> reset --hard HEAD^</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="fu">git</span> add .</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="fu">git</span> commit</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="co">#强推</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="fu">git</span> push -f origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 <h2 id="保持fork之后的项目和上游同步">保持fork之后的项目和上游同步</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="co">#添加上游仓库</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="fu">git</span> remote add upstream [upstream_url]</a>
-<a class="sourceLine" id="cb7-3" title="3"></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="co">#fetch</span></a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="fu">git</span> fetch upstream</a>
-<a class="sourceLine" id="cb7-6" title="6"></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="co">#将upstream/&lt;branch_name&gt; merge到本地当前分支</span></a>
-<a class="sourceLine" id="cb7-8" title="8"><span class="fu">git</span> merge upstream/<span class="op">&lt;</span>branch_name<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb7-9" title="9"></a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="co">#同时别忘了push到自己的github仓库</span></a>
-<a class="sourceLine" id="cb7-11" title="11"><span class="fu">git</span> push origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">#添加上游仓库</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="fu">git</span> remote add upstream [upstream_url]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="co">#fetch</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="fu">git</span> fetch upstream</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="co">#将upstream/&lt;branch_name&gt; merge到本地当前分支</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a><span class="fu">git</span> merge upstream/<span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a><span class="co">#同时别忘了push到自己的github仓库</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 <h2 id="合并某个commitid">合并某个commitId</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">git</span> cherry-pick commitId</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="fu">git</span> cherry-pick commitId</span></code></pre></div>
 <h2 id="to-443">22 to 443</h2>
 <p>git的ssh使用22端口不可用时，可以使用443端口</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">vim</span> ~/.ssh/config</a>
-<a class="sourceLine" id="cb9-2" title="2"></a>
-<a class="sourceLine" id="cb9-3" title="3"><span class="co">#写入</span></a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="ex">Host</span> github.com</a>
-<a class="sourceLine" id="cb9-5" title="5">  <span class="ex">Hostname</span> ssh.github.com</a>
-<a class="sourceLine" id="cb9-6" title="6">  <span class="ex">Port</span> 443</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="ex">vim</span> ~/.ssh/config</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="co">#写入</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="ex">Host</span> github.com</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>  <span class="ex">Hostname</span> ssh.github.com</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>  <span class="ex">Port</span> 443</span></code></pre></div>
 <h2 id="设置ss代理">设置SS代理</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="ex">vim</span> ~/.ssh/config</a>
-<a class="sourceLine" id="cb10-2" title="2"></a>
-<a class="sourceLine" id="cb10-3" title="3"><span class="co">#写入</span></a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="ex">Host</span> github.com</a>
-<a class="sourceLine" id="cb10-5" title="5">   <span class="ex">HostName</span> github.com</a>
-<a class="sourceLine" id="cb10-6" title="6">   <span class="ex">User</span> git</a>
-<a class="sourceLine" id="cb10-7" title="7">   <span class="ex">ProxyCommand</span> nc -v -x 127.0.0.1:1086 %h %p</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="ex">vim</span> ~/.ssh/config</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="co">#写入</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a><span class="ex">Host</span> github.com</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>   <span class="ex">HostName</span> github.com</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a>   <span class="ex">User</span> git</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a>   <span class="ex">ProxyCommand</span> nc -v -x 127.0.0.1:1086 %h %p</span></code></pre></div>
 <p>!&gt; 注意配置文件内的 127.0.0.1:1086 需要和本地 SS 客户端的所暴露的 本地 Socks5 监听地址 和 本地 Socks5 监听端口 一致</p>
 <h2 id="webhook">WebHook</h2>
 <p>使用Swoole的<code>Http\Server</code>来作为Web服务，执行GitHub/Gitee的WebHook</p>
@@ -131,27 +131,362 @@ fi&#39;</code></pre>
 <h2 id="非ssh模式免密">非SSH模式免密</h2>
 <pre class="shell"><code>echo &#39;http://username:password@githost&#39; &gt;&gt; ~/.git-credentials</code></pre>
 <h2 id="patch">Patch</h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb23-1" title="1"><span class="co"># 所有文件</span></a>
-<a class="sourceLine" id="cb23-2" title="2"><span class="fu">git</span> diff <span class="op">&gt;</span> xxx.patch</a>
-<a class="sourceLine" id="cb23-3" title="3"></a>
-<a class="sourceLine" id="cb23-4" title="4"><span class="co"># 指定文件</span></a>
-<a class="sourceLine" id="cb23-5" title="5"><span class="fu">git</span> diff file1 file2 <span class="op">&gt;</span> xxx.patch</a>
-<a class="sourceLine" id="cb23-6" title="6"></a>
-<a class="sourceLine" id="cb23-7" title="7"><span class="co"># 应用patch</span></a>
-<a class="sourceLine" id="cb23-8" title="8"><span class="fu">git</span> apply xxx.patch</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a><span class="co"># 所有文件</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true"></a><span class="fu">git</span> diff <span class="op">&gt;</span> xxx.patch</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true"></a><span class="co"># 指定文件</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true"></a><span class="fu">git</span> diff file1 file2 <span class="op">&gt;</span> xxx.patch</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true"></a><span class="co"># 应用patch</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true"></a><span class="fu">git</span> apply xxx.patch</span></code></pre></div>
 <h2 id="获取两个分支commitid的差异文件">获取两个分支/commitID的差异文件</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb24-1" title="1"><span class="fu">git</span> diff master dev --stat --name-only</a>
-<a class="sourceLine" id="cb24-2" title="2"><span class="fu">git</span> diff xxxxxx xxxxxx --stat --name-only</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a><span class="fu">git</span> diff master dev --stat --name-only</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true"></a><span class="fu">git</span> diff xxxxxx xxxxxx --stat --name-only</span></code></pre></div>
 <h2 id="git-提交统计">Git 提交统计</h2>
 <h3 id="指定时间内某个人的提交代码行数">指定时间内某个人的提交代码行数</h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb25-1" title="1"><span class="fu">git</span> log --author=<span class="st">&quot;username&quot;</span> --after=<span class="st">&quot;2022-08-01 00:00:01&quot;</span> --before=<span class="st">&quot;2022-09-15 23:59:59&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a><span class="fu">git</span> log --author=<span class="st">&quot;username&quot;</span> --after=<span class="st">&quot;2022-08-01 00:00:01&quot;</span> --before=<span class="st">&quot;2022-09-15 23:59:59&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -</span></code></pre></div>
 <h3 id="某个人的提交代码行数">某个人的提交代码行数</h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb26-1" title="1"><span class="fu">git</span> log --author=<span class="st">&quot;username&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true"></a><span class="fu">git</span> log --author=<span class="st">&quot;username&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -</span></code></pre></div>
 <h3 id="按用户查看提交代码行数">按用户查看提交代码行数</h3>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb27-1" title="1"><span class="fu">git</span> log --format=<span class="st">&#39;%aN&#39;</span> <span class="kw">|</span> <span class="fu">sort</span> -u <span class="kw">|</span> <span class="kw">while</span> <span class="bu">read</span> <span class="va">name</span>; <span class="kw">do</span> <span class="bu">echo</span> -en <span class="st">&quot;</span><span class="va">$name</span><span class="st">\t&quot;</span><span class="kw">;</span> <span class="fu">git</span> log --author=<span class="st">&quot;</span><span class="va">$name</span><span class="st">&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -<span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a><span class="fu">git</span> log --format=<span class="st">&#39;%aN&#39;</span> <span class="kw">|</span> <span class="fu">sort</span> -u <span class="kw">|</span> <span class="kw">while</span> <span class="bu">read</span> <span class="va">name</span>; <span class="kw">do</span> <span class="bu">echo</span> -en <span class="st">&quot;</span><span class="va">$name</span><span class="st">\t&quot;</span><span class="kw">;</span> <span class="fu">git</span> log --author=<span class="st">&quot;</span><span class="va">$name</span><span class="st">&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -<span class="kw">;</span> <span class="kw">done</span></span></code></pre></div>
 <h3 id="查看每个用户的提交次数">查看每个用户的提交次数</h3>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb28-1" title="1"><span class="fu">git</span> shortlog -s -n </a></code></pre></div>]]></description>
-    <pubDate>Sun, 18 Sep 2022 08:33:23 +0800</pubDate>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true"></a><span class="fu">git</span> shortlog -s -n </span></code></pre></div>
+<h2 id="tag">Tag</h2>
+<h3 id="删除本地tag">删除本地tag</h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true"></a><span class="fu">git</span> tag -d <span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code></pre></div>
+<h3 id="删除远程tag">删除远程tag</h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true"></a><span class="fu">git</span> push origin :refs/tags/<span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code></pre></div>]]></description>
+    <pubDate>Sat, 21 Oct 2023 15:57:57 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Nginx]]></title>
+    <link>https://notes.qq52o.me/#/gateway/nginx</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/gateway/nginx</guid>
+    <description><![CDATA[<h1 id="nginx">Nginx</h1>
+<h2 id="隐藏版本号">隐藏版本号</h2>
+<p>进入 nginx 配置文件的目录，编辑<code>nginx.conf</code></p>
+<p>在<code>http {}</code>里加上<code>server_tokens off;</code></p>
+<p>编辑 php-fpm 配置文件，如<code>fastcgi.conf</code>或<code>fcgi.conf</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode ini"><code class="sourceCode ini"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">#找到：</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dt">fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">#改为：</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dt">fastcgi_param SERVER_SOFTWARE nginx;</span></span></code></pre></div>
+<p>重载 nginx 配置即可</p>
+<h2 id="反向代理">反向代理</h2>
+<h3 id="http">HTTP</h3>
+<pre class="conf"><code># 至少需要一个 Server 节点，多个配置多行
+upstream http_servers {
+    # HTTP Server 的 IP 及 端口
+    server 127.0.0.1:9501;
+    server 127.0.0.1:9502;
+}
+
+server {
+    # 监听端口
+    listen 80;
+    # 绑定的域名
+    server_name proxy.host.name;
+
+    location / {
+        # 将客户端的 Host 和 IP 信息一并转发到对应节点
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        # 转发Cookie，设置 SameSite
+        proxy_cookie_path / &quot;/; secure; HttpOnly; SameSite=strict&quot;;
+
+        # 执行代理访问真实服务器
+        proxy_pass http://http_servers;
+    }
+}</code></pre>
+<ul>
+<li><a href="/code/websocket.md">配置 Websocket Wss 代理</a></li>
+</ul>
+<h3 id="微信图片">微信图片</h3>
+<pre class="conf"><code># http://mmbiz.qpic.cn/mmbiz_png/2lUhY9SosBGOtQLz66sZrjlyoqIT3A9sVeU7YQcVlpbZ9GicFkmM8Ctht1bFhXvPp7Uhtj0fU4JlRakqn4ViaspA/0?wx_fmt=png
+# /mmbiz_png/2lUhY9SosBGOtQLz66sZrjlyoqIT3A9sVeU7YQcVlpbZ9GicFkmM8Ctht1bFhXvPp7Uhtj0fU4JlRakqn4ViaspA/0
+
+location ~ /(.*)mmbiz(.*)/ {
+    if ($http_referer !~* ^https://qq52o.me) {
+        return 403;
+    }
+    proxy_pass http://mmbiz.qpic.cn;
+    proxy_set_header Host &quot;mmbiz.qpic.cn&quot;;
+    proxy_set_header Referer &quot;&quot;;
+}</code></pre>
+<h3 id="csdn-头像">CSDN 头像</h3>
+<pre class="conf"><code># https://profile-avatar.csdnimg.cn/f9dd455bf70d483299fb65e2e840d359_kaiyuanshe.jpg
+# /avatar-csdnimg/f9dd455bf70d483299fb65e2e840d359_kaiyuanshe.jpg
+
+location /avatar-csdnimg/ {
+    if ($http_referer !~* ^https://qq52o.me) {
+        return 403;
+    }
+    proxy_pass https://profile-avatar.csdnimg.cn/;
+    proxy_set_header Host &quot;profile-avatar.csdnimg.cn&quot;;
+    proxy_set_header Referer &quot;&quot;;
+}</code></pre>
+<h2 id="伪静态">伪静态</h2>
+<pre class="conf"><code>location / {
+    if (!-e $request_filename) {
+        rewrite ^/(.*)$ /index.php/$1 last;
+        break;
+    }
+}
+
+location ~ \.php/?.*$ {
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi.conf;
+
+    set $fastcgi_script_name2 $fastcgi_script_name;
+    if ($fastcgi_script_name ~ &quot;^(.+\.php)(/.+)$&quot;) {
+        set $fastcgi_script_name2 $1;
+        set $path_info $2;
+    }
+    fastcgi_param PATH_INFO $path_info;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name2;
+    fastcgi_param SCRIPT_NAME $fastcgi_script_name2;
+}</code></pre>]]></description>
+    <pubDate>Wed, 11 Oct 2023 08:36:18 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Docker]]></title>
+    <link>https://notes.qq52o.me/#/tools/docker</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/docker</guid>
+    <description><![CDATA[<h1 id="docker">Docker</h1>
+<h2 id="删除所有容器">删除所有容器</h2>
+<pre class="shell"><code>docker stop $(docker ps -qa)
+docker rm $(docker ps -qa)</code></pre>
+<h2 id="删除所有镜像">删除所有镜像</h2>
+<pre class="shell"><code>docker rmi --force $(docker images -q)</code></pre>
+<h2 id="删除none的镜像">删除none的镜像</h2>
+<pre class="shell"><code>docker rmi $(docker images -f dangling=true -q)</code></pre>
+<h2 id="docker-ce-镜像">Docker CE 镜像</h2>
+<pre class="shell"><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></pre>
+<p>https://developer.aliyun.com/article/110806</p>
+<h2 id="通过docker-overlay2目录名查找容器名和容器id">通过docker overlay2目录名查找容器名和容器ID</h2>
+<pre class="shell"><code>docker ps -q | xargs docker inspect --format &#39;{{.State.Pid}}, {{.Id}}, {{.Name}}, {{.GraphDriver.Data.WorkDir}}&#39; | grep &quot;xxxxxxxx&quot;</code></pre>
+<h2 id="安装-docker-compose">安装 docker-compose</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">curl</span> -L https://get.daocloud.io/docker/compose/releases/download/1.29.2/docker-compose-<span class="kw">`</span><span class="fu">uname</span> -s<span class="kw">`</span>-<span class="kw">`</span><span class="fu">uname</span> -m<span class="kw">`</span> <span class="op">&gt;</span> /usr/local/bin/docker-compose</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="fu">chmod</span> +x /usr/local/bin/docker-compose</span></code></pre></div>]]></description>
+    <pubDate>Tue, 8 Aug 2023 09:22:16 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Snippets]]></title>
+    <link>https://notes.qq52o.me/#/tools/snippets</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/snippets</guid>
+    <description><![CDATA[<h1 id="snippets">Snippets</h1>
+<h2 id="获取公众号二维码">获取公众号二维码</h2>
+<p>获取某个公众号的二维码，需要公众号的微信号或原始ID。</p>
+<p>使用接口：<code>https://open.weixin.qq.com/qr/code?username=微信号或原始ID</code></p>
+<ul>
+<li>微信号：<code>sy-records</code></li>
+</ul>
+<p><img src="https://open.weixin.qq.com/qr/code?username=sy-records" /></p>
+<ul>
+<li>原始ID：<code>gh_200a99619f7f</code></li>
+</ul>
+<p><img src="https://open.weixin.qq.com/qr/code?username=gh_200a99619f7f" /></p>]]></description>
+    <pubDate>Mon, 10 Jul 2023 14:07:26 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[短链]]></title>
+    <link>https://notes.qq52o.me/#/api/short_url</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/api/short_url</guid>
+    <description><![CDATA[<h1 id="短链">短链</h1>
+<h2 id="腾讯-url.cn">腾讯 url.cn</h2>
+<p>!&gt; 已失效。</p>
+<p>请求地址：<code>https://vip.video.qq.com/fcgi-bin/comm_cgi</code><br />
+请求参数：<code>name，need_short_url，url</code><br />
+示例：</p>
+<pre><code>https://vip.video.qq.com/fcgi-bin/comm_cgi?name=short_url&amp;need_short_url=1&amp;url=https://notes.qq52o.me</code></pre>
+<p>请求方式：<code>GET</code><br />
+返回类型：<code>JSON</code><br />
+返回值：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="er">QZOutputJson=(</span><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>   <span class="dt">&quot;msg&quot;</span> <span class="fu">:</span> <span class="st">&quot;ok&quot;</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>   <span class="dt">&quot;qrcode&quot;</span> <span class="fu">:</span> <span class="st">&quot;&quot;</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>   <span class="dt">&quot;ret&quot;</span> <span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>   <span class="dt">&quot;short_url&quot;</span> <span class="fu">:</span> <span class="st">&quot;https://url.cn/5zo7b5d&quot;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="fu">}</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="er">);</span></span></code></pre></div>
+<h2 id="腾讯微信-w.url.cn">腾讯微信 w.url.cn</h2>
+<p>原理是使用微信公众号提供的接口转换短接口，可以使用测试公众号进行调用</p>
+<ul>
+<li>申请测试号，<a href="http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login">点击前往</a></li>
+<li>获取<code>appID</code>、<code>appsecret</code>，对应下面代码的<code>$appid</code>和<code>$secret</code></li>
+<li>调用即可</li>
+</ul>
+<p>!&gt; 可以增加一个缓存<code>AccessToken</code>的操作，示例代码未提供</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode php"><code class="sourceCode php"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">$url</span> = <span class="st">&quot;https://qq52o.me&quot;</span><span class="ot">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">$appid</span> = <span class="st">&quot;&quot;</span><span class="ot">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">$secret</span> = <span class="st">&quot;&quot;</span><span class="ot">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="kw">$token</span> = getAccessToken<span class="ot">(</span><span class="kw">$appid</span><span class="ot">,</span> <span class="kw">$secret</span><span class="ot">);</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="kw">$data</span> = <span class="ot">[</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    <span class="st">&quot;action&quot;</span> =&gt; <span class="st">&quot;long2short&quot;</span><span class="ot">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    <span class="st">&quot;long_url&quot;</span> =&gt; <span class="kw">$url</span><span class="ot">,</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a><span class="ot">];</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="kw">$res</span> = curlRequest<span class="ot">(</span><span class="st">&quot;https://api.weixin.qq.com/cgi-bin/shorturl?access_token=</span><span class="kw">{$token}</span><span class="st">&quot;</span><span class="ot">,</span> <span class="fu">json_encode</span><span class="ot">(</span><span class="kw">$data</span><span class="ot">),</span> <span class="kw">true</span><span class="ot">);</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a><span class="fu">var_dump</span><span class="ot">(</span><span class="kw">$res</span><span class="ot">);</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a><span class="kw">function</span> getAccessToken<span class="ot">(</span><span class="kw">$appid</span><span class="ot">,</span> <span class="kw">$secret</span><span class="ot">)</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>{</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>    <span class="kw">$url</span> = <span class="st">&quot;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=</span><span class="kw">{$appid}</span><span class="st">&amp;secret=</span><span class="kw">{$secret}</span><span class="st">&quot;</span><span class="ot">;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>    <span class="kw">$tokenJson</span> = curlRequest<span class="ot">(</span><span class="kw">$url</span><span class="ot">);</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>    <span class="kw">$tokenArr</span> = <span class="fu">json_decode</span><span class="ot">(</span><span class="kw">$tokenJson</span><span class="ot">,</span><span class="kw">true</span><span class="ot">);</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a>    <span class="kw">if</span><span class="ot">(</span><span class="kw">isset</span><span class="ot">(</span><span class="kw">$tokenArr</span><span class="ot">[</span><span class="st">&#39;errcode&#39;</span><span class="ot">]))</span> {</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a>        <span class="kw">return</span> <span class="kw">$tokenArr</span><span class="ot">[</span><span class="st">&#39;errcode&#39;</span><span class="ot">];</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a>    }</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a>    <span class="co">// 此处应该缓存 可以自己提供一个api 使用redis缓存2个小时</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a>    <span class="kw">$accessToken</span> = <span class="kw">$tokenArr</span><span class="ot">[</span><span class="st">&#39;access_token&#39;</span><span class="ot">];</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a>    <span class="kw">return</span> <span class="kw">$accessToken</span><span class="ot">;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true"></a>}</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true"></a><span class="kw">function</span> curlRequest<span class="ot">(</span><span class="kw">$url</span><span class="ot">,</span> <span class="kw">$params</span> = <span class="kw">false</span><span class="ot">,</span> <span class="kw">$ispost</span> = <span class="dv">0</span><span class="ot">)</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true"></a>{</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true"></a>    <span class="kw">$ch</span> = <span class="fu">curl_init</span><span class="ot">();</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true"></a>    <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_RETURNTRANSFER</span><span class="ot">,</span> <span class="kw">true</span><span class="ot">);</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true"></a>    <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_FOLLOWLOCATION</span><span class="ot">,</span> <span class="kw">true</span><span class="ot">);</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true"></a>    <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_SSL_VERIFYPEER</span><span class="ot">,</span> <span class="kw">false</span><span class="ot">);</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true"></a>    <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_SSL_VERIFYHOST</span><span class="ot">,</span> <span class="dv">2</span><span class="ot">);</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true"></a>    <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_HTTPHEADER</span><span class="ot">,</span> <span class="kw">array</span> <span class="ot">(</span><span class="st">&#39;Content-Type: application/json&#39;</span><span class="ot">));</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true"></a>    <span class="kw">if</span> <span class="ot">(</span><span class="kw">$ispost</span><span class="ot">)</span> {</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true"></a>        <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_POST</span><span class="ot">,</span> <span class="kw">true</span><span class="ot">);</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true"></a>        <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_POSTFIELDS</span><span class="ot">,</span> <span class="kw">$params</span><span class="ot">);</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true"></a>        <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_URL</span><span class="ot">,</span> <span class="kw">$url</span><span class="ot">);</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true"></a>    } <span class="kw">else</span> {</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true"></a>        <span class="kw">if</span> <span class="ot">(</span><span class="kw">$params</span><span class="ot">)</span> {</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true"></a>            <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_URL</span><span class="ot">,</span> <span class="kw">$url</span>.<span class="st">&#39;?&#39;</span>.<span class="kw">$params</span><span class="ot">);</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true"></a>        } <span class="kw">else</span> {</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true"></a>            <span class="fu">curl_setopt</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">,</span> <span class="kw">CURLOPT_URL</span><span class="ot">,</span> <span class="kw">$url</span><span class="ot">);</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true"></a>        }</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true"></a>    }</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true"></a>    <span class="kw">$response</span> = <span class="fu">curl_exec</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">);</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true"></a>    <span class="kw">if</span> <span class="ot">(</span><span class="kw">$response</span> === <span class="kw">false</span><span class="ot">)</span> {</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true"></a>        <span class="kw">return</span> <span class="fu">curl_error</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">);</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true"></a>    }</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true"></a>    <span class="fu">curl_close</span><span class="ot">(</span><span class="kw">$ch</span><span class="ot">);</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true"></a>    <span class="kw">return</span> <span class="kw">$response</span><span class="ot">;</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true"></a>}</span></code></pre></div>]]></description>
+    <pubDate>Mon, 10 Jul 2023 14:07:26 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[前言]]></title>
+    <link>https://notes.qq52o.me/#/_sidebar</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/_sidebar</guid>
+    <description><![CDATA[<ul>
+<li>前言
+<ul>
+<li><a href="donate.md">赞赏</a></li>
+</ul></li>
+<li>环境搭建
+<ul>
+<li><a href="development/mac.md">Mac</a></li>
+<li><a href="development/linux.md">Linux</a></li>
+</ul></li>
+<li>常用工具
+<ul>
+<li><a href="tools/git.md">Git</a></li>
+<li><a href="tools/brew.md">Homebrew</a></li>
+<li><a href="tools/phpstorm.md">PhpStorm</a></li>
+<li><a href="tools/wp-cli.md">WP-CLI</a></li>
+<li><a href="tools/docker.md">Docker</a></li>
+<li><a href="tools/charles.md">Charles</a></li>
+<li><a href="tools/wireshark.md">Wireshark</a></li>
+<li><a href="tools/tools.md">Tools</a></li>
+<li><a href="tools/snippets.md">Snippets</a></li>
+</ul></li>
+<li>常用API
+<ul>
+<li><a href="api/short_url.md">短链</a></li>
+</ul></li>
+<li>框架
+<ul>
+<li><a href="framework/hyperf.md">Hyperf</a></li>
+</ul></li>
+<li>实例代码
+<ul>
+<li><a href="code/hyperf-jsonrpc.md">JSON-RPC</a></li>
+<li><a href="code/select2.md">Select2</a></li>
+<li><a href="code/echarts.md">ECharts</a></li>
+<li><a href="code/bootstrap.md">Bootstrap</a></li>
+<li><a href="code/javascript.md">JavaScript</a></li>
+<li><a href="code/cli.md">CLI</a></li>
+<li><a href="code/layui.md">Layui</a></li>
+<li><a href="code/nodejs.md">Node.js</a></li>
+<li><a href="code/php.md">PHP</a></li>
+</ul></li>
+<li>数据库
+<ul>
+<li><a href="database/mysql.md">MySQL</a></li>
+<li><a href="database/postgresql.md">PostgreSQL</a></li>
+</ul></li>
+<li>网关
+<ul>
+<li><a href="gateway/nginx.md">Nginx</a></li>
+</ul></li>
+<li>WebSocket
+<ul>
+<li><a href="code/websocket.md">Wss</a></li>
+<li><a href="http://wstool.js.org">在线测试</a></li>
+</ul></li>
+<li>语言
+<ul>
+<li><a href="language/python.md">Python</a></li>
+</ul></li>
+</ul>]]></description>
+    <pubDate>Mon, 10 Jul 2023 14:07:26 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[logo](https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png)]]></title>
+    <link>https://notes.qq52o.me/#/_coverpage</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/_coverpage</guid>
+    <description><![CDATA[<figure>
+<img src="https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png" alt="" /><figcaption>logo</figcaption>
+</figure>
+<h1 id="沈唁志">沈唁志</h1>
+<h2 id="dont-let-your-past-determine-the-future.-idcover-page-hitokoto">🍃Don’t let your past determine the future. :id=cover-page-hitokoto</h2>
+<p><a href="https://github.com/sy-records">GitHub</a> <a href="#main">Getting Started</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202109/home-background.jpg" /></p>]]></description>
+    <pubDate>Tue, 27 Jun 2023 09:43:38 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[关于我]]></title>
+    <link>https://notes.qq52o.me/#/README</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/README</guid>
+    <description><![CDATA[<h1 id="关于我">关于我</h1>
+<p><a href="https://qq52o.me" title="沈唁志"><img src="https://img.shields.io/badge/Blog-qq52o.me-blue" alt="博客" /></a> <a href="https://www.zhihu.com/people/sy-records" title="沈唁"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/zhihu.svg" alt="知乎" /></a> <a href="https://twitter.com/intent/follow?screen_name=lufeidot" title="Luffy"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/twitter.svg" alt="Twitter" /></a> <a href="https://weibo.com/i3l4521" title="@你飞"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/weibo.svg" alt="新浪微博" /></a> <a href="https://segmentfault.com/u/sy_records" title="沈唁"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/segmentfault.svg" alt="思否" /></a> <a href="https://github.com/sy-records" title="sy-records"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/github.svg" alt="GitHub" /></a></p>
+<p><a href="https://github.com/lufei/notes/actions"><img src="https://github.com/lufei/notes/workflows/RSS/badge.svg" alt="RSS Status" /></a> <a href="https://github.com/lufei/notes/actions"><img src="https://github.com/lufei/notes/workflows/Sitemap/badge.svg" alt="Sitemap Status" /></a> <a href="https://github.com/lufei/notes/blob/master/LICENSE"><img src="https://img.shields.io/github/license/lufei/notes" alt="LICENSE" /></a> <a href="https://notes.qq52o.me/feed.xml"><img src="https://img.shields.io/badge/RSS-Atom-green" alt="RSS Icon" /></a> <a href="https://paypal.me/lufeidot"><img src="https://img.shields.io/badge/paypal-donate-green.svg" alt="Donate" /></a></p>
+<blockquote>
+<p>路有多远，只有心知道，<br />
+最美的旅程，是不断的经历，<br />
+坚持走下去，与梦想者同行！</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="dt">&quot;nickname&quot;</span><span class="fu">:</span> <span class="st">&quot;沈唁&quot;</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="dt">&quot;contact&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;52o[at]qq52o.cn&quot;</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>        <span class="dt">&quot;weibo&quot;</span><span class="fu">:</span> <span class="st">&quot;@你飞&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="fu">},</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Xi&#39;an&quot;</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="dt">&quot;skills&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;PHP&quot;</span><span class="ot">,</span> <span class="st">&quot;Swoole&quot;</span><span class="ot">,</span> <span class="st">&quot;Linux&quot;</span><span class="ot">,</span> <span class="st">&quot;Python&quot;</span><span class="ot">,</span> <span class="st">&quot;WordPress&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;天秤男&quot;</span><span class="ot">,</span> <span class="st">&quot;果粉&quot;</span><span class="ot">,</span> <span class="st">&quot;路飞迷&quot;</span><span class="ot">]</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="微信公众号">微信公众号</h3>
+<figure>
+<img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202012/wechat_white.png" title=":size=autox150 欢迎关注" alt="" /><figcaption>鲁飞</figcaption>
+</figure>]]></description>
+    <pubDate>Tue, 27 Jun 2023 09:43:38 +0800</pubDate>
   </item>
    
   <item>
@@ -160,13 +495,13 @@ fi&#39;</code></pre>
     <guid isPermaLink="false">https://notes.qq52o.me/#/development/linux</guid>
     <description><![CDATA[<h1 id="linux">Linux</h1>
 <h2 id="修改主机名">修改主机名</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">hostnamectl</span> set-hostname</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">hostnamectl</span> set-hostname</span></code></pre></div>
 <p>退出 ssh 重新登录后生效</p>
 <h2 id="查看对应网卡流量">查看对应网卡流量</h2>
 <h3 id="安装">安装</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">yum</span> install iftop</a>
-<a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="ex">apt-get</span> install iftop</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">yum</span> install iftop</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="ex">apt-get</span> install iftop</span></code></pre></div>
 <h3 id="使用">使用</h3>
 <pre class="shell"><code>iftop -i eth0</code></pre>
 <h2 id="修改ssh端口">修改ssh端口</h2>
@@ -182,97 +517,10 @@ else
   exit $?
 fi</code></pre>
 <h2 id="ubuntu-连接wifi">Ubuntu 连接wifi</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">suto</span> apt install net-tools wireless-tools network-manager</a>
-<a class="sourceLine" id="cb6-2" title="2"></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="ex">nmcli</span> dev wifi connect <span class="st">&quot;&quot;</span> password <span class="st">&quot;&quot;</span></a></code></pre></div>]]></description>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">suto</span> apt install net-tools wireless-tools network-manager</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="ex">nmcli</span> dev wifi connect <span class="st">&quot;&quot;</span> password <span class="st">&quot;&quot;</span></span></code></pre></div>]]></description>
     <pubDate>Wed, 20 Apr 2022 13:31:13 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Nginx]]></title>
-    <link>https://notes.qq52o.me/#/gateway/nginx</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/gateway/nginx</guid>
-    <description><![CDATA[<h1 id="nginx">Nginx</h1>
-<h2 id="隐藏版本号">隐藏版本号</h2>
-<p>进入 nginx 配置文件的目录，编辑<code>nginx.conf</code></p>
-<p>在<code>http {}</code>里加上<code>server_tokens off;</code></p>
-<p>编辑 php-fpm 配置文件，如<code>fastcgi.conf</code>或<code>fcgi.conf</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode ini"><code class="sourceCode ini"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#找到：</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="dt">fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co">#改为：</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="dt">fastcgi_param SERVER_SOFTWARE nginx;</span></a></code></pre></div>
-<p>重载 nginx 配置即可</p>
-<h2 id="反向代理">反向代理</h2>
-<h3 id="http">HTTP</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode conf"><code class="sourceCode ini"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># 至少需要一个 Server 节点，多个配置多行</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="dt">upstream http_servers {</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="dt">    </span><span class="co"># HTTP Server 的 IP 及 端口</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="dt">    server 127.0.0.1:9501;</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="dt">    server 127.0.0.1:9502;</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="dt">}</span></a>
-<a class="sourceLine" id="cb2-7" title="7"></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="dt">server {</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="dt">    </span><span class="co"># 监听端口</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="dt">    listen 80;</span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="dt">    </span><span class="co"># 绑定的域名</span></a>
-<a class="sourceLine" id="cb2-12" title="12"><span class="dt">    server_name proxy.host.name;</span></a>
-<a class="sourceLine" id="cb2-13" title="13"></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="dt">    location / {</span></a>
-<a class="sourceLine" id="cb2-15" title="15"><span class="dt">        </span><span class="co"># 将客户端的 Host 和 IP 信息一并转发到对应节点</span></a>
-<a class="sourceLine" id="cb2-16" title="16"><span class="dt">        proxy_set_header Host $http_host;</span></a>
-<a class="sourceLine" id="cb2-17" title="17"><span class="dt">        proxy_set_header X-Real-IP $remote_addr;</span></a>
-<a class="sourceLine" id="cb2-18" title="18"><span class="dt">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span></a>
-<a class="sourceLine" id="cb2-19" title="19"></a>
-<a class="sourceLine" id="cb2-20" title="20"><span class="dt">        </span><span class="co"># 转发Cookie，设置 SameSite</span></a>
-<a class="sourceLine" id="cb2-21" title="21"><span class="dt">        proxy_cookie_path / &quot;/; secure; HttpOnly; SameSite</span><span class="ot">=</span><span class="st">strict&quot;;</span></a>
-<a class="sourceLine" id="cb2-22" title="22"></a>
-<a class="sourceLine" id="cb2-23" title="23"><span class="dt">        </span><span class="co"># 执行代理访问真实服务器</span></a>
-<a class="sourceLine" id="cb2-24" title="24"><span class="dt">        proxy_pass http://http_servers;</span></a>
-<a class="sourceLine" id="cb2-25" title="25"><span class="dt">    }</span></a>
-<a class="sourceLine" id="cb2-26" title="26"><span class="dt">}</span></a></code></pre></div>
-<ul>
-<li><a href="/code/websocket.md">配置 Websocket Wss 代理</a></li>
-</ul>
-<h2 id="伪静态">伪静态</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode conf"><code class="sourceCode ini"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">location / {</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="dt">    if (!-e $request_filename) {</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="dt">        rewrite ^/(.*)$ /index.php/$1 last;</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="dt">        break;</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="dt">    }</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="dt">}</span></a>
-<a class="sourceLine" id="cb3-7" title="7"></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="dt">location ~ \.php/?.*$ {</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="dt">    fastcgi_pass 127.0.0.1:9000;</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="dt">    fastcgi_index index.php;</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="dt">    include fastcgi.conf;</span></a>
-<a class="sourceLine" id="cb3-12" title="12"></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="dt">    set $fastcgi_script_name2 $fastcgi_script_name;</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="dt">    if ($fastcgi_script_name ~ &quot;^(.+\.php)(/.+)$&quot;) {</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="dt">        set $fastcgi_script_name2 $1;</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="dt">        set $path_info $2;</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="dt">    }</span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="dt">    fastcgi_param PATH_INFO $path_info;</span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="dt">    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name2;</span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="dt">    fastcgi_param SCRIPT_NAME $fastcgi_script_name2;</span></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="dt">}</span></a></code></pre></div>]]></description>
-    <pubDate>Wed, 16 Feb 2022 10:43:37 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[logo](https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png)]]></title>
-    <link>https://notes.qq52o.me/#/_coverpage</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/_coverpage</guid>
-    <description><![CDATA[<figure>
-<img src="https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png" alt="logo" /><figcaption>logo</figcaption>
-</figure>
-<h1 id="沈唁志">沈唁志</h1>
-<blockquote>
-<p>一个 PHPer 的成长之路</p>
-</blockquote>
-<h3 id="dont-let-your-past-determine-the-future.-idcover-page-hitokoto">🍃Don’t let your past determine the future. :id=cover-page-hitokoto</h3>
-<p><a href="https://github.com/sy-records">GitHub</a> <a href="#main">Getting Started</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202109/home-background.jpg" /></p>]]></description>
-    <pubDate>Fri, 24 Sep 2021 09:19:43 +0800</pubDate>
   </item>
    
   <item>
@@ -329,199 +577,10 @@ ulimit -c unlimited
 lldb -c /cores/core.37676</code></pre>
 <h2 id="touchbar">TouchBar</h2>
 <p>音量和亮度调节消失</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">killall</span> ControlStrip</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="fu">killall</span> ControlStrip</span></code></pre></div>
 <h2 id="nginx">Nginx</h2>
 <pre class="shell"><code>brew install nginx</code></pre>]]></description>
     <pubDate>Wed, 28 Jul 2021 14:41:23 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Docker]]></title>
-    <link>https://notes.qq52o.me/#/tools/docker</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/docker</guid>
-    <description><![CDATA[<h1 id="docker">Docker</h1>
-<h2 id="删除所有容器">删除所有容器</h2>
-<pre class="shell"><code>docker stop $(docker ps -qa)
-docker rm $(docker ps -qa)</code></pre>
-<h2 id="删除所有镜像">删除所有镜像</h2>
-<pre class="shell"><code>docker rmi --force $(docker images -q)</code></pre>
-<h2 id="docker-ce-镜像">Docker CE 镜像</h2>
-<pre class="shell"><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></pre>
-<p>https://developer.aliyun.com/article/110806</p>
-<h2 id="通过docker-overlay2目录名查找容器名和容器id">通过docker overlay2目录名查找容器名和容器ID</h2>
-<pre class="shell"><code>docker ps -q | xargs docker inspect --format &#39;{{.State.Pid}}, {{.Id}}, {{.Name}}, {{.GraphDriver.Data.WorkDir}}&#39; | grep &quot;xxxxxxxx&quot;</code></pre>
-<h2 id="安装-docker-compose">安装 docker-compose</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">curl</span> -L https://get.daocloud.io/docker/compose/releases/download/1.29.2/docker-compose-<span class="kw">`</span><span class="fu">uname</span> -s<span class="kw">`</span>-<span class="kw">`</span><span class="fu">uname</span> -m<span class="kw">`</span> <span class="op">&gt;</span> /usr/local/bin/docker-compose</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">chmod</span> +x /usr/local/bin/docker-compose</a></code></pre></div>]]></description>
-    <pubDate>Sun, 4 Jul 2021 20:05:30 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[前言]]></title>
-    <link>https://notes.qq52o.me/#/_sidebar</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/_sidebar</guid>
-    <description><![CDATA[<ul>
-<li>前言
-<ul>
-<li><a href="donate.md">赞赏</a></li>
-</ul></li>
-<li>环境搭建
-<ul>
-<li><a href="development/mac.md">Mac</a></li>
-<li><a href="development/linux.md">Linux</a></li>
-</ul></li>
-<li>常用工具
-<ul>
-<li><a href="tools/git.md">Git</a></li>
-<li><a href="tools/brew.md">Homebrew</a></li>
-<li><a href="tools/phpstorm.md">PhpStorm</a></li>
-<li><a href="tools/wp-cli.md">WP-CLI</a></li>
-<li><a href="tools/docker.md">Docker</a></li>
-<li><a href="tools/charles.md">Charles</a></li>
-<li><a href="tools/wireshark.md">Wireshark</a></li>
-<li><a href="tools/tools.md">Tools</a></li>
-</ul></li>
-<li>常用API
-<ul>
-<li><a href="api/short_url.md">短链</a></li>
-</ul></li>
-<li>框架
-<ul>
-<li><a href="framework/hyperf.md">Hyperf</a></li>
-</ul></li>
-<li>实例代码
-<ul>
-<li><a href="code/hyperf-jsonrpc.md">JSON-RPC</a></li>
-<li><a href="code/select2.md">Select2</a></li>
-<li><a href="code/echarts.md">ECharts</a></li>
-<li><a href="code/bootstrap.md">Bootstrap</a></li>
-<li><a href="code/javascript.md">JavaScript</a></li>
-<li><a href="code/cli.md">CLI</a></li>
-<li><a href="code/layui.md">Layui</a></li>
-<li><a href="code/nodejs.md">Node.js</a></li>
-<li><a href="code/php.md">PHP</a></li>
-</ul></li>
-<li>数据库
-<ul>
-<li><a href="database/mysql.md">MySQL</a></li>
-<li><a href="database/postgresql.md">PostgreSQL</a></li>
-</ul></li>
-<li>网关
-<ul>
-<li><a href="gateway/nginx.md">Nginx</a></li>
-</ul></li>
-<li>WebSocket
-<ul>
-<li><a href="code/websocket.md">Wss</a></li>
-<li><a href="http://wstool.js.org">在线测试</a></li>
-</ul></li>
-<li>语言
-<ul>
-<li><a href="language/python.md">Python</a></li>
-</ul></li>
-</ul>]]></description>
-    <pubDate>Fri, 26 Mar 2021 13:39:58 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[PHP]]></title>
-    <link>https://notes.qq52o.me/#/code/php</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/code/php</guid>
-    <description><![CDATA[<h1 id="php">PHP</h1>
-<h2 id="进制转换">进制转换</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode php"><code class="sourceCode php"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// 十六进制 十进制</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">hexdec</span><span class="ot">(</span><span class="st">&#39;abc&#39;</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">dechex</span><span class="ot">(</span><span class="dv">2748</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co">// 二进制 十进制</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">bindec</span><span class="ot">(</span><span class="st">&#39;110011&#39;</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">decbin</span><span class="ot">(</span><span class="dv">51</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co">// 八进制 十进制</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">octdec</span><span class="ot">(</span><span class="st">&#39;77&#39;</span><span class="ot">));</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">decoct</span><span class="ot">(</span><span class="dv">63</span><span class="ot">));</span></a></code></pre></div>]]></description>
-    <pubDate>Sun, 14 Mar 2021 09:01:53 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Homebrew]]></title>
-    <link>https://notes.qq52o.me/#/tools/brew</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/brew</guid>
-    <description><![CDATA[<h1 id="homebrew">Homebrew</h1>
-<p>Homebrew 简称 brew，Homebrew 是一款 Mac OS 平台下的软件包管理工具，很方便帮助我们实现安装、卸载、更新、查看、搜索等很多实用的功能。</p>
-<h2 id="安装">安装</h2>
-<pre class="shell"><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre>
-<h2 id="配置镜像">配置镜像</h2>
-<pre class="shell"><code>cd &quot;$(brew --repo)&quot;
-git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
-git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-cask&quot;
-git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
-brew update
-#bash
-echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#39; &gt;&gt; ~/.bash_profile
-source ~/.bash_profile
-
-#zsh
-echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#39; &gt;&gt; ~/.zshrc
-source ~/.zshrc</code></pre>
-<h2 id="常用命令">常用命令</h2>
-<pre class="shell"><code>#查询 Homebrew 版本
-brew -v
-
-#brew帮助
-brew -h
-
-#更新Homebrew
-brew update
-
-#安装
-brew install &lt;pkg_name&gt;
-
-#卸载
-brew uninstall &lt;pkg_name&gt;
-
-#搜索
-brew search &lt;pkg_name&gt;
-
-#列出安装列表
-brew list
-
-#查看包内容信息
-brew info &lt;pkg_name&gt;
-
-#更新包
-brew upgrade &lt;pkg_name&gt;
-
-#删除具体旧软件
-brew cleanup &lt;pkg_name&gt;
-
-#删除所有旧软件
-brew cleanup
-
-#列出所有安装的软件里可以升级的
-brew outdated       </code></pre>
-<h2 id="brew-和-brew-cask-的区别">brew 和 brew cask 的区别</h2>
-<ul>
-<li>brew 主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发</li>
-<li>brew cask 主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在 Mac 中直接运行使用</li>
-</ul>]]></description>
-    <pubDate>Wed, 17 Feb 2021 14:25:50 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Tools]]></title>
-    <link>https://notes.qq52o.me/#/tools/tools</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/tools</guid>
-    <description><![CDATA[<h1 id="tools">Tools</h1>
-<h2 id="jq">jq</h2>
-<p>用于命令行解析json数据，<a href="https://stedolan.github.io/jq/manual/">文档</a></p>
-<h3 id="获取-swoole-release-版本">获取 Swoole Release 版本</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> -s https://api.github.com/repos/swoole/swoole-src/releases/latest <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&#39;.tag_name&#39;</span> -r</a></code></pre></div>
-<h3 id="获取-tag">获取 tag</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">curl</span> -s https://api.github.com/repos/swoole/swoole-src/tags <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&quot;.[].name&quot;</span> -r <span class="kw">|</span> <span class="fu">grep</span> v4.5 <span class="kw">|</span> <span class="fu">head</span> -1</a></code></pre></div>]]></description>
-    <pubDate>Fri, 8 Jan 2021 09:07:36 +0800</pubDate>
   </item>
   
 </channel>
