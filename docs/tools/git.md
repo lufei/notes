@@ -137,6 +137,12 @@ git branch -r -d origin/<branch_name>
 git push origin :<branch_name>
 ```
 
+## 删除远程不存在但存在本地的分支
+
+```bash
+git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+```
+
 ## 修改分支名称
 
 ```shell
