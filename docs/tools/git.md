@@ -277,3 +277,9 @@ git tag -d <tagname>
 ```bash
 git push origin :refs/tags/<tagname>
 ```
+
+## 获取某个分支的文件
+
+```bash
+git checkout branchName -- filepath
+```
