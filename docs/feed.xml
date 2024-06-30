@@ -157,8 +157,10 @@ fi&#39;</code></pre>
 <h3 id="删除本地tag">删除本地tag</h3>
 <div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true"></a><span class="fu">git</span> tag -d <span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code></pre></div>
 <h3 id="删除远程tag">删除远程tag</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true"></a><span class="fu">git</span> push origin :refs/tags/<span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code></pre></div>]]></description>
-    <pubDate>Sat, 6 Apr 2024 09:54:08 +0800</pubDate>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true"></a><span class="fu">git</span> push origin :refs/tags/<span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code></pre></div>
+<h2 id="获取某个分支的文件">获取某个分支的文件</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true"></a><span class="fu">git</span> checkout branchName -- filepath</span></code></pre></div>]]></description>
+    <pubDate>Fri, 17 May 2024 15:02:05 +0800</pubDate>
   </item>
    
   <item>
