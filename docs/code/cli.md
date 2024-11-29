@@ -71,3 +71,19 @@ echo "\007发出'咚~'一声\033[0m";
 7:反显(替换背景色和字体颜色)
 8:消隐
 ```
+
+## 终端使用代理
+
+```bash
+function proxy() {
+    export http_proxy=http://127.0.0.1:7890
+    export https_proxy=http://127.0.0.1:7890
+    export all_proxy=socks5://127.0.0.1:7890
+    echo -e "\e[32mOpen proxy successfully.\e[0m"
+}
+
+function unproxy() {
+    unset http_proxy https_proxy all_proxy
+    echo -e "\e[31mClose proxy successfully.\e[0m"
+}
+```
