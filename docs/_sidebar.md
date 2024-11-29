@@ -7,7 +7,6 @@
 
 * 常用工具
     * [Git](tools/git.md)
-    * [Homebrew](tools/brew.md)
     * [PhpStorm](tools/phpstorm.md)
     * [WP-CLI](tools/wp-cli.md)
     * [Docker](tools/docker.md)
