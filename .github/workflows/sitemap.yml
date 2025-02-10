@@ -1,24 +1,22 @@
 name: Sitemap
 
-#on: [ push, pull_request ]
-on: [ pull_request, workflow_dispatch ]
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          ref: ${{ github.head_ref }}
+      - uses: actions/checkout@v4
 
       - name: Build Sitemap
-        run: |
-          git pull --rebase
-          cd docs/
+        run:
           ./sitemap.sh
+        working-directory: docs/
 
       - name: Commit Updated
         uses: stefanzweifel/git-auto-commit-action@v4

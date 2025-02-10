@@ -283,3 +283,10 @@ git push origin :refs/tags/<tagname>
 ```bash
 git checkout branchName -- filepath
 ```
+
+## 生成patch并合并
+
+```bash
+git format-patch -1 commitId -o  ~/GitHub/sy-records/path
+git apply --reject patchfile
+```

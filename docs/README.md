@@ -1,4 +1,4 @@
-# 关于我
+# 关于我 :id=about
 
 [![博客](https://img.shields.io/badge/Blog-qq52o.me-blue)](https://qq52o.me "沈唁志")
 [![知乎](https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/zhihu.svg)](https://www.zhihu.com/people/sy-records "沈唁")

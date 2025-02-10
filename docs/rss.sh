@@ -4,6 +4,8 @@ feed="feed.xml"
 website_title="沈唁的编程笔记"
 website_link="https://notes.qq52o.me"
 description="沈唁的编程笔记"
+followFeedId=110879509092022272
+followUserId=72226467595413504
 
 urlencode() {
   local length="${#1}"
@@ -49,6 +51,10 @@ rss_content="<rss xmlns:atom=\"http://www.w3.org/2005/Atom\" version=\"2.0\">
   <atom:link href=\"$website_link/$feed\" rel=\"self\" type=\"application/rss+xml\" />
   <link>$website_link</link>
   <description>$description</description>
+  <follow_challenge>
+      <feedId>$followFeedId</feedId>
+      <userId>$followUserId</userId>
+  </follow_challenge>
   $items
 </channel>
 </rss>"
