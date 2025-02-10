@@ -4,6 +4,10 @@
   <atom:link href="https://notes.qq52o.me/feed.xml" rel="self" type="application/rss+xml" />
   <link>https://notes.qq52o.me</link>
   <description>沈唁的编程笔记</description>
+  <follow_challenge>
+      <feedId>110879509092022272</feedId>
+      <userId>72226467595413504</userId>
+  </follow_challenge>
    
   <item>
     <title><![CDATA[Git]]></title>
@@ -31,42 +35,48 @@ git remote add origin git@github.com:UserName/Repository.git
 #码云
 git remote set-url --add origin git@gitee.com:UserName/Repository.git</code></pre>
 <h2 id="回滚上次push的提交">回滚上次push的提交</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="fu">git</span> reset --hard HEAD^</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="fu">git</span> add .</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="fu">git</span> commit</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="co">#强推</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="fu">git</span> push -f origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> HEAD^</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#强推</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-f</span> origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 <h2 id="保持fork之后的项目和上游同步">保持fork之后的项目和上游同步</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">#添加上游仓库</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="fu">git</span> remote add upstream [upstream_url]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="co">#fetch</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="fu">git</span> fetch upstream</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="co">#将upstream/&lt;branch_name&gt; merge到本地当前分支</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a><span class="fu">git</span> merge upstream/<span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a><span class="co">#同时别忘了push到自己的github仓库</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#添加上游仓库</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add upstream <span class="pp">[</span><span class="ss">upstream_url</span><span class="pp">]</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#fetch</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch upstream</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#将upstream/&lt;branch_name&gt; merge到本地当前分支</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge upstream/<span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#同时别忘了push到自己的github仓库</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 <h2 id="合并某个commitid">合并某个commitId</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="fu">git</span> cherry-pick commitId</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick commitId</span></code></pre></div>
 <h2 id="to-443">22 to 443</h2>
 <p>git的ssh使用22端口不可用时，可以使用443端口</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="ex">vim</span> ~/.ssh/config</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="co">#写入</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="ex">Host</span> github.com</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>  <span class="ex">Hostname</span> ssh.github.com</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>  <span class="ex">Port</span> 443</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vim</span> ~/.ssh/config</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#写入</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> github.com</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Hostname</span> ssh.github.com</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Port</span> 443</span></code></pre></div>
 <h2 id="设置ss代理">设置SS代理</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="ex">vim</span> ~/.ssh/config</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="co">#写入</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a><span class="ex">Host</span> github.com</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>   <span class="ex">HostName</span> github.com</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a>   <span class="ex">User</span> git</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a>   <span class="ex">ProxyCommand</span> nc -v -x 127.0.0.1:1086 %h %p</span></code></pre></div>
-<p>!&gt; 注意配置文件内的 127.0.0.1:1086 需要和本地 SS 客户端的所暴露的 本地 Socks5 监听地址 和 本地 Socks5 监听端口 一致</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vim</span> ~/.ssh/config</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#写入</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> github.com</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>   <span class="ex">HostName</span> github.com</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>   <span class="ex">User</span> git</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>   <span class="ex">ProxyCommand</span> nc <span class="at">-v</span> <span class="at">-x</span> 127.0.0.1:1086 %h %p</span></code></pre></div>
+<p>!&gt; 注意配置文件内的 127.0.0.1:1086 需要和本地 SS 客户端的所暴露的
+本地 Socks5 监听地址 和 本地 Socks5 监听端口 一致</p>
 <h2 id="webhook">WebHook</h2>
 <p>使用Swoole的<code>Http\Server</code>来作为Web服务，执行GitHub/Gitee的WebHook</p>
 <p><a href="https://github.com/sy-records/git-deploy">git-deploy</a></p>
@@ -89,8 +99,10 @@ git push -f origin &lt;branch_name&gt;</code></pre>
 <h2 id="删除远程分支">删除远程分支</h2>
 <pre class="shell"><code>git branch -r -d origin/&lt;branch_name&gt;
 git push origin :&lt;branch_name&gt;</code></pre>
-<h2 id="删除远程不存在但存在本地的分支">删除远程不存在但存在本地的分支</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="fu">git</span> branch -vv <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;: gone]&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span> <span class="kw">|</span> <span class="fu">xargs</span> git branch -D</span></code></pre></div>
+<h2
+id="删除远程不存在但存在本地的分支">删除远程不存在但存在本地的分支</h2>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-vv</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;: gone]&#39;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span> <span class="kw">|</span> <span class="fu">xargs</span> git branch <span class="at">-D</span></span></code></pre></div>
 <h2 id="修改分支名称">修改分支名称</h2>
 <pre class="shell"><code># 本地分支重命名
 git branch -m oldName newName
@@ -109,7 +121,8 @@ git reset --hard origin/&lt;branch_name&gt;</code></pre>
 <pre class="shell"><code>find . -type d -empty -exec touch {}/.gitignore \;
 
 find ./ -type f -name &#39;.gitignore&#39; -delete</code></pre>
-<h2 id="将某个分支的代码完全覆盖另一个分支">将某个分支的代码完全覆盖另一个分支</h2>
+<h2
+id="将某个分支的代码完全覆盖另一个分支">将某个分支的代码完全覆盖另一个分支</h2>
 <pre class="shell"><code>#将test分支上的代码完全覆盖dev分支
 git checkout dev
 git reset --hard origin/test
@@ -133,34 +146,272 @@ fi&#39;</code></pre>
 <h2 id="非ssh模式免密">非SSH模式免密</h2>
 <pre class="shell"><code>echo &#39;http://username:password@githost&#39; &gt;&gt; ~/.git-credentials</code></pre>
 <h2 id="patch">Patch</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a><span class="co"># 所有文件</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true"></a><span class="fu">git</span> diff <span class="op">&gt;</span> xxx.patch</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true"></a><span class="co"># 指定文件</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true"></a><span class="fu">git</span> diff file1 file2 <span class="op">&gt;</span> xxx.patch</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true"></a><span class="co"># 应用patch</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true"></a><span class="fu">git</span> apply xxx.patch</span></code></pre></div>
-<h2 id="获取两个分支commitid的差异文件">获取两个分支/commitID的差异文件</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a><span class="fu">git</span> diff master dev --stat --name-only</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true"></a><span class="fu">git</span> diff xxxxxx xxxxxx --stat --name-only</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 所有文件</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff <span class="op">&gt;</span> xxx.patch</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 指定文件</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff file1 file2 <span class="op">&gt;</span> xxx.patch</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 应用patch</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> apply xxx.patch</span></code></pre></div>
+<h2
+id="获取两个分支commitid的差异文件">获取两个分支/commitID的差异文件</h2>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff master dev <span class="at">--stat</span> <span class="at">--name-only</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff xxxxxx xxxxxx <span class="at">--stat</span> <span class="at">--name-only</span></span></code></pre></div>
 <h2 id="git-提交统计">Git 提交统计</h2>
-<h3 id="指定时间内某个人的提交代码行数">指定时间内某个人的提交代码行数</h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true"></a><span class="fu">git</span> log --author=<span class="st">&quot;username&quot;</span> --after=<span class="st">&quot;2022-08-01 00:00:01&quot;</span> --before=<span class="st">&quot;2022-09-15 23:59:59&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -</span></code></pre></div>
+<h3
+id="指定时间内某个人的提交代码行数">指定时间内某个人的提交代码行数</h3>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--author</span><span class="op">=</span><span class="st">&quot;username&quot;</span> <span class="at">--after</span><span class="op">=</span><span class="st">&quot;2022-08-01 00:00:01&quot;</span> <span class="at">--before</span><span class="op">=</span><span class="st">&quot;2022-09-15 23:59:59&quot;</span> <span class="at">--pretty</span><span class="op">=</span>tformat: <span class="at">--numstat</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> <span class="at">-</span></span></code></pre></div>
 <h3 id="某个人的提交代码行数">某个人的提交代码行数</h3>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a><span class="fu">git</span> log --author=<span class="st">&quot;username&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--author</span><span class="op">=</span><span class="st">&quot;username&quot;</span> <span class="at">--pretty</span><span class="op">=</span>tformat: <span class="at">--numstat</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> <span class="at">-</span></span></code></pre></div>
 <h3 id="按用户查看提交代码行数">按用户查看提交代码行数</h3>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true"></a><span class="fu">git</span> log --format=<span class="st">&#39;%aN&#39;</span> <span class="kw">|</span> <span class="fu">sort</span> -u <span class="kw">|</span> <span class="kw">while</span> <span class="bu">read</span> <span class="va">name</span>; <span class="kw">do</span> <span class="bu">echo</span> -en <span class="st">&quot;</span><span class="va">$name</span><span class="st">\t&quot;</span><span class="kw">;</span> <span class="fu">git</span> log --author=<span class="st">&quot;</span><span class="va">$name</span><span class="st">&quot;</span> --pretty=tformat: --numstat <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> -<span class="kw">;</span> <span class="kw">done</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--format</span><span class="op">=</span><span class="st">&#39;%aN&#39;</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-u</span> <span class="kw">|</span> <span class="cf">while</span> <span class="bu">read</span> <span class="va">name</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="at">-en</span> <span class="st">&quot;</span><span class="va">$name</span><span class="st">\t&quot;</span><span class="kw">;</span> <span class="fu">git</span> log <span class="at">--author</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$name</span><span class="st">&quot;</span> <span class="at">--pretty</span><span class="op">=</span>tformat: <span class="at">--numstat</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ add += $1; subs += $2; loc += $1 - $2 } END { printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc }&#39;</span> <span class="at">-</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
 <h3 id="查看每个用户的提交次数">查看每个用户的提交次数</h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true"></a><span class="fu">git</span> shortlog -s -n </span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> shortlog <span class="at">-s</span> <span class="at">-n</span> </span></code></pre></div>
 <h2 id="tag">Tag</h2>
 <h3 id="删除本地tag">删除本地tag</h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true"></a><span class="fu">git</span> tag -d <span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-d</span> <span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code></pre></div>
 <h3 id="删除远程tag">删除远程tag</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true"></a><span class="fu">git</span> push origin :refs/tags/<span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin :refs/tags/<span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code></pre></div>
 <h2 id="获取某个分支的文件">获取某个分支的文件</h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true"></a><span class="fu">git</span> checkout branchName -- filepath</span></code></pre></div>]]></description>
-    <pubDate>Fri, 17 May 2024 15:02:05 +0800</pubDate>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout branchName <span class="at">--</span> filepath</span></code></pre></div>
+<h2 id="生成patch并合并">生成patch并合并</h2>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> format-patch <span class="at">-1</span> commitId <span class="at">-o</span>  ~/GitHub/sy-records/path</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> apply <span class="at">--reject</span> patchfile</span></code></pre></div>]]></description>
+    <pubDate>Mon, 10 Feb 2025 09:42:44 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[logo](https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png)]]></title>
+    <link>https://notes.qq52o.me/#/_coverpage</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/_coverpage</guid>
+    <description><![CDATA[<figure>
+<img src="https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png"
+alt="logo" />
+<figcaption aria-hidden="true">logo</figcaption>
+</figure>
+<h1 id="沈唁志">沈唁志</h1>
+<h2
+id="dont-let-your-past-determine-the-future.-idcover-page-hitokoto">🍃Don’t
+let your past determine the future. :id=cover-page-hitokoto</h2>
+<p><a href="https://github.com/sy-records">GitHub</a> <a
+href="#about">Getting Started</a></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202109/home-background.jpg" /></p>]]></description>
+    <pubDate>Mon, 10 Feb 2025 09:42:44 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[关于我 :id=about]]></title>
+    <link>https://notes.qq52o.me/#/README</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/README</guid>
+    <description><![CDATA[<h1 id="关于我-idabout">关于我 :id=about</h1>
+<p><a href="https://qq52o.me" title="沈唁志"><img
+src="https://img.shields.io/badge/Blog-qq52o.me-blue" alt="博客" /></a>
+<a href="https://www.zhihu.com/people/sy-records" title="沈唁"><img
+src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/zhihu.svg"
+alt="知乎" /></a> <a
+href="https://twitter.com/intent/follow?screen_name=lufeidot"
+title="Luffy"><img
+src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/twitter.svg"
+alt="Twitter" /></a> <a href="https://weibo.com/i3l4521"
+title="@你飞"><img
+src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/weibo.svg"
+alt="新浪微博" /></a> <a href="https://segmentfault.com/u/sy_records"
+title="沈唁"><img
+src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/segmentfault.svg"
+alt="思否" /></a> <a href="https://github.com/sy-records"
+title="sy-records"><img
+src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/github.svg"
+alt="GitHub" /></a></p>
+<p><a href="https://github.com/lufei/notes/actions"><img
+src="https://github.com/lufei/notes/workflows/RSS/badge.svg"
+alt="RSS Status" /></a> <a
+href="https://github.com/lufei/notes/actions"><img
+src="https://github.com/lufei/notes/workflows/Sitemap/badge.svg"
+alt="Sitemap Status" /></a> <a
+href="https://github.com/lufei/notes/blob/master/LICENSE"><img
+src="https://img.shields.io/github/license/lufei/notes"
+alt="LICENSE" /></a> <a href="https://notes.qq52o.me/feed.xml"><img
+src="https://img.shields.io/badge/RSS-Atom-green" alt="RSS Icon" /></a>
+<a href="https://paypal.me/lufeidot"><img
+src="https://img.shields.io/badge/paypal-donate-green.svg"
+alt="Donate" /></a></p>
+<blockquote>
+<p>路有多远，只有心知道，<br />
+最美的旅程，是不断的经历，<br />
+坚持走下去，与梦想者同行！</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;nickname&quot;</span><span class="fu">:</span> <span class="st">&quot;沈唁&quot;</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;contact&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;52o[at]qq52o.cn&quot;</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;weibo&quot;</span><span class="fu">:</span> <span class="st">&quot;@你飞&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Xi&#39;an&quot;</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;skills&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;PHP&quot;</span><span class="ot">,</span> <span class="st">&quot;Swoole&quot;</span><span class="ot">,</span> <span class="st">&quot;Linux&quot;</span><span class="ot">,</span> <span class="st">&quot;Python&quot;</span><span class="ot">,</span> <span class="st">&quot;WordPress&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;天秤男&quot;</span><span class="ot">,</span> <span class="st">&quot;果粉&quot;</span><span class="ot">,</span> <span class="st">&quot;路飞迷&quot;</span><span class="ot">]</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="微信公众号">微信公众号</h3>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202012/wechat_white.png"
+title=":size=autox150 欢迎关注" alt="鲁飞" />
+<figcaption aria-hidden="true">鲁飞</figcaption>
+</figure>]]></description>
+    <pubDate>Mon, 10 Feb 2025 09:42:44 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[命令行]]></title>
+    <link>https://notes.qq52o.me/#/code/cli</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/code/cli</guid>
+    <description><![CDATA[<h1 id="命令行">命令行</h1>
+<h2 id="终端输出颜色">终端输出颜色</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode php"><code class="sourceCode php"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">echo</span> <span class="st">&quot;</span><span class="sc">\033</span><span class="st">[32m绿色</span><span class="sc">\033</span><span class="st">[0m&quot;</span><span class="ot">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">echo</span> <span class="st">&quot;</span><span class="sc">\033</span><span class="st">[4;31m下划线红色</span><span class="sc">\033</span><span class="st">[0m&quot;</span><span class="ot">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">echo</span> <span class="st">&quot;</span><span class="sc">\007</span><span class="st">发出&#39;咚~&#39;一声</span><span class="sc">\033</span><span class="st">[0m&quot;</span><span class="ot">;</span></span></code></pre></div>
+<pre><code>\033[0m 关闭所有属性
+\033[1m 设置高亮度
+\033[4m 下划线
+\033[5m 闪烁
+\033[7m 反显
+\033[8m 消隐
+\033[30m 至 \033[37m 设置前景色
+\033[40m 至 \033[47m 设置背景色
+\033[nA 光标上移n行
+\033[nB 光标下移n行
+\033[nC 光标右移n行
+\033[nD 光标左移n行
+\033[y;xH设置光标位置
+\033[2J 清屏
+\033[K 清除从光标到行尾的内容
+\033[s 保存光标位置
+\033[u 恢复光标位置
+\033[?25l 隐藏光标
+\033[?25h 显示光标</code></pre>
+<p>各数字所代表的颜色如下：</p>
+<ul>
+<li>背景颜色：40-49</li>
+</ul>
+<pre><code>40:黑
+41:深红
+42:绿
+43:黄色
+44:蓝色
+45:紫色
+46:深绿
+47:白色</code></pre>
+<ul>
+<li>字体颜色：30-39</li>
+</ul>
+<pre><code>30:黑
+31:红
+32:绿
+33:黄
+34:蓝色
+35:紫色
+36:深绿
+37:白色
+38:在缺省的前景颜色上设置下划线 
+39:在缺省的前景颜色上关闭下划线</code></pre>
+<ul>
+<li>显示效果：</li>
+</ul>
+<pre><code>0:不使用效果
+1:高亮(加深)显示
+2:低亮(减弱)显示   
+4:下划线
+5:闪烁
+7:反显(替换背景色和字体颜色)
+8:消隐</code></pre>
+<h2 id="终端使用代理">终端使用代理</h2>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="fu"> proxy()</span> <span class="kw">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">http_proxy</span><span class="op">=</span>http://127.0.0.1:7890</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">https_proxy</span><span class="op">=</span>http://127.0.0.1:7890</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">all_proxy</span><span class="op">=</span>socks5://127.0.0.1:7890</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-e</span> <span class="st">&quot;\e[32mOpen proxy successfully.\e[0m&quot;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="fu"> unproxy()</span> <span class="kw">{</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">unset</span> <span class="va">http_proxy</span> <span class="va">https_proxy</span> <span class="va">all_proxy</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-e</span> <span class="st">&quot;\e[31mClose proxy successfully.\e[0m&quot;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>]]></description>
+    <pubDate>Fri, 29 Nov 2024 18:20:29 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Mac]]></title>
+    <link>https://notes.qq52o.me/#/development/mac</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/development/mac</guid>
+    <description><![CDATA[<h1 id="mac">Mac</h1>
+<p>brew 工具参照 <a href="https://brew.sh/">Homebrew</a> 进行安装。</p>
+<h2 id="php">PHP</h2>
+<p>安装 PHP72 来代替系统自带的 PHP。</p>
+<pre class="shell"><code>brew install php@7.2
+brew link php@7.2 --force</code></pre>
+<pre class="shell"><code>brew install php@7.3
+brew link php@7.3 --force
+
+brew install php@7.4
+brew link php@7.4 --force</code></pre>
+<h2 id="composer">Composer</h2>
+<pre class="shell"><code>brew install composer</code></pre>
+<h2 id="mysql">MySQL</h2>
+<pre class="shell"><code>#先安装一下 cmake
+brew install cmake
+
+#安装 MySQL
+brew install mysql@5.7
+
+#添加环境变量
+echo &#39;export PATH=&quot;/usr/local/opt/mysql@5.7/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
+source ~/.zshrc
+
+#启动 MySQL
+brew services start mysql@5.7
+
+#初始化 MySQL，设置密码相关的
+mysql_secure_installation</code></pre>
+<h2 id="mycli">MyCli</h2>
+<p>MySQL 的自动补全和语法高亮工具。</p>
+<pre class="shell"><code>brew install mycli</code></pre>
+<h2 id="redis">Redis</h2>
+<pre class="shell"><code>brew install redis
+
+#启动 Redis
+brew services start redis</code></pre>
+<h2 id="修改-hosts">修改 hosts</h2>
+<pre class="shell"><code>sudo vim /etc/hosts</code></pre>
+<h2 id="core-dump">Core Dump</h2>
+<pre class="shell"><code>sudo mkdir /cores 
+sudo chown root:admin /cores 
+sudo chmod 1775 /cores
+sudo chmod o+w /cores
+
+ulimit -c unlimited
+
+lldb -c /cores/core.37676</code></pre>
+<h2 id="touchbar">TouchBar</h2>
+<p>音量和亮度调节消失</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">killall</span> ControlStrip</span></code></pre></div>
+<h2 id="nginx">Nginx</h2>
+<pre class="shell"><code>brew install nginx</code></pre>]]></description>
+    <pubDate>Fri, 29 Nov 2024 18:03:46 +0800</pubDate>
   </item>
    
   <item>
@@ -180,7 +431,6 @@ fi&#39;</code></pre>
 <li>常用工具
 <ul>
 <li><a href="tools/git.md">Git</a></li>
-<li><a href="tools/brew.md">Homebrew</a></li>
 <li><a href="tools/phpstorm.md">PhpStorm</a></li>
 <li><a href="tools/wp-cli.md">WP-CLI</a></li>
 <li><a href="tools/docker.md">Docker</a></li>
@@ -224,7 +474,7 @@ fi&#39;</code></pre>
 <li><a href="language/python.md">Python</a></li>
 </ul></li>
 </ul>]]></description>
-    <pubDate>Sat, 6 Apr 2024 09:54:08 +0800</pubDate>
+    <pubDate>Fri, 29 Nov 2024 18:03:46 +0800</pubDate>
   </item>
    
   <item>
@@ -235,11 +485,13 @@ fi&#39;</code></pre>
 <h2 id="隐藏版本号">隐藏版本号</h2>
 <p>进入 nginx 配置文件的目录，编辑<code>nginx.conf</code></p>
 <p>在<code>http {}</code>里加上<code>server_tokens off;</code></p>
-<p>编辑 php-fpm 配置文件，如<code>fastcgi.conf</code>或<code>fcgi.conf</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode ini"><code class="sourceCode ini"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">#找到：</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dt">fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">#改为：</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dt">fastcgi_param SERVER_SOFTWARE nginx;</span></span></code></pre></div>
+<p>编辑 php-fpm
+配置文件，如<code>fastcgi.conf</code>或<code>fcgi.conf</code></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#找到：</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#改为：</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">fastcgi_param SERVER_SOFTWARE nginx;</span></span></code></pre></div>
 <p>重载 nginx 配置即可</p>
 <h2 id="反向代理">反向代理</h2>
 <h3 id="http">HTTP</h3>
@@ -336,11 +588,13 @@ docker rm $(docker ps -qa)</code></pre>
 <h2 id="docker-ce-镜像">Docker CE 镜像</h2>
 <pre class="shell"><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></pre>
 <p>https://developer.aliyun.com/article/110806</p>
-<h2 id="通过docker-overlay2目录名查找容器名和容器id">通过docker overlay2目录名查找容器名和容器ID</h2>
+<h2 id="通过docker-overlay2目录名查找容器名和容器id">通过docker
+overlay2目录名查找容器名和容器ID</h2>
 <pre class="shell"><code>docker ps -q | xargs docker inspect --format &#39;{{.State.Pid}}, {{.Id}}, {{.Name}}, {{.GraphDriver.Data.WorkDir}}&#39; | grep &quot;xxxxxxxx&quot;</code></pre>
 <h2 id="安装-docker-compose">安装 docker-compose</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">curl</span> -L https://get.daocloud.io/docker/compose/releases/download/1.29.2/docker-compose-<span class="kw">`</span><span class="fu">uname</span> -s<span class="kw">`</span>-<span class="kw">`</span><span class="fu">uname</span> -m<span class="kw">`</span> <span class="op">&gt;</span> /usr/local/bin/docker-compose</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="fu">chmod</span> +x /usr/local/bin/docker-compose</span></code></pre></div>]]></description>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> https://get.daocloud.io/docker/compose/releases/download/1.29.2/docker-compose-<span class="kw">`</span><span class="fu">uname</span> <span class="at">-s</span><span class="kw">`</span><span class="at">-</span><span class="kw">`</span><span class="fu">uname</span> <span class="at">-m</span><span class="kw">`</span> <span class="op">&gt;</span> /usr/local/bin/docker-compose</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x /usr/local/bin/docker-compose</span></code></pre></div>]]></description>
     <pubDate>Tue, 8 Aug 2023 09:22:16 +0800</pubDate>
   </item>
    
@@ -355,55 +609,14 @@ docker rm $(docker ps -qa)</code></pre>
 <ul>
 <li>微信号：<code>sy-records</code></li>
 </ul>
-<p><img src="https://open.weixin.qq.com/qr/code?username=sy-records" /></p>
+<p><img
+src="https://open.weixin.qq.com/qr/code?username=sy-records" /></p>
 <ul>
 <li>原始ID：<code>gh_200a99619f7f</code></li>
 </ul>
-<p><img src="https://open.weixin.qq.com/qr/code?username=gh_200a99619f7f" /></p>]]></description>
+<p><img
+src="https://open.weixin.qq.com/qr/code?username=gh_200a99619f7f" /></p>]]></description>
     <pubDate>Mon, 10 Jul 2023 14:07:26 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[logo](https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png)]]></title>
-    <link>https://notes.qq52o.me/#/_coverpage</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/_coverpage</guid>
-    <description><![CDATA[<figure>
-<img src="https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png" alt="" /><figcaption>logo</figcaption>
-</figure>
-<h1 id="沈唁志">沈唁志</h1>
-<h2 id="dont-let-your-past-determine-the-future.-idcover-page-hitokoto">🍃Don’t let your past determine the future. :id=cover-page-hitokoto</h2>
-<p><a href="https://github.com/sy-records">GitHub</a> <a href="#main">Getting Started</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202109/home-background.jpg" /></p>]]></description>
-    <pubDate>Tue, 27 Jun 2023 09:43:38 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[关于我]]></title>
-    <link>https://notes.qq52o.me/#/README</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/README</guid>
-    <description><![CDATA[<h1 id="关于我">关于我</h1>
-<p><a href="https://qq52o.me" title="沈唁志"><img src="https://img.shields.io/badge/Blog-qq52o.me-blue" alt="博客" /></a> <a href="https://www.zhihu.com/people/sy-records" title="沈唁"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/zhihu.svg" alt="知乎" /></a> <a href="https://twitter.com/intent/follow?screen_name=lufeidot" title="Luffy"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/twitter.svg" alt="Twitter" /></a> <a href="https://weibo.com/i3l4521" title="@你飞"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/weibo.svg" alt="新浪微博" /></a> <a href="https://segmentfault.com/u/sy_records" title="沈唁"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/segmentfault.svg" alt="思否" /></a> <a href="https://github.com/sy-records" title="sy-records"><img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/ico/github.svg" alt="GitHub" /></a></p>
-<p><a href="https://github.com/lufei/notes/actions"><img src="https://github.com/lufei/notes/workflows/RSS/badge.svg" alt="RSS Status" /></a> <a href="https://github.com/lufei/notes/actions"><img src="https://github.com/lufei/notes/workflows/Sitemap/badge.svg" alt="Sitemap Status" /></a> <a href="https://github.com/lufei/notes/blob/master/LICENSE"><img src="https://img.shields.io/github/license/lufei/notes" alt="LICENSE" /></a> <a href="https://notes.qq52o.me/feed.xml"><img src="https://img.shields.io/badge/RSS-Atom-green" alt="RSS Icon" /></a> <a href="https://paypal.me/lufeidot"><img src="https://img.shields.io/badge/paypal-donate-green.svg" alt="Donate" /></a></p>
-<blockquote>
-<p>路有多远，只有心知道，<br />
-最美的旅程，是不断的经历，<br />
-坚持走下去，与梦想者同行！</p>
-</blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="dt">&quot;nickname&quot;</span><span class="fu">:</span> <span class="st">&quot;沈唁&quot;</span><span class="fu">,</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="dt">&quot;contact&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;52o[at]qq52o.cn&quot;</span><span class="fu">,</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>        <span class="dt">&quot;weibo&quot;</span><span class="fu">:</span> <span class="st">&quot;@你飞&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="fu">},</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Xi&#39;an&quot;</span><span class="fu">,</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="dt">&quot;skills&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;PHP&quot;</span><span class="ot">,</span> <span class="st">&quot;Swoole&quot;</span><span class="ot">,</span> <span class="st">&quot;Linux&quot;</span><span class="ot">,</span> <span class="st">&quot;Python&quot;</span><span class="ot">,</span> <span class="st">&quot;WordPress&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;天秤男&quot;</span><span class="ot">,</span> <span class="st">&quot;果粉&quot;</span><span class="ot">,</span> <span class="st">&quot;路飞迷&quot;</span><span class="ot">]</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
-<h3 id="微信公众号">微信公众号</h3>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202012/wechat_white.png" title=":size=autox150 欢迎关注" alt="" /><figcaption>鲁飞</figcaption>
-</figure>]]></description>
-    <pubDate>Tue, 27 Jun 2023 09:43:38 +0800</pubDate>
   </item>
    
   <item>
@@ -412,13 +625,15 @@ docker rm $(docker ps -qa)</code></pre>
     <guid isPermaLink="false">https://notes.qq52o.me/#/development/linux</guid>
     <description><![CDATA[<h1 id="linux">Linux</h1>
 <h2 id="修改主机名">修改主机名</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">hostnamectl</span> set-hostname</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hostnamectl</span> set-hostname</span></code></pre></div>
 <p>退出 ssh 重新登录后生效</p>
 <h2 id="查看对应网卡流量">查看对应网卡流量</h2>
 <h3 id="安装">安装</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">yum</span> install iftop</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="ex">apt-get</span> install iftop</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">yum</span> install iftop</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> install iftop</span></code></pre></div>
 <h3 id="使用">使用</h3>
 <pre class="shell"><code>iftop -i eth0</code></pre>
 <h2 id="修改ssh端口">修改ssh端口</h2>
@@ -434,90 +649,11 @@ else
   exit $?
 fi</code></pre>
 <h2 id="ubuntu-连接wifi">Ubuntu 连接wifi</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">suto</span> apt install net-tools wireless-tools network-manager</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="ex">nmcli</span> dev wifi connect <span class="st">&quot;&quot;</span> password <span class="st">&quot;&quot;</span></span></code></pre></div>]]></description>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">suto</span> apt install net-tools wireless-tools network-manager</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nmcli</span> dev wifi connect <span class="st">&quot;&quot;</span> password <span class="st">&quot;&quot;</span></span></code></pre></div>]]></description>
     <pubDate>Wed, 20 Apr 2022 13:31:13 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Mac]]></title>
-    <link>https://notes.qq52o.me/#/development/mac</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/development/mac</guid>
-    <description><![CDATA[<h1 id="mac">Mac</h1>
-<p>brew 工具参照 <a href="tools/brew.md">Homebrew</a> 进行安装。</p>
-<h2 id="php">PHP</h2>
-<p>安装 PHP72 来代替系统自带的 PHP。</p>
-<pre class="shell"><code>brew install php@7.2
-brew link php@7.2 --force</code></pre>
-<pre class="shell"><code>brew install php@7.3
-brew link php@7.3 --force
-
-brew install php@7.4
-brew link php@7.4 --force</code></pre>
-<h2 id="composer">Composer</h2>
-<pre class="shell"><code>brew install composer</code></pre>
-<h2 id="mysql">MySQL</h2>
-<pre class="shell"><code>#先安装一下 cmake
-brew install cmake
-
-#安装 MySQL
-brew install mysql@5.7
-
-#添加环境变量
-echo &#39;export PATH=&quot;/usr/local/opt/mysql@5.7/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
-source ~/.zshrc
-
-#启动 MySQL
-brew services start mysql@5.7
-
-#初始化 MySQL，设置密码相关的
-mysql_secure_installation</code></pre>
-<h2 id="mycli">MyCli</h2>
-<p>MySQL 的自动补全和语法高亮工具。</p>
-<pre class="shell"><code>brew install mycli</code></pre>
-<h2 id="redis">Redis</h2>
-<pre class="shell"><code>brew install redis
-
-#启动 Redis
-brew services start redis</code></pre>
-<h2 id="修改-hosts">修改 hosts</h2>
-<pre class="shell"><code>sudo vim /etc/hosts</code></pre>
-<h2 id="core-dump">Core Dump</h2>
-<pre class="shell"><code>sudo mkdir /cores 
-sudo chown root:admin /cores 
-sudo chmod 1775 /cores
-sudo chmod o+w /cores
-
-ulimit -c unlimited
-
-lldb -c /cores/core.37676</code></pre>
-<h2 id="touchbar">TouchBar</h2>
-<p>音量和亮度调节消失</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="fu">killall</span> ControlStrip</span></code></pre></div>
-<h2 id="nginx">Nginx</h2>
-<pre class="shell"><code>brew install nginx</code></pre>]]></description>
-    <pubDate>Wed, 28 Jul 2021 14:41:23 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[PHP]]></title>
-    <link>https://notes.qq52o.me/#/code/php</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/code/php</guid>
-    <description><![CDATA[<h1 id="php">PHP</h1>
-<h2 id="进制转换">进制转换</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode php"><code class="sourceCode php"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">// 十六进制 十进制</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">hexdec</span><span class="ot">(</span><span class="st">&#39;abc&#39;</span><span class="ot">));</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">dechex</span><span class="ot">(</span><span class="dv">2748</span><span class="ot">));</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">// 二进制 十进制</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">bindec</span><span class="ot">(</span><span class="st">&#39;110011&#39;</span><span class="ot">));</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">decbin</span><span class="ot">(</span><span class="dv">51</span><span class="ot">));</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co">// 八进制 十进制</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">octdec</span><span class="ot">(</span><span class="st">&#39;77&#39;</span><span class="ot">));</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="fu">var_dump</span><span class="ot">(</span><span class="fu">decoct</span><span class="ot">(</span><span class="dv">63</span><span class="ot">));</span></span></code></pre></div>]]></description>
-    <pubDate>Sun, 14 Mar 2021 09:01:53 +0800</pubDate>
   </item>
   
 </channel>
