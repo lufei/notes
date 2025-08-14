@@ -19,7 +19,10 @@ urlencode() {
 }
 
 newest_files=$( \
-  git ls-files -z '*.md' | \
+  git ls-files -z '*.md' \
+    ':(exclude)_coverpage.md' \
+    ':(exclude)_navbar.md' \
+    ':(exclude)_sidebar.md' | \
   xargs -0 -n1 -I{} -- git log -1 --format="%at {}" {} | \
   sort -r | \
   head -n10 | \
