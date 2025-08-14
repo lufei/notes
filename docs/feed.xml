@@ -10,6 +10,69 @@
   </follow_challenge>
    
   <item>
+    <title><![CDATA[Mac]]></title>
+    <link>https://notes.qq52o.me/#/development/mac</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/development/mac</guid>
+    <description><![CDATA[<h1 id="mac">Mac</h1>
+<p>brew 工具参照 <a href="https://brew.sh/">Homebrew</a> 进行安装。</p>
+<h2 id="php">PHP</h2>
+<p>安装 PHP72 来代替系统自带的 PHP。</p>
+<pre class="shell"><code>brew install php@7.2
+brew link php@7.2 --force</code></pre>
+<pre class="shell"><code>brew install php@7.3
+brew link php@7.3 --force
+
+brew install php@7.4
+brew link php@7.4 --force</code></pre>
+<h2 id="composer">Composer</h2>
+<pre class="shell"><code>brew install composer</code></pre>
+<h2 id="mysql">MySQL</h2>
+<pre class="shell"><code>#先安装一下 cmake
+brew install cmake
+
+#安装 MySQL
+brew install mysql@5.7
+
+#添加环境变量
+echo &#39;export PATH=&quot;/usr/local/opt/mysql@5.7/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
+source ~/.zshrc
+
+#启动 MySQL
+brew services start mysql@5.7
+
+#初始化 MySQL，设置密码相关的
+mysql_secure_installation</code></pre>
+<h2 id="mycli">MyCli</h2>
+<p>MySQL 的自动补全和语法高亮工具。</p>
+<pre class="shell"><code>brew install mycli</code></pre>
+<h2 id="redis">Redis</h2>
+<pre class="shell"><code>brew install redis
+
+#启动 Redis
+brew services start redis</code></pre>
+<h2 id="nginx">Nginx</h2>
+<pre class="shell"><code>brew install nginx</code></pre>
+<h2 id="core-dump">Core Dump</h2>
+<pre class="shell"><code>sudo mkdir /cores 
+sudo chown root:admin /cores 
+sudo chmod 1775 /cores
+sudo chmod o+w /cores
+
+ulimit -c unlimited
+
+lldb -c /cores/core.37676</code></pre>
+<h2 id="touchbar">TouchBar</h2>
+<p>音量和亮度调节消失</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">killall</span> ControlStrip</span></code></pre></div>
+<h2 id="alfred">Alfred</h2>
+<p>Fix auto-paste on return failure</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tccutil</span> reset All com.runningwithcrayons.Alfred</span></code></pre></div>]]></description>
+    <pubDate>Thu, 14 Aug 2025 17:16:55 +0800</pubDate>
+  </item>
+   
+  <item>
     <title><![CDATA[Git]]></title>
     <link>https://notes.qq52o.me/#/tools/git</link>
     <guid isPermaLink="false">https://notes.qq52o.me/#/tools/git</guid>
@@ -351,67 +414,6 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-e</span> <span class="st">&quot;\e[31mClose proxy successfully.\e[0m&quot;</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>]]></description>
     <pubDate>Fri, 29 Nov 2024 18:20:29 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[Mac]]></title>
-    <link>https://notes.qq52o.me/#/development/mac</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/development/mac</guid>
-    <description><![CDATA[<h1 id="mac">Mac</h1>
-<p>brew 工具参照 <a href="https://brew.sh/">Homebrew</a> 进行安装。</p>
-<h2 id="php">PHP</h2>
-<p>安装 PHP72 来代替系统自带的 PHP。</p>
-<pre class="shell"><code>brew install php@7.2
-brew link php@7.2 --force</code></pre>
-<pre class="shell"><code>brew install php@7.3
-brew link php@7.3 --force
-
-brew install php@7.4
-brew link php@7.4 --force</code></pre>
-<h2 id="composer">Composer</h2>
-<pre class="shell"><code>brew install composer</code></pre>
-<h2 id="mysql">MySQL</h2>
-<pre class="shell"><code>#先安装一下 cmake
-brew install cmake
-
-#安装 MySQL
-brew install mysql@5.7
-
-#添加环境变量
-echo &#39;export PATH=&quot;/usr/local/opt/mysql@5.7/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
-source ~/.zshrc
-
-#启动 MySQL
-brew services start mysql@5.7
-
-#初始化 MySQL，设置密码相关的
-mysql_secure_installation</code></pre>
-<h2 id="mycli">MyCli</h2>
-<p>MySQL 的自动补全和语法高亮工具。</p>
-<pre class="shell"><code>brew install mycli</code></pre>
-<h2 id="redis">Redis</h2>
-<pre class="shell"><code>brew install redis
-
-#启动 Redis
-brew services start redis</code></pre>
-<h2 id="修改-hosts">修改 hosts</h2>
-<pre class="shell"><code>sudo vim /etc/hosts</code></pre>
-<h2 id="core-dump">Core Dump</h2>
-<pre class="shell"><code>sudo mkdir /cores 
-sudo chown root:admin /cores 
-sudo chmod 1775 /cores
-sudo chmod o+w /cores
-
-ulimit -c unlimited
-
-lldb -c /cores/core.37676</code></pre>
-<h2 id="touchbar">TouchBar</h2>
-<p>音量和亮度调节消失</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">killall</span> ControlStrip</span></code></pre></div>
-<h2 id="nginx">Nginx</h2>
-<pre class="shell"><code>brew install nginx</code></pre>]]></description>
-    <pubDate>Fri, 29 Nov 2024 18:03:46 +0800</pubDate>
   </item>
    
   <item>
