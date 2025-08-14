@@ -255,26 +255,6 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href=
   </item>
    
   <item>
-    <title><![CDATA[logo](https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png)]]></title>
-    <link>https://notes.qq52o.me/#/_coverpage</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/_coverpage</guid>
-    <description><![CDATA[<figure>
-<img src="https://cdn.jsdelivr.net/gh/lufei/notes/docs/images/huaji.png"
-alt="logo" />
-<figcaption aria-hidden="true">logo</figcaption>
-</figure>
-<h1 id="沈唁志">沈唁志</h1>
-<h2
-id="dont-let-your-past-determine-the-future.-idcover-page-hitokoto">🍃Don’t
-let your past determine the future. :id=cover-page-hitokoto</h2>
-<p><a href="https://github.com/sy-records">GitHub</a> <a
-href="#about">Getting Started</a></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/sy-records/staticfile/images/202109/home-background.jpg" /></p>]]></description>
-    <pubDate>Mon, 10 Feb 2025 09:42:44 +0800</pubDate>
-  </item>
-   
-  <item>
     <title><![CDATA[关于我 :id=about]]></title>
     <link>https://notes.qq52o.me/#/README</link>
     <guid isPermaLink="false">https://notes.qq52o.me/#/README</guid>
@@ -414,69 +394,6 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-e</span> <span class="st">&quot;\e[31mClose proxy successfully.\e[0m&quot;</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>]]></description>
     <pubDate>Fri, 29 Nov 2024 18:20:29 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[前言]]></title>
-    <link>https://notes.qq52o.me/#/_sidebar</link>
-    <guid isPermaLink="false">https://notes.qq52o.me/#/_sidebar</guid>
-    <description><![CDATA[<ul>
-<li>前言
-<ul>
-<li><a href="donate.md">赞赏</a></li>
-</ul></li>
-<li>环境搭建
-<ul>
-<li><a href="development/mac.md">Mac</a></li>
-<li><a href="development/linux.md">Linux</a></li>
-</ul></li>
-<li>常用工具
-<ul>
-<li><a href="tools/git.md">Git</a></li>
-<li><a href="tools/phpstorm.md">PhpStorm</a></li>
-<li><a href="tools/wp-cli.md">WP-CLI</a></li>
-<li><a href="tools/docker.md">Docker</a></li>
-<li><a href="tools/charles.md">Charles</a></li>
-<li><a href="tools/wireshark.md">Wireshark</a></li>
-<li><a href="tools/tools.md">Tools</a></li>
-<li><a href="tools/snippets.md">Snippets</a></li>
-</ul></li>
-<li>框架
-<ul>
-<li><a href="framework/hyperf.md">Hyperf</a></li>
-</ul></li>
-<li>实例代码
-<ul>
-<li><a href="code/hyperf-jsonrpc.md">JSON-RPC</a></li>
-<li><a href="code/select2.md">Select2</a></li>
-<li><a href="code/echarts.md">ECharts</a></li>
-<li><a href="code/bootstrap.md">Bootstrap</a></li>
-<li><a href="code/javascript.md">JavaScript</a></li>
-<li><a href="code/cli.md">CLI</a></li>
-<li><a href="code/layui.md">Layui</a></li>
-<li><a href="code/nodejs.md">Node.js</a></li>
-<li><a href="code/php.md">PHP</a></li>
-</ul></li>
-<li>数据库
-<ul>
-<li><a href="database/mysql.md">MySQL</a></li>
-<li><a href="database/postgresql.md">PostgreSQL</a></li>
-</ul></li>
-<li>网关
-<ul>
-<li><a href="gateway/nginx.md">Nginx</a></li>
-</ul></li>
-<li>WebSocket
-<ul>
-<li><a href="code/websocket.md">Wss</a></li>
-<li><a href="http://wstool.js.org">在线测试</a></li>
-</ul></li>
-<li>语言
-<ul>
-<li><a href="language/python.md">Python</a></li>
-</ul></li>
-</ul>]]></description>
-    <pubDate>Fri, 29 Nov 2024 18:03:46 +0800</pubDate>
   </item>
    
   <item>
@@ -656,6 +573,44 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nmcli</span> dev wifi connect <span class="st">&quot;&quot;</span> password <span class="st">&quot;&quot;</span></span></code></pre></div>]]></description>
     <pubDate>Wed, 20 Apr 2022 13:31:13 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[PHP]]></title>
+    <link>https://notes.qq52o.me/#/code/php</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/code/php</guid>
+    <description><![CDATA[<h1 id="php">PHP</h1>
+<h2 id="进制转换">进制转换</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode php"><code class="sourceCode php"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// 十六进制 十进制</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var_dump</span>(<span class="fu">hexdec</span>(<span class="st">&#39;abc&#39;</span>))<span class="ot">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_dump</span>(<span class="fu">dechex</span>(<span class="dv">2748</span>))<span class="ot">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">// 二进制 十进制</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">var_dump</span>(<span class="fu">bindec</span>(<span class="st">&#39;110011&#39;</span>))<span class="ot">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">var_dump</span>(<span class="fu">decbin</span>(<span class="dv">51</span>))<span class="ot">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">// 八进制 十进制</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">var_dump</span>(<span class="fu">octdec</span>(<span class="st">&#39;77&#39;</span>))<span class="ot">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">var_dump</span>(<span class="fu">decoct</span>(<span class="dv">63</span>))<span class="ot">;</span></span></code></pre></div>]]></description>
+    <pubDate>Sun, 14 Mar 2021 09:01:53 +0800</pubDate>
+  </item>
+   
+  <item>
+    <title><![CDATA[Tools]]></title>
+    <link>https://notes.qq52o.me/#/tools/tools</link>
+    <guid isPermaLink="false">https://notes.qq52o.me/#/tools/tools</guid>
+    <description><![CDATA[<h1 id="tools">Tools</h1>
+<h2 id="jq">jq</h2>
+<p>用于命令行解析json数据，<a
+href="https://stedolan.github.io/jq/manual/">文档</a></p>
+<h3 id="获取-swoole-release-版本">获取 Swoole Release 版本</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> https://api.github.com/repos/swoole/swoole-src/releases/latest <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&#39;.tag_name&#39;</span> <span class="at">-r</span></span></code></pre></div>
+<h3 id="获取-tag">获取 tag</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> https://api.github.com/repos/swoole/swoole-src/tags <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&quot;.[].name&quot;</span> <span class="at">-r</span> <span class="kw">|</span> <span class="fu">grep</span> v4.5 <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span></span></code></pre></div>]]></description>
+    <pubDate>Fri, 8 Jan 2021 09:07:36 +0800</pubDate>
   </item>
   
 </channel>
