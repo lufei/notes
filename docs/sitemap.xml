@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://notes.qq52o.me</loc>
-    <lastmod>2025-02-10T02:11:40Z</lastmod>
+    <lastmod>2025-08-14T09:16:55Z</lastmod>
+  </url>
+   
+  <url>
+    <loc>https://notes.qq52o.me/#/development/mac</loc>
+    <lastmod>2025-08-14T09:16:55Z</lastmod>
   </url>
    
   <url>
@@ -18,11 +23,6 @@
   <url>
     <loc>https://notes.qq52o.me/#/code/cli</loc>
     <lastmod>2024-11-29T10:20:29Z</lastmod>
-  </url>
-   
-  <url>
-    <loc>https://notes.qq52o.me/#/development/mac</loc>
-    <lastmod>2024-11-29T10:03:46Z</lastmod>
   </url>
    
   <url>
