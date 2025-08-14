@@ -62,10 +62,10 @@ brew install redis
 brew services start redis
 ```
 
-## 修改 hosts
+## Nginx
 
 ```shell
-sudo vim /etc/hosts
+brew install nginx
 ```
 
 ## Core Dump
@@ -89,8 +89,10 @@ lldb -c /cores/core.37676
 killall ControlStrip
 ```
 
-## Nginx
+## Alfred
 
-```shell
-brew install nginx
+Fix auto-paste on return failure
+
+```bash
+tccutil reset All com.runningwithcrayons.Alfred
 ```
