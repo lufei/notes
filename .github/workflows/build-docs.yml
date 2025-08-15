@@ -1,0 +1,41 @@
+name: Build RSS and Sitemap
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - 'docs/feed.xml'
+      - 'docs/sitemap.xml'
+  workflow_dispatch:
+    inputs:
+      job:
+        description: '选择要运行的任务 (rss, sitemap, all)'
+        required: true
+        default: 'all'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+
+      - name: Build RSS
+        if: github.event.inputs.job == 'rss' || github.event.inputs.job == 'all' || github.event_name != 'workflow_dispatch'
+        run: |
+          sudo apt-get install -y pandoc
+          ./rss.sh
+        working-directory: docs/
+
+      - name: Build Sitemap
+        if: github.event.inputs.job == 'sitemap' || github.event.inputs.job == 'all' || github.event_name != 'workflow_dispatch'
+        run: ./sitemap.sh
+        working-directory: docs/
+
+      - name: Commit Updated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Build RSS and/or Sitemap"
